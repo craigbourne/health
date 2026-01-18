@@ -71,4 +71,19 @@ for repo_name in repos:
         print(f"  Releases (last year): 0")
         print(f"  Latest Release: None")
     
+    # Get contributor info
+    contributors = repo.get_contributors()
+    total_contributors = contributors.totalCount
+    
+    # Count active contributors from recent commits
+    active_contributors_set = set()
+    for commit in repo.get_commits(since=three_months_ago):
+        if commit.author:
+            active_contributors_set.add(commit.author.login)
+    
+    active_contributors = len(active_contributors_set)
+    
+    print(f"  Total Contributors: {total_contributors}")
+    print(f"  Active Contributors (last 3 months): {active_contributors}")
+
     print()
