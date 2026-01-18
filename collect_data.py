@@ -6,14 +6,22 @@ from github import Github, Auth
 load_dotenv()
 token = os.getenv('GITHUB_TOKEN')
 
-# Connect to GitHub (updated method)
+# Connect to GitHub
 auth = Auth.Token(token)
 g = Github(auth=auth)
 
-# Test: get info about one repository
-repo = g.get_repo("vitejs/vite")
+# Read the list of repos
+with open('repos.txt', 'r') as file:
+    repos = [line.strip() for line in file if line.strip()]
 
-# Print some basic info
-print("Repository:", repo.name)
-print("Stars:", repo.stargazers_count)
-print("Open Issues:", repo.open_issues_count)
+# Print header
+print("Collecting data from", len(repos), "repos...")
+print("-" * 60)
+
+# Get data for each repository
+for repo_name in repos:
+    repo = g.get_repo(repo_name)
+    print(f"{repo_name}")
+    print(f"  Stars: {repo.stargazers_count}")
+    print(f"  Open Issues: {repo.open_issues_count}")
+    print()
