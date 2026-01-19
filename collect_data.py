@@ -26,17 +26,28 @@ print("-" * 70)
 for repo_name in repos:
     print(f"Analysing: {repo_name}")
     repo = g.get_repo(repo_name)
+
+
+    # ==================== EVOLVABILITY (20%) ====================
+    created_date = repo.created_at
+    repo_age_days = (datetime.now(timezone.utc) - created_date).days
     
     # Basic info
+    print(f"  Created: {created_date.strftime('%Y-%m-%d')}")
+    print(f"  Age (days): {repo_age_days}")
     print(f"  Stars: {repo.stargazers_count}")
-    print(f"  Open Issues: {repo.open_issues_count}")
-    
+    print(f"  Forks: {repo.forks_count}")
+    print(f"  Watchers: {repo.watchers_count}")
+
+
+    # ==================== VELOCITY (30%) ====================
     # Get commits
     commits = repo.get_commits()
-    
+
     # Last commit date
     last_commit = commits[0]
     last_commit_date = last_commit.commit.author.date
+    
     print(f"  Last Commit: {last_commit_date.strftime('%Y-%m-%d')}")
     
     # Count commits in last 3 months
@@ -51,11 +62,9 @@ for repo_name in repos:
     
     # Get release info
     releases = repo.get_releases()
-    
     try:
         latest_release = releases[0]
         latest_release_date = latest_release.published_at
-        print(f"  Latest Release: {latest_release_date.strftime('%Y-%m-%d')}")
         
         # Count releases in last year
         one_year_ago = datetime.now(timezone.utc) - timedelta(days=365)
@@ -67,10 +76,13 @@ for repo_name in repos:
                 break
         
         print(f"  Releases (last year): {recent_releases}")
+        print(f"  Latest Release: {latest_release_date.strftime('%Y-%m-%d')}")
     except (IndexError, StopIteration):
         print(f"  Releases (last year): 0")
         print(f"  Latest Release: None")
-    
+
+
+    # ==================== COLLABORATION (25%) ====================
     # Get contributor info
     contributors = repo.get_contributors()
     total_contributors = contributors.totalCount
@@ -85,5 +97,20 @@ for repo_name in repos:
     
     print(f"  Total Contributors: {total_contributors}")
     print(f"  Active Contributors (last 3 months): {active_contributors}")
+    
+    # Get pull request info
+    open_prs = repo.get_pulls(state='open').totalCount
+    closed_prs = repo.get_pulls(state='closed').totalCount
+    
+    print(f"  Pull Requests Open: {open_prs}")
+    print(f"  Pull Requests Closed: {closed_prs}")
 
+
+    # ==================== QUALITY (25%) ====================
+    print(f"  Issues Open: {repo.open_issues_count}")
+    
+    # Count closed issues in last 3 months
+    closed_issues = repo.get_issues(state='closed', since=three_months_ago).totalCount
+    print(f"  Issues Closed (last 3 months): {closed_issues}")
+    
     print()
