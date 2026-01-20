@@ -22,13 +22,9 @@ three_months_ago = datetime.now(timezone.utc) - timedelta(days=90)
 # Store all repo data
 all_repo_data = []
 
-# Print header
-print("Collecting data from", len(repos), "repos...")
-print("-" * 70)
-
 # Get data for each repo
 for repo_name in repos:
-    print(f"Collecting: {repo_name}...", end=" ")
+    print(f"Collected: {repo_name}...", end=" ")
     repo = g.get_repo(repo_name)
     
     # Create dictionary for repo
@@ -136,6 +132,6 @@ for repo_name in repos:
 with open('repo_data.json', 'w') as f:
     json.dump(all_repo_data, f, indent=2)
 
-print("-" * 70)
+print("-" * 50)
 print(f"Data saved to repo_data.json")
 print(f"Total repos collected: {len(all_repo_data)}")

@@ -20,7 +20,7 @@ three_months_ago = datetime.now(timezone.utc) - timedelta(days=90)
 
 # Print header
 print("Printing data from", len(repos), "repos...")
-print("-" * 70)
+print("-" * 50)
 
 # Get data for each repo
 for repo_name in repos:

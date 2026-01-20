@@ -1,40 +1,42 @@
 [
   {
     "name": "vitejs/vite",
-    "collection_date": "2026-01-20 04:05:34 UTC",
+    "collection_date": "2026-01-20 18:48:14 UTC",
     "evolvability": {
       "created_date": "2020-04-21",
-      "age_days": 2099,
-      "stars": 77650,
-      "forks": 7723,
-      "watchers": 77650
+      "age_days": 2100,
+      "stars": 77661,
+      "forks": 7722,
+      "watchers": 77661
     },
     "velocity": {
       "last_commit_date": "2026-01-20",
-      "commits_last_3_months": 281,
-      "releases_last_year": 142,
+      "commits_last_3_months": 273,
+      "releases_last_year": 135,
       "latest_release_date": "2026-01-15"
     },
     "collaboration": {
       "total_contributors": 440,
-      "active_contributors_last_3_months": 57,
-      "pull_requests_open": 152,
-      "pull_requests_closed": 7628
+      "active_contributors_last_3_months": 53,
+      "pull_requests_open": 154,
+      "pull_requests_closed": 7632
     },
     "quality": {
-      "issues_open": 621,
+      "issues_open": 623,
       "issues_closed_last_3_months": 0
-    }
+    },
+    "classification": "Active",
+    "classification_evidence": "273 commits in last 3 months, 135 releases in last year, last commit 0 days ago, 53 active contributors"
   },
   {
     "name": "fastify/fastify",
-    "collection_date": "2026-01-20 04:05:54 UTC",
+    "collection_date": "2026-01-20 18:48:34 UTC",
     "evolvability": {
       "created_date": "2016-09-28",
       "age_days": 3400,
-      "stars": 35449,
+      "stars": 35455,
       "forks": 2551,
-      "watchers": 35449
+      "watchers": 35455
     },
     "velocity": {
       "last_commit_date": "2026-01-18",
@@ -45,77 +47,83 @@
     "collaboration": {
       "total_contributors": 435,
       "active_contributors_last_3_months": 26,
-      "pull_requests_open": 25,
+      "pull_requests_open": 26,
       "pull_requests_closed": 3875
     },
     "quality": {
-      "issues_open": 100,
+      "issues_open": 101,
       "issues_closed_last_3_months": 0
-    }
+    },
+    "classification": "Active",
+    "classification_evidence": "53 commits in last 3 months, 13 releases in last year, last commit 2 days ago, 26 active contributors"
   },
   {
     "name": "microsoft/playwright",
-    "collection_date": "2026-01-20 04:06:00 UTC",
+    "collection_date": "2026-01-20 18:48:40 UTC",
     "evolvability": {
       "created_date": "2019-11-15",
-      "age_days": 2257,
-      "stars": 81432,
-      "forks": 5023,
-      "watchers": 81432
+      "age_days": 2258,
+      "stars": 81462,
+      "forks": 5025,
+      "watchers": 81462
     },
     "velocity": {
-      "last_commit_date": "2026-01-19",
-      "commits_last_3_months": 401,
+      "last_commit_date": "2026-01-20",
+      "commits_last_3_months": 408,
       "releases_last_year": 16,
       "latest_release_date": "2025-11-25"
     },
     "collaboration": {
       "total_contributors": 473,
       "active_contributors_last_3_months": 28,
-      "pull_requests_open": 13,
-      "pull_requests_closed": 18344
+      "pull_requests_open": 12,
+      "pull_requests_closed": 18355
     },
     "quality": {
       "issues_open": 580,
       "issues_closed_last_3_months": 0
-    }
+    },
+    "classification": "Active",
+    "classification_evidence": "408 commits in last 3 months, 16 releases in last year, last commit 0 days ago, 28 active contributors"
   },
   {
     "name": "shadcn-ui/ui",
-    "collection_date": "2026-01-20 04:06:23 UTC",
+    "collection_date": "2026-01-20 18:49:04 UTC",
     "evolvability": {
       "created_date": "2023-01-04",
-      "age_days": 1111,
-      "stars": 105118,
-      "forks": 7700,
-      "watchers": 105118
+      "age_days": 1112,
+      "stars": 105185,
+      "forks": 7705,
+      "watchers": 105185
     },
     "velocity": {
-      "last_commit_date": "2026-01-19",
-      "commits_last_3_months": 214,
+      "last_commit_date": "2026-01-20",
+      "commits_last_3_months": 222,
       "releases_last_year": 33,
       "latest_release_date": "2026-01-16"
     },
     "collaboration": {
-      "total_contributors": 421,
+      "total_contributors": 423,
       "active_contributors_last_3_months": 89,
-      "pull_requests_open": 774,
-      "pull_requests_closed": 2386
+      "pull_requests_open": 770,
+      "pull_requests_closed": 2394
     },
     "quality": {
-      "issues_open": 1803,
+      "issues_open": 1798,
       "issues_closed_last_3_months": 0
-    }
+    },
+    "classification": "Active",
+    "classification_evidence": "222 commits in last 3 months, 33 releases in last year, last commit 0 days ago, 89 active contributors"
   },
   {
     "name": "jashkenas/backbone",
-    "collection_date": "2026-01-20 04:06:38 UTC",
+    "collection_date": "2026-01-20 18:49:19 UTC",
     "evolvability": {
       "created_date": "2010-09-30",
       "age_days": 5590,
-      "stars": 28125,
+      "stars": 28123,
       "forks": 5337,
-      "watchers": 28125
+      "watchers": 28123
     },
     "velocity": {
       "last_commit_date": "2025-04-01",
@@ -132,17 +140,19 @@
     "quality": {
       "issues_open": 62,
       "issues_closed_last_3_months": 0
-    }
+    },
+    "classification": "Declining",
+    "classification_evidence": "No commits in last 3 months, No releases in last year, last commit 294 days ago"
   },
   {
     "name": "jashkenas/coffeescript",
-    "collection_date": "2026-01-20 04:06:43 UTC",
+    "collection_date": "2026-01-20 18:49:24 UTC",
     "evolvability": {
       "created_date": "2009-12-18",
       "age_days": 5877,
-      "stars": 16595,
+      "stars": 16594,
       "forks": 1984,
-      "watchers": 16595
+      "watchers": 16594
     },
     "velocity": {
       "last_commit_date": "2023-09-19",
@@ -159,17 +169,19 @@
     "quality": {
       "issues_open": 95,
       "issues_closed_last_3_months": 0
-    }
+    },
+    "classification": "Abandoned",
+    "classification_evidence": "No commits in last 3 months, No releases in last year, last commit 854 days ago"
   },
   {
     "name": "gruntjs/grunt",
-    "collection_date": "2026-01-20 04:06:48 UTC",
+    "collection_date": "2026-01-20 18:49:29 UTC",
     "evolvability": {
       "created_date": "2011-09-21",
-      "age_days": 5234,
-      "stars": 12262,
+      "age_days": 5235,
+      "stars": 12261,
       "forks": 1498,
-      "watchers": 12262
+      "watchers": 12261
     },
     "velocity": {
       "last_commit_date": "2025-11-05",
@@ -186,14 +198,16 @@
     "quality": {
       "issues_open": 164,
       "issues_closed_last_3_months": 0
-    }
+    },
+    "classification": "Declining",
+    "classification_evidence": "1 commits in last 3 months, No releases in last year, last commit 76 days ago, 1 active contributors"
   },
   {
     "name": "gulpjs/gulp",
-    "collection_date": "2026-01-20 04:06:53 UTC",
+    "collection_date": "2026-01-20 18:49:33 UTC",
     "evolvability": {
       "created_date": "2013-07-04",
-      "age_days": 4582,
+      "age_days": 4583,
       "stars": 33034,
       "forks": 4193,
       "watchers": 33034
@@ -213,14 +227,16 @@
     "quality": {
       "issues_open": 35,
       "issues_closed_last_3_months": 1
-    }
+    },
+    "classification": "Declining",
+    "classification_evidence": "No commits in last 3 months, 1 releases in last year, last commit 233 days ago"
   },
   {
     "name": "knockout/knockout",
-    "collection_date": "2026-01-20 04:06:58 UTC",
+    "collection_date": "2026-01-20 18:49:38 UTC",
     "evolvability": {
       "created_date": "2010-07-05",
-      "age_days": 5677,
+      "age_days": 5678,
       "stars": 10546,
       "forks": 1499,
       "watchers": 10546
@@ -240,14 +256,16 @@
     "quality": {
       "issues_open": 375,
       "issues_closed_last_3_months": 0
-    }
+    },
+    "classification": "Abandoned",
+    "classification_evidence": "No commits in last 3 months, No releases in last year, last commit 1596 days ago"
   },
   {
     "name": "atom/atom",
-    "collection_date": "2026-01-20 04:07:03 UTC",
+    "collection_date": "2026-01-20 18:49:43 UTC",
     "evolvability": {
       "created_date": "2012-01-20",
-      "age_days": 5113,
+      "age_days": 5114,
       "stars": 60992,
       "forks": 17302,
       "watchers": 60992
@@ -267,17 +285,20 @@
     "quality": {
       "issues_open": 994,
       "issues_closed_last_3_months": 0
-    }
+    },
+    "classification": "Abandoned",
+    "classification_evidence": "No commits in last 3 months, No releases in last year, last commit 1155 days ago",
+    "official_statement": "https://github.blog/2022-06-08-sunsetting-atom/"
   },
   {
     "name": "angular/angular.js",
-    "collection_date": "2026-01-20 04:07:08 UTC",
+    "collection_date": "2026-01-20 18:49:48 UTC",
     "evolvability": {
       "created_date": "2010-01-06",
       "age_days": 5858,
-      "stars": 58998,
-      "forks": 27290,
-      "watchers": 58998
+      "stars": 58997,
+      "forks": 27289,
+      "watchers": 58997
     },
     "velocity": {
       "last_commit_date": "2024-04-12",
@@ -294,11 +315,14 @@
     "quality": {
       "issues_open": 461,
       "issues_closed_last_3_months": 0
-    }
+    },
+    "classification": "Abandoned",
+    "classification_evidence": "No commits in last 3 months, No releases in last year, last commit 648 days ago",
+    "official_statement": "https://blog.angular.io/discontinued-long-term-support-for-angularjs-cc066b82e65a"
   },
   {
     "name": "bower/bower",
-    "collection_date": "2026-01-20 04:07:13 UTC",
+    "collection_date": "2026-01-20 18:49:53 UTC",
     "evolvability": {
       "created_date": "2012-09-07",
       "age_days": 4883,
@@ -321,6 +345,9 @@
     "quality": {
       "issues_open": 14,
       "issues_closed_last_3_months": 0
-    }
+    },
+    "classification": "Abandoned",
+    "classification_evidence": "No commits in last 3 months, No releases in last year, last commit 464 days ago",
+    "official_statement": "https://bower.io/blog/2017/how-to-migrate-away-from-bower/"
   }
 ]
