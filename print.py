@@ -1,5 +1,4 @@
 import os
-import json
 from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
 from github import Github, Auth
@@ -20,7 +19,7 @@ with open('repos.txt', 'r') as file:
 three_months_ago = datetime.now(timezone.utc) - timedelta(days=90)
 
 # Print header
-print("Collecting data from", len(repos), "repos...")
+print("Printing data from", len(repos), "repos...")
 print("-" * 70)
 
 # Get data for each repo

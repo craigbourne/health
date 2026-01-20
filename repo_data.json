@@ -1,0 +1,326 @@
+[
+  {
+    "name": "vitejs/vite",
+    "collection_date": "2026-01-20 04:05:34 UTC",
+    "evolvability": {
+      "created_date": "2020-04-21",
+      "age_days": 2099,
+      "stars": 77650,
+      "forks": 7723,
+      "watchers": 77650
+    },
+    "velocity": {
+      "last_commit_date": "2026-01-20",
+      "commits_last_3_months": 281,
+      "releases_last_year": 142,
+      "latest_release_date": "2026-01-15"
+    },
+    "collaboration": {
+      "total_contributors": 440,
+      "active_contributors_last_3_months": 57,
+      "pull_requests_open": 152,
+      "pull_requests_closed": 7628
+    },
+    "quality": {
+      "issues_open": 621,
+      "issues_closed_last_3_months": 0
+    }
+  },
+  {
+    "name": "fastify/fastify",
+    "collection_date": "2026-01-20 04:05:54 UTC",
+    "evolvability": {
+      "created_date": "2016-09-28",
+      "age_days": 3400,
+      "stars": 35449,
+      "forks": 2551,
+      "watchers": 35449
+    },
+    "velocity": {
+      "last_commit_date": "2026-01-18",
+      "commits_last_3_months": 53,
+      "releases_last_year": 13,
+      "latest_release_date": "2026-01-16"
+    },
+    "collaboration": {
+      "total_contributors": 435,
+      "active_contributors_last_3_months": 26,
+      "pull_requests_open": 25,
+      "pull_requests_closed": 3875
+    },
+    "quality": {
+      "issues_open": 100,
+      "issues_closed_last_3_months": 0
+    }
+  },
+  {
+    "name": "microsoft/playwright",
+    "collection_date": "2026-01-20 04:06:00 UTC",
+    "evolvability": {
+      "created_date": "2019-11-15",
+      "age_days": 2257,
+      "stars": 81432,
+      "forks": 5023,
+      "watchers": 81432
+    },
+    "velocity": {
+      "last_commit_date": "2026-01-19",
+      "commits_last_3_months": 401,
+      "releases_last_year": 16,
+      "latest_release_date": "2025-11-25"
+    },
+    "collaboration": {
+      "total_contributors": 473,
+      "active_contributors_last_3_months": 28,
+      "pull_requests_open": 13,
+      "pull_requests_closed": 18344
+    },
+    "quality": {
+      "issues_open": 580,
+      "issues_closed_last_3_months": 0
+    }
+  },
+  {
+    "name": "shadcn-ui/ui",
+    "collection_date": "2026-01-20 04:06:23 UTC",
+    "evolvability": {
+      "created_date": "2023-01-04",
+      "age_days": 1111,
+      "stars": 105118,
+      "forks": 7700,
+      "watchers": 105118
+    },
+    "velocity": {
+      "last_commit_date": "2026-01-19",
+      "commits_last_3_months": 214,
+      "releases_last_year": 33,
+      "latest_release_date": "2026-01-16"
+    },
+    "collaboration": {
+      "total_contributors": 421,
+      "active_contributors_last_3_months": 89,
+      "pull_requests_open": 774,
+      "pull_requests_closed": 2386
+    },
+    "quality": {
+      "issues_open": 1803,
+      "issues_closed_last_3_months": 0
+    }
+  },
+  {
+    "name": "jashkenas/backbone",
+    "collection_date": "2026-01-20 04:06:38 UTC",
+    "evolvability": {
+      "created_date": "2010-09-30",
+      "age_days": 5590,
+      "stars": 28125,
+      "forks": 5337,
+      "watchers": 28125
+    },
+    "velocity": {
+      "last_commit_date": "2025-04-01",
+      "commits_last_3_months": 0,
+      "releases_last_year": 0,
+      "latest_release_date": null
+    },
+    "collaboration": {
+      "total_contributors": 284,
+      "active_contributors_last_3_months": 0,
+      "pull_requests_open": 20,
+      "pull_requests_closed": 1851
+    },
+    "quality": {
+      "issues_open": 62,
+      "issues_closed_last_3_months": 0
+    }
+  },
+  {
+    "name": "jashkenas/coffeescript",
+    "collection_date": "2026-01-20 04:06:43 UTC",
+    "evolvability": {
+      "created_date": "2009-12-18",
+      "age_days": 5877,
+      "stars": 16595,
+      "forks": 1984,
+      "watchers": 16595
+    },
+    "velocity": {
+      "last_commit_date": "2023-09-19",
+      "commits_last_3_months": 0,
+      "releases_last_year": 0,
+      "latest_release_date": null
+    },
+    "collaboration": {
+      "total_contributors": 213,
+      "active_contributors_last_3_months": 0,
+      "pull_requests_open": 21,
+      "pull_requests_closed": 1231
+    },
+    "quality": {
+      "issues_open": 95,
+      "issues_closed_last_3_months": 0
+    }
+  },
+  {
+    "name": "gruntjs/grunt",
+    "collection_date": "2026-01-20 04:06:48 UTC",
+    "evolvability": {
+      "created_date": "2011-09-21",
+      "age_days": 5234,
+      "stars": 12262,
+      "forks": 1498,
+      "watchers": 12262
+    },
+    "velocity": {
+      "last_commit_date": "2025-11-05",
+      "commits_last_3_months": 1,
+      "releases_last_year": 0,
+      "latest_release_date": "2023-01-31"
+    },
+    "collaboration": {
+      "total_contributors": 76,
+      "active_contributors_last_3_months": 1,
+      "pull_requests_open": 17,
+      "pull_requests_closed": 487
+    },
+    "quality": {
+      "issues_open": 164,
+      "issues_closed_last_3_months": 0
+    }
+  },
+  {
+    "name": "gulpjs/gulp",
+    "collection_date": "2026-01-20 04:06:53 UTC",
+    "evolvability": {
+      "created_date": "2013-07-04",
+      "age_days": 4582,
+      "stars": 33034,
+      "forks": 4193,
+      "watchers": 33034
+    },
+    "velocity": {
+      "last_commit_date": "2025-06-01",
+      "commits_last_3_months": 0,
+      "releases_last_year": 1,
+      "latest_release_date": "2025-06-01"
+    },
+    "collaboration": {
+      "total_contributors": 223,
+      "active_contributors_last_3_months": 0,
+      "pull_requests_open": 5,
+      "pull_requests_closed": 681
+    },
+    "quality": {
+      "issues_open": 35,
+      "issues_closed_last_3_months": 1
+    }
+  },
+  {
+    "name": "knockout/knockout",
+    "collection_date": "2026-01-20 04:06:58 UTC",
+    "evolvability": {
+      "created_date": "2010-07-05",
+      "age_days": 5677,
+      "stars": 10546,
+      "forks": 1499,
+      "watchers": 10546
+    },
+    "velocity": {
+      "last_commit_date": "2021-09-07",
+      "commits_last_3_months": 0,
+      "releases_last_year": 0,
+      "latest_release_date": "2019-11-05"
+    },
+    "collaboration": {
+      "total_contributors": 81,
+      "active_contributors_last_3_months": 0,
+      "pull_requests_open": 72,
+      "pull_requests_closed": 687
+    },
+    "quality": {
+      "issues_open": 375,
+      "issues_closed_last_3_months": 0
+    }
+  },
+  {
+    "name": "atom/atom",
+    "collection_date": "2026-01-20 04:07:03 UTC",
+    "evolvability": {
+      "created_date": "2012-01-20",
+      "age_days": 5113,
+      "stars": 60992,
+      "forks": 17302,
+      "watchers": 60992
+    },
+    "velocity": {
+      "last_commit_date": "2022-11-22",
+      "commits_last_3_months": 0,
+      "releases_last_year": 0,
+      "latest_release_date": "2022-03-08"
+    },
+    "collaboration": {
+      "total_contributors": 325,
+      "active_contributors_last_3_months": 0,
+      "pull_requests_open": 31,
+      "pull_requests_closed": 5248
+    },
+    "quality": {
+      "issues_open": 994,
+      "issues_closed_last_3_months": 0
+    }
+  },
+  {
+    "name": "angular/angular.js",
+    "collection_date": "2026-01-20 04:07:08 UTC",
+    "evolvability": {
+      "created_date": "2010-01-06",
+      "age_days": 5858,
+      "stars": 58998,
+      "forks": 27290,
+      "watchers": 58998
+    },
+    "velocity": {
+      "last_commit_date": "2024-04-12",
+      "commits_last_3_months": 0,
+      "releases_last_year": 0,
+      "latest_release_date": null
+    },
+    "collaboration": {
+      "total_contributors": 396,
+      "active_contributors_last_3_months": 0,
+      "pull_requests_open": 72,
+      "pull_requests_closed": 7928
+    },
+    "quality": {
+      "issues_open": 461,
+      "issues_closed_last_3_months": 0
+    }
+  },
+  {
+    "name": "bower/bower",
+    "collection_date": "2026-01-20 04:07:13 UTC",
+    "evolvability": {
+      "created_date": "2012-09-07",
+      "age_days": 4883,
+      "stars": 14936,
+      "forks": 1821,
+      "watchers": 14936
+    },
+    "velocity": {
+      "last_commit_date": "2024-10-13",
+      "commits_last_3_months": 0,
+      "releases_last_year": 0,
+      "latest_release_date": "2021-01-19"
+    },
+    "collaboration": {
+      "total_contributors": 204,
+      "active_contributors_last_3_months": 0,
+      "pull_requests_open": 5,
+      "pull_requests_closed": 677
+    },
+    "quality": {
+      "issues_open": 14,
+      "issues_closed_last_3_months": 0
+    }
+  }
+]
