@@ -16,8 +16,45 @@ g = Github(auth=auth)
 with open('repos.txt', 'r') as file:
     repos = [line.strip() for line in file if line.strip()]
 
-# Calculate date 3 months ago (with timezone)
+# ==================== TIME PERIOD DEFINITIONS ====================
+# Define 4 time periods for temporal analysis (6-month intervals over 24 months)
+now = datetime.now(timezone.utc)
+
+time_periods = {
+    "period_1": {
+        "name": "18-24 months ago",
+        "start": now - timedelta(days=730),
+        "end": now - timedelta(days=547)
+    },
+    "period_2": {
+        "name": "12-18 months ago", 
+        "start": now - timedelta(days=547),
+        "end": now - timedelta(days=365)
+    },
+    "period_3": {
+        "name": "6-12 months ago",
+        "start": now - timedelta(days=365),
+        "end": now - timedelta(days=183)
+    },
+    "period_4": {
+        "name": "0-6 months ago (recent)",
+        "start": now - timedelta(days=183),
+        "end": now
+    }
+}
+
+# Backwards compatibility
 three_months_ago = datetime.now(timezone.utc) - timedelta(days=90)
+
+# ==================== HELPER FUNCTIONS ====================
+
+def count_commits_in_period(repo, start_date, end_date):
+    """Count commits within a specific time period"""
+    count = 0
+    commits = repo.get_commits(since=start_date, until=end_date)
+    for commit in commits:
+        count += 1
+    return count
 
 # Store all repo data
 all_repo_data = []
@@ -54,13 +91,22 @@ for repo_name in repos:
     last_commit = commits[0]
     last_commit_date = last_commit.commit.author.date
     
-    # Count commits in last 3 months
+    # Count commits in last 3 months (backwards compatible)
     recent_commit_count = 0
     for commit in commits:
         if commit.commit.author.date >= three_months_ago:
             recent_commit_count += 1
         else:
             break  # Stop when we hit older commits
+    
+    # Count commits per time period for trend analysis
+    commits_by_period = {}
+    for period_key, period_data in time_periods.items():
+        commits_by_period[period_key] = count_commits_in_period(
+            repo, 
+            period_data["start"], 
+            period_data["end"]
+        )
     
     # Get release info
     releases = repo.get_releases()
@@ -80,6 +126,7 @@ for repo_name in repos:
         repo_data["velocity"] = {
             "last_commit_date": last_commit_date.strftime('%Y-%m-%d'),
             "commits_last_3_months": recent_commit_count,
+            "commits_by_period": commits_by_period,
             "releases_last_year": recent_releases,
             "latest_release_date": latest_release_date
         }
@@ -87,6 +134,7 @@ for repo_name in repos:
         repo_data["velocity"] = {
             "last_commit_date": last_commit_date.strftime('%Y-%m-%d'),
             "commits_last_3_months": recent_commit_count,
+            "commits_by_period": commits_by_period,
             "releases_last_year": 0,
             "latest_release_date": None
         }
