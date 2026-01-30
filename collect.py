@@ -48,13 +48,26 @@ three_months_ago = datetime.now(timezone.utc) - timedelta(days=90)
 
 # ==================== HELPER FUNCTIONS ====================
 
-def count_commits_in_period(repo, start_date, end_date):
-    """Count commits within a specific time period"""
-    count = 0
+def get_period_metrics(repo, start_date, end_date):
+    """Get commits and code churn for a time period in single pass"""
+    commit_count = 0
+    total_additions = 0
+    total_deletions = 0
+    
     commits = repo.get_commits(since=start_date, until=end_date)
     for commit in commits:
-        count += 1
-    return count
+        commit_count += 1
+        stats = commit.stats
+        total_additions += stats.additions
+        total_deletions += stats.deletions
+    
+    return {
+        "commit_count": commit_count,
+        "additions": total_additions,
+        "deletions": total_deletions,
+        "total_changes": total_additions + total_deletions,
+        "churn_rate": (total_additions + total_deletions) / commit_count if commit_count > 0 else 0
+    }
 
 # Store all repo data
 all_repo_data = []
@@ -98,13 +111,12 @@ for repo_name in repos:
             recent_commit_count += 1
         else:
             break  # Stop when we hit older commits
-    
-    # Count commits per time period for trend analysis
-    commits_by_period = {}
+    # Get commits and code churn per time period (combined for efficiency)
+    period_metrics = {}
     for period_key, period_data in time_periods.items():
-        commits_by_period[period_key] = count_commits_in_period(
-            repo, 
-            period_data["start"], 
+        period_metrics[period_key] = get_period_metrics(
+            repo,
+            period_data["start"],
             period_data["end"]
         )
     
@@ -126,7 +138,7 @@ for repo_name in repos:
         repo_data["velocity"] = {
             "last_commit_date": last_commit_date.strftime('%Y-%m-%d'),
             "commits_last_3_months": recent_commit_count,
-            "commits_by_period": commits_by_period,
+            "period_metrics": period_metrics,
             "releases_last_year": recent_releases,
             "latest_release_date": latest_release_date
         }
@@ -134,7 +146,7 @@ for repo_name in repos:
         repo_data["velocity"] = {
             "last_commit_date": last_commit_date.strftime('%Y-%m-%d'),
             "commits_last_3_months": recent_commit_count,
-            "commits_by_period": commits_by_period,
+            "period_metrics": period_metrics,
             "releases_last_year": 0,
             "latest_release_date": None
         }
