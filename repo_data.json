@@ -1,7 +1,7 @@
 [
   {
     "name": "jashkenas/backbone",
-    "collection_date": "2026-01-30 20:14:50 UTC",
+    "collection_date": "2026-01-30 20:42:05 UTC",
     "evolvability": {
       "created_date": "2010-09-30",
       "age_days": 5601,
@@ -48,9 +48,9 @@
           "closed_without_merge": 1,
           "avg_merge_time_hours": 121.63,
           "merge_times_sample": [
-            4.706111111111111,
-            50.395,
-            309.79083333333335
+            4.71,
+            50.4,
+            309.79
           ]
         },
         "period_2": {
@@ -64,8 +64,8 @@
           "closed_without_merge": 1,
           "avg_merge_time_hours": 18.09,
           "merge_times_sample": [
-            1.198611111111111,
-            34.97138888888889
+            1.2,
+            34.97
           ]
         },
         "period_4": {
@@ -91,7 +91,7 @@
   },
   {
     "name": "bower/bower",
-    "collection_date": "2026-01-30 20:15:13 UTC",
+    "collection_date": "2026-01-30 20:42:25 UTC",
     "evolvability": {
       "created_date": "2012-09-07",
       "age_days": 4893,
@@ -144,7 +144,7 @@
           "closed_without_merge": 0,
           "avg_merge_time_hours": 195.09,
           "merge_times_sample": [
-            195.0938888888889
+            195.09
           ]
         },
         "period_3": {
@@ -152,7 +152,7 @@
           "closed_without_merge": 0,
           "avg_merge_time_hours": 0.47,
           "merge_times_sample": [
-            0.475
+            0.47
           ]
         },
         "period_4": {

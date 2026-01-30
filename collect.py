@@ -43,7 +43,7 @@ time_periods = {
     }
 }
 
-# Backwards compatibility
+# Additional time reference for recent activity metrics
 three_months_ago = datetime.now(timezone.utc) - timedelta(days=90)
 
 # ==================== HELPER FUNCTIONS ====================
@@ -161,39 +161,34 @@ for repo_name in repos:
             period_data["end"]
         )
     
-    # Get release info
+# Get release info
     releases = repo.get_releases()
+    latest_release = None
+    latest_release_date = None
+    recent_releases = 0
+    
     try:
         latest_release = releases[0]
         latest_release_date = latest_release.published_at.strftime('%Y-%m-%d')
         
-        # Count releases in last year
         one_year_ago = datetime.now(timezone.utc) - timedelta(days=365)
-        recent_releases = 0
         for release in releases:
             if release.published_at >= one_year_ago:
                 recent_releases += 1
             else:
                 break
-        
-        repo_data["velocity"] = {
-            "last_commit_date": last_commit_date.strftime('%Y-%m-%d'),
-            "commits_last_3_months": recent_commit_count,
-            "period_metrics": period_metrics,
-            "pr_metrics_by_period": pr_metrics_by_period,
-            "releases_last_year": recent_releases,
-            "latest_release_date": latest_release_date
-        }
-
     except (IndexError, StopIteration):
-        repo_data["velocity"] = {
-            "last_commit_date": last_commit_date.strftime('%Y-%m-%d'),
-            "commits_last_3_months": recent_commit_count,
-            "period_metrics": period_metrics,
-            "pr_metrics_by_period": pr_metrics_by_period,
-            "releases_last_year": 0,
-            "latest_release_date": None
-        }
+        pass  # No releases, keep defaults as None/0
+    
+    # Build velocity data once
+    repo_data["velocity"] = {
+        "last_commit_date": last_commit_date.strftime('%Y-%m-%d'),
+        "commits_last_3_months": recent_commit_count,
+        "period_metrics": period_metrics,
+        "pr_metrics_by_period": pr_metrics_by_period,
+        "releases_last_year": recent_releases,
+        "latest_release_date": latest_release_date
+    }
     
     # ==================== COLLABORATION (25%) ====================
     # Get contributor info
