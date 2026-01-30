@@ -69,6 +69,38 @@ def get_period_metrics(repo, start_date, end_date):
         "churn_rate": (total_additions + total_deletions) / commit_count if commit_count > 0 else 0
     }
 
+def calculate_pr_metrics(repo, start_date, end_date):
+    """Calculate PR merge times and patterns for a time period"""
+    prs = repo.get_pulls(state='closed', sort='updated', direction='desc')
+    
+    merge_times = []
+    merged_count = 0
+    closed_without_merge = 0
+    
+    for pr in prs:
+        # Only look at PRs updated in our time period
+        if pr.updated_at < start_date:
+            break
+        if pr.updated_at > end_date:
+            continue
+            
+        if pr.merged_at:
+            # Calculate time from opened to merged (in hours)
+            time_to_merge = (pr.merged_at - pr.created_at).total_seconds() / 3600
+            merge_times.append(time_to_merge)
+            merged_count += 1
+        else:
+            closed_without_merge += 1
+    
+    avg_merge_time = sum(merge_times) / len(merge_times) if merge_times else 0
+    
+    return {
+        "merged_count": merged_count,
+        "closed_without_merge": closed_without_merge,
+        "avg_merge_time_hours": round(avg_merge_time, 2),
+        "merge_times_sample": [round(t, 2) for t in merge_times[:5]]  # First 5 for inspection
+    }
+
 # Store all repo data
 all_repo_data = []
 
@@ -120,6 +152,15 @@ for repo_name in repos:
             period_data["end"]
         )
     
+    # Calculate PR merge velocity per time period
+    pr_metrics_by_period = {}
+    for period_key, period_data in time_periods.items():
+        pr_metrics_by_period[period_key] = calculate_pr_metrics(
+            repo,
+            period_data["start"],
+            period_data["end"]
+        )
+    
     # Get release info
     releases = repo.get_releases()
     try:
@@ -139,14 +180,17 @@ for repo_name in repos:
             "last_commit_date": last_commit_date.strftime('%Y-%m-%d'),
             "commits_last_3_months": recent_commit_count,
             "period_metrics": period_metrics,
+            "pr_metrics_by_period": pr_metrics_by_period,
             "releases_last_year": recent_releases,
             "latest_release_date": latest_release_date
         }
+
     except (IndexError, StopIteration):
         repo_data["velocity"] = {
             "last_commit_date": last_commit_date.strftime('%Y-%m-%d'),
             "commits_last_3_months": recent_commit_count,
             "period_metrics": period_metrics,
+            "pr_metrics_by_period": pr_metrics_by_period,
             "releases_last_year": 0,
             "latest_release_date": None
         }
