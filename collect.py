@@ -140,6 +140,52 @@ def calculate_issue_response_times(repo, start_date, end_date):
         "response_times_sample": [round(t, 2) for t in response_times[:5]]
     }
 
+def calculate_pr_review_metrics(repo, start_date, end_date):
+    """Calculate PR review participation for time period"""
+    prs = repo.get_pulls(state='all', sort='updated', direction='desc')
+    
+    total_reviewers = set()
+    total_reviews = 0
+    prs_with_reviews = 0
+    prs_without_reviews = 0
+    review_comments = 0
+    
+    for pr in prs:
+        if pr.updated_at < start_date:
+            break
+        if pr.updated_at > end_date:
+            continue
+            
+        # Get reviews for this PR
+        reviews = pr.get_reviews()
+        review_count = 0
+        
+        for review in reviews:
+            review_count += 1
+            total_reviews += 1
+            if review.user:
+                total_reviewers.add(review.user.login)
+        
+        # Count review comments
+        review_comments += pr.review_comments
+        
+        if review_count > 0:
+            prs_with_reviews += 1
+        else:
+            prs_without_reviews += 1
+    
+    total_prs = prs_with_reviews + prs_without_reviews
+    
+    return {
+        "total_prs": total_prs,
+        "prs_with_reviews": prs_with_reviews,
+        "prs_without_reviews": prs_without_reviews,
+        "unique_reviewers": len(total_reviewers),
+        "total_reviews": total_reviews,
+        "review_comments": review_comments,
+        "avg_reviews_per_pr": round(total_reviews / total_prs, 2) if total_prs > 0 else 0
+    }
+
 # Store all repo data
 all_repo_data = []
 
@@ -208,6 +254,15 @@ for repo_name in repos:
             period_data["start"],
             period_data["end"]
         )
+    
+    # Calculate PR review participation per time period
+    pr_review_by_period = {}
+    for period_key, period_data in time_periods.items():
+        pr_review_by_period[period_key] = calculate_pr_review_metrics(
+            repo,
+            period_data["start"],
+            period_data["end"]
+        )
 
 # Get release info
     releases = repo.get_releases()
@@ -260,7 +315,8 @@ for repo_name in repos:
         "active_contributors_last_3_months": active_contributors,
         "pull_requests_open": open_prs,
         "pull_requests_closed": closed_prs,
-        "issue_response_by_period": issue_response_by_period
+        "issue_response_by_period": issue_response_by_period,
+        "pr_review_by_period": pr_review_by_period
     }
     
     # ==================== QUALITY (25%) ====================

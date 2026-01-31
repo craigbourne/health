@@ -1,7 +1,7 @@
 [
   {
     "name": "jashkenas/backbone",
-    "collection_date": "2026-01-31 22:25:04 UTC",
+    "collection_date": "2026-01-31 22:31:14 UTC",
     "evolvability": {
       "created_date": "2010-09-30",
       "age_days": 5602,
@@ -117,6 +117,44 @@
           "avg_response_time_hours": 0,
           "response_times_sample": []
         }
+      },
+      "pr_review_by_period": {
+        "period_1": {
+          "total_prs": 4,
+          "prs_with_reviews": 3,
+          "prs_without_reviews": 1,
+          "unique_reviewers": 2,
+          "total_reviews": 4,
+          "review_comments": 1,
+          "avg_reviews_per_pr": 1.0
+        },
+        "period_2": {
+          "total_prs": 1,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 1,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0.0
+        },
+        "period_3": {
+          "total_prs": 4,
+          "prs_with_reviews": 3,
+          "prs_without_reviews": 1,
+          "unique_reviewers": 2,
+          "total_reviews": 4,
+          "review_comments": 2,
+          "avg_reviews_per_pr": 1.0
+        },
+        "period_4": {
+          "total_prs": 0,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 0,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0
+        }
       }
     },
     "quality": {
@@ -126,7 +164,7 @@
   },
   {
     "name": "bower/bower",
-    "collection_date": "2026-01-31 22:25:34 UTC",
+    "collection_date": "2026-01-31 22:31:58 UTC",
     "evolvability": {
       "created_date": "2012-09-07",
       "age_days": 4894,
@@ -235,6 +273,44 @@
           "response_times_sample": [
             0.56
           ]
+        }
+      },
+      "pr_review_by_period": {
+        "period_1": {
+          "total_prs": 0,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 0,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0
+        },
+        "period_2": {
+          "total_prs": 1,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 1,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0.0
+        },
+        "period_3": {
+          "total_prs": 2,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 2,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 2,
+          "avg_reviews_per_pr": 0.0
+        },
+        "period_4": {
+          "total_prs": 1,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 1,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0.0
         }
       }
     },
