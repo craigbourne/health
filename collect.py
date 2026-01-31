@@ -101,6 +101,45 @@ def calculate_pr_metrics(repo, start_date, end_date):
         "merge_times_sample": [round(t, 2) for t in merge_times[:5]]  # First 5 for inspection
     }
 
+def calculate_issue_response_times(repo, start_date, end_date):
+    """Calculate time to first response for issues in time period"""
+    issues = repo.get_issues(state='all', since=start_date, sort='created', direction='desc')
+    
+    response_times = []
+    issues_without_response = 0
+    issues_counted = 0
+    
+    for issue in issues:
+        # Only issues created in our time period
+        if issue.created_at > end_date:
+            continue
+        if issue.created_at < start_date:
+            break
+            
+        # Skip pull requests (GitHub treats them as issues)
+        if issue.pull_request:
+            continue
+            
+        issues_counted += 1
+        comments = issue.get_comments()
+        
+        try:
+            first_comment = comments[0]
+            time_to_response = (first_comment.created_at - issue.created_at).total_seconds() / 3600
+            response_times.append(time_to_response)
+        except (IndexError, StopIteration):
+            issues_without_response += 1
+    
+    avg_response_time = sum(response_times) / len(response_times) if response_times else 0
+    
+    return {
+        "issues_created": issues_counted,
+        "issues_with_response": len(response_times),
+        "issues_without_response": issues_without_response,
+        "avg_response_time_hours": round(avg_response_time, 2),
+        "response_times_sample": [round(t, 2) for t in response_times[:5]]
+    }
+
 # Store all repo data
 all_repo_data = []
 
@@ -161,6 +200,15 @@ for repo_name in repos:
             period_data["end"]
         )
     
+    # Calculate issue response times per time period
+    issue_response_by_period = {}
+    for period_key, period_data in time_periods.items():
+        issue_response_by_period[period_key] = calculate_issue_response_times(
+            repo,
+            period_data["start"],
+            period_data["end"]
+        )
+
 # Get release info
     releases = repo.get_releases()
     latest_release = None
@@ -211,7 +259,8 @@ for repo_name in repos:
         "total_contributors": total_contributors,
         "active_contributors_last_3_months": active_contributors,
         "pull_requests_open": open_prs,
-        "pull_requests_closed": closed_prs
+        "pull_requests_closed": closed_prs,
+        "issue_response_by_period": issue_response_by_period
     }
     
     # ==================== QUALITY (25%) ====================

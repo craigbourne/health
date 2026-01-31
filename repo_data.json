@@ -1,13 +1,13 @@
 [
   {
     "name": "jashkenas/backbone",
-    "collection_date": "2026-01-30 20:42:05 UTC",
+    "collection_date": "2026-01-31 22:25:04 UTC",
     "evolvability": {
       "created_date": "2010-09-30",
-      "age_days": 5601,
-      "stars": 28117,
+      "age_days": 5602,
+      "stars": 28119,
       "forks": 5336,
-      "watchers": 28117
+      "watchers": 28119
     },
     "velocity": {
       "last_commit_date": "2025-04-01",
@@ -82,7 +82,42 @@
       "total_contributors": 284,
       "active_contributors_last_3_months": 0,
       "pull_requests_open": 20,
-      "pull_requests_closed": 1851
+      "pull_requests_closed": 1851,
+      "issue_response_by_period": {
+        "period_1": {
+          "issues_created": 4,
+          "issues_with_response": 2,
+          "issues_without_response": 2,
+          "avg_response_time_hours": 146.85,
+          "response_times_sample": [
+            278.78,
+            14.93
+          ]
+        },
+        "period_2": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        },
+        "period_3": {
+          "issues_created": 2,
+          "issues_with_response": 1,
+          "issues_without_response": 1,
+          "avg_response_time_hours": 80.47,
+          "response_times_sample": [
+            80.47
+          ]
+        },
+        "period_4": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        }
+      }
     },
     "quality": {
       "issues_open": 62,
@@ -91,10 +126,10 @@
   },
   {
     "name": "bower/bower",
-    "collection_date": "2026-01-30 20:42:25 UTC",
+    "collection_date": "2026-01-31 22:25:34 UTC",
     "evolvability": {
       "created_date": "2012-09-07",
-      "age_days": 4893,
+      "age_days": 4894,
       "stars": 14939,
       "forks": 1821,
       "watchers": 14939
@@ -169,7 +204,39 @@
       "total_contributors": 204,
       "active_contributors_last_3_months": 0,
       "pull_requests_open": 5,
-      "pull_requests_closed": 677
+      "pull_requests_closed": 677,
+      "issue_response_by_period": {
+        "period_1": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        },
+        "period_2": {
+          "issues_created": 1,
+          "issues_with_response": 0,
+          "issues_without_response": 1,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        },
+        "period_3": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        },
+        "period_4": {
+          "issues_created": 1,
+          "issues_with_response": 1,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0.56,
+          "response_times_sample": [
+            0.56
+          ]
+        }
+      }
     },
     "quality": {
       "issues_open": 14,
