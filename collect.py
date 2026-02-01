@@ -47,7 +47,6 @@ time_periods = {
 three_months_ago = datetime.now(timezone.utc) - timedelta(days=90)
 
 # ==================== HELPER FUNCTIONS ====================
-
 def get_period_metrics(repo, start_date, end_date):
     """Get commits and code churn for a time period in single pass"""
     commit_count = 0
@@ -186,6 +185,51 @@ def calculate_pr_review_metrics(repo, start_date, end_date):
         "avg_reviews_per_pr": round(total_reviews / total_prs, 2) if total_prs > 0 else 0
     }
 
+def calculate_contributor_metrics(repo, periods_dict):
+    """Calculate contributor growth and retention across all periods"""
+    # Track contributors by period
+    contributors_by_period = {}
+    
+    for period_key, period_data in periods_dict.items():
+        contributors_set = set()
+        commits = repo.get_commits(since=period_data["start"], until=period_data["end"])
+        
+        for commit in commits:
+            if commit.author:
+                contributors_set.add(commit.author.login)
+        
+        contributors_by_period[period_key] = contributors_set
+    
+    # Calculate metrics for each period
+    metrics_by_period = {}
+    period_keys = ["period_1", "period_2", "period_3", "period_4"]
+    
+    for i, period_key in enumerate(period_keys):
+        current_contributors = contributors_by_period[period_key]
+        
+        # New contributors (not in any previous period)
+        previous_all = set()
+        for j in range(i):
+            previous_all.update(contributors_by_period[period_keys[j]])
+        
+        new_contributors = current_contributors - previous_all
+        
+        # Retention (contributors who return from previous period)
+        if i > 0:
+            previous_period = contributors_by_period[period_keys[i-1]]
+            retained = current_contributors & previous_period
+            retention_rate = len(retained) / len(previous_period) if len(previous_period) > 0 else 0
+        else:
+            retention_rate = 0
+        
+        metrics_by_period[period_key] = {
+            "total_contributors": len(current_contributors),
+            "new_contributors": len(new_contributors),
+            "retention_rate": round(retention_rate, 2)
+        }
+    
+    return metrics_by_period
+
 # Store all repo data
 all_repo_data = []
 
@@ -245,24 +289,6 @@ for repo_name in repos:
             period_data["start"],
             period_data["end"]
         )
-    
-    # Calculate issue response times per time period
-    issue_response_by_period = {}
-    for period_key, period_data in time_periods.items():
-        issue_response_by_period[period_key] = calculate_issue_response_times(
-            repo,
-            period_data["start"],
-            period_data["end"]
-        )
-    
-    # Calculate PR review participation per time period
-    pr_review_by_period = {}
-    for period_key, period_data in time_periods.items():
-        pr_review_by_period[period_key] = calculate_pr_review_metrics(
-            repo,
-            period_data["start"],
-            period_data["end"]
-        )
 
 # Get release info
     releases = repo.get_releases()
@@ -306,6 +332,27 @@ for repo_name in repos:
     
     active_contributors = len(active_contributors_set)
     
+    # Calculate contributor growth and retention across periods
+    contributor_metrics_by_period = calculate_contributor_metrics(repo, time_periods)
+    
+    # Calculate issue response times per time period
+    issue_response_by_period = {}
+    for period_key, period_data in time_periods.items():
+        issue_response_by_period[period_key] = calculate_issue_response_times(
+            repo,
+            period_data["start"],
+            period_data["end"]
+        )
+    
+    # Calculate PR review participation per time period
+    pr_review_by_period = {}
+    for period_key, period_data in time_periods.items():
+        pr_review_by_period[period_key] = calculate_pr_review_metrics(
+            repo,
+            period_data["start"],
+            period_data["end"]
+        )
+    
     # Get pull request info
     open_prs = repo.get_pulls(state='open').totalCount
     closed_prs = repo.get_pulls(state='closed').totalCount
@@ -313,6 +360,7 @@ for repo_name in repos:
     repo_data["collaboration"] = {
         "total_contributors": total_contributors,
         "active_contributors_last_3_months": active_contributors,
+        "contributor_metrics_by_period": contributor_metrics_by_period,
         "pull_requests_open": open_prs,
         "pull_requests_closed": closed_prs,
         "issue_response_by_period": issue_response_by_period,

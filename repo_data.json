@@ -1,13 +1,13 @@
 [
   {
     "name": "jashkenas/backbone",
-    "collection_date": "2026-01-31 22:31:14 UTC",
+    "collection_date": "2026-02-01 19:15:12 UTC",
     "evolvability": {
       "created_date": "2010-09-30",
       "age_days": 5602,
-      "stars": 28119,
-      "forks": 5336,
-      "watchers": 28119
+      "stars": 28120,
+      "forks": 5335,
+      "watchers": 28120
     },
     "velocity": {
       "last_commit_date": "2025-04-01",
@@ -81,6 +81,28 @@
     "collaboration": {
       "total_contributors": 284,
       "active_contributors_last_3_months": 0,
+      "contributor_metrics_by_period": {
+        "period_1": {
+          "total_contributors": 3,
+          "new_contributors": 3,
+          "retention_rate": 0
+        },
+        "period_2": {
+          "total_contributors": 1,
+          "new_contributors": 0,
+          "retention_rate": 0.33
+        },
+        "period_3": {
+          "total_contributors": 1,
+          "new_contributors": 0,
+          "retention_rate": 1.0
+        },
+        "period_4": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0.0
+        }
+      },
       "pull_requests_open": 20,
       "pull_requests_closed": 1851,
       "issue_response_by_period": {
@@ -164,10 +186,10 @@
   },
   {
     "name": "bower/bower",
-    "collection_date": "2026-01-31 22:31:58 UTC",
+    "collection_date": "2026-02-01 19:15:59 UTC",
     "evolvability": {
       "created_date": "2012-09-07",
-      "age_days": 4894,
+      "age_days": 4895,
       "stars": 14939,
       "forks": 1821,
       "watchers": 14939
@@ -241,6 +263,28 @@
     "collaboration": {
       "total_contributors": 204,
       "active_contributors_last_3_months": 0,
+      "contributor_metrics_by_period": {
+        "period_1": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        },
+        "period_2": {
+          "total_contributors": 1,
+          "new_contributors": 1,
+          "retention_rate": 0
+        },
+        "period_3": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0.0
+        },
+        "period_4": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        }
+      },
       "pull_requests_open": 5,
       "pull_requests_closed": 677,
       "issue_response_by_period": {
