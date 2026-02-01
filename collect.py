@@ -230,7 +230,54 @@ def calculate_contributor_metrics(repo, periods_dict):
     
     return metrics_by_period
 
-
+def calculate_bug_feature_metrics(repo, start_date, end_date):
+    """Classify issues as bugs vs features and track closure rates"""
+    issues = repo.get_issues(state='all', since=start_date, sort='created', direction='desc')
+    
+    bugs_opened = 0
+    bugs_closed = 0
+    features_opened = 0
+    features_closed = 0
+    other_issues = 0
+    
+    for issue in issues:
+        if issue.created_at > end_date:
+            continue
+        if issue.created_at < start_date:
+            break
+            
+        # Skip pull requests
+        if issue.pull_request:
+            continue
+        
+        # Check labels
+        labels = [label.name.lower() for label in issue.labels]
+        is_bug = any(term in label for label in labels for term in ['bug', 'defect', 'error'])
+        is_feature = any(term in label for label in labels for term in ['feature', 'enhancement', 'improvement'])
+        
+        if is_bug:
+            bugs_opened += 1
+            if issue.state == 'closed':
+                bugs_closed += 1
+        elif is_feature:
+            features_opened += 1
+            if issue.state == 'closed':
+                features_closed += 1
+        else:
+            other_issues += 1
+    
+    bug_closure_rate = bugs_closed / bugs_opened if bugs_opened > 0 else 0
+    feature_closure_rate = features_closed / features_opened if features_opened > 0 else 0
+    
+    return {
+        "bugs_opened": bugs_opened,
+        "bugs_closed": bugs_closed,
+        "bug_closure_rate": round(bug_closure_rate, 2),
+        "features_opened": features_opened,
+        "features_closed": features_closed,
+        "feature_closure_rate": round(feature_closure_rate, 2),
+        "other_issues": other_issues
+    }
 
 # Store all repo data
 all_repo_data = []
