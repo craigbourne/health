@@ -230,6 +230,8 @@ def calculate_contributor_metrics(repo, periods_dict):
     
     return metrics_by_period
 
+
+
 # Store all repo data
 all_repo_data = []
 
@@ -371,9 +373,19 @@ for repo_name in repos:
     # Count closed issues in last 3 months
     closed_issues = repo.get_issues(state='closed', since=three_months_ago).totalCount
     
+    # Calculate bug vs feature metrics per time period
+    bug_feature_by_period = {}
+    for period_key, period_data in time_periods.items():
+        bug_feature_by_period[period_key] = calculate_bug_feature_metrics(
+            repo,
+            period_data["start"],
+            period_data["end"]
+        )
+    
     repo_data["quality"] = {
         "issues_open": repo.open_issues_count,
-        "issues_closed_last_3_months": closed_issues
+        "issues_closed_last_3_months": closed_issues,
+        "bug_feature_by_period": bug_feature_by_period
     }
     
     # Add to collection
