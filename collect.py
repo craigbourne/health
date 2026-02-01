@@ -279,6 +279,39 @@ def calculate_bug_feature_metrics(repo, start_date, end_date):
         "other_issues": other_issues
     }
 
+def calculate_issue_accumulation(repo, start_date, end_date):
+    """Calculate issue backlog growth/shrinkage for time period"""
+    issues = repo.get_issues(state='all', since=start_date, sort='created', direction='desc')
+    
+    opened = 0
+    closed = 0
+    
+    for issue in issues:
+        # Skip pull requests
+        if issue.pull_request:
+            continue
+            
+        # Issues created in period
+        if start_date <= issue.created_at <= end_date:
+            opened += 1
+        
+        # Issues closed in period
+        if issue.closed_at and start_date <= issue.closed_at <= end_date:
+            closed += 1
+        
+        # Stop when we're past the period
+        if issue.created_at < start_date:
+            break
+    
+    net_accumulation = opened - closed
+    
+    return {
+        "issues_opened": opened,
+        "issues_closed": closed,
+        "net_accumulation": net_accumulation,
+        "accumulation_rate": round(net_accumulation / opened, 2) if opened > 0 else 0
+    }
+
 # Store all repo data
 all_repo_data = []
 
@@ -428,11 +461,21 @@ for repo_name in repos:
             period_data["start"],
             period_data["end"]
         )
+
+    # Calculate issue accumulation per time period
+    issue_accumulation_by_period = {}
+    for period_key, period_data in time_periods.items():
+        issue_accumulation_by_period[period_key] = calculate_issue_accumulation(
+            repo,
+            period_data["start"],
+            period_data["end"]
+        )
     
     repo_data["quality"] = {
         "issues_open": repo.open_issues_count,
         "issues_closed_last_3_months": closed_issues,
-        "bug_feature_by_period": bug_feature_by_period
+        "bug_feature_by_period": bug_feature_by_period,
+        "issue_accumulation_by_period": issue_accumulation_by_period
     }
     
     # Add to collection
