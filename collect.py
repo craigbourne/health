@@ -555,13 +555,23 @@ for repo_name in repos:
             period_data["start"],
             period_data["end"]
         )
+
+    # Calculate regression rate per time period
+    regression_by_period = {}
+    for period_key, period_data in time_periods.items():
+        regression_by_period[period_key] = calculate_regression_rate(
+            repo,
+            period_data["start"],
+            period_data["end"]
+        )
     
     repo_data["quality"] = {
         "issues_open": repo.open_issues_count,
         "issues_closed_last_3_months": closed_issues,
         "bug_feature_by_period": bug_feature_by_period,
         "issue_accumulation_by_period": issue_accumulation_by_period,
-        "breaking_changes_by_period": breaking_changes_by_period
+        "breaking_changes_by_period": breaking_changes_by_period,
+        "regression_by_period": regression_by_period
     }
     
     # Add to collection

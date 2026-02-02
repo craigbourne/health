@@ -1,13 +1,13 @@
 [
   {
     "name": "jashkenas/backbone",
-    "collection_date": "2026-02-01 19:15:12 UTC",
+    "collection_date": "2026-02-02 14:36:12 UTC",
     "evolvability": {
       "created_date": "2010-09-30",
-      "age_days": 5602,
-      "stars": 28120,
+      "age_days": 5603,
+      "stars": 28119,
       "forks": 5335,
-      "watchers": 28120
+      "watchers": 28119
     },
     "velocity": {
       "last_commit_date": "2025-04-01",
@@ -181,15 +181,109 @@
     },
     "quality": {
       "issues_open": 62,
-      "issues_closed_last_3_months": 0
+      "issues_closed_last_3_months": 0,
+      "bug_feature_by_period": {
+        "period_1": {
+          "bugs_opened": 2,
+          "bugs_closed": 1,
+          "bug_closure_rate": 0.5,
+          "features_opened": 1,
+          "features_closed": 0,
+          "feature_closure_rate": 0.0,
+          "other_issues": 1
+        },
+        "period_2": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        },
+        "period_3": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 2
+        },
+        "period_4": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        }
+      },
+      "issue_accumulation_by_period": {
+        "period_1": {
+          "issues_opened": 4,
+          "issues_closed": 0,
+          "net_accumulation": 4,
+          "accumulation_rate": 1.0
+        },
+        "period_2": {
+          "issues_opened": 0,
+          "issues_closed": 0,
+          "net_accumulation": 0,
+          "accumulation_rate": 0
+        },
+        "period_3": {
+          "issues_opened": 2,
+          "issues_closed": 0,
+          "net_accumulation": 2,
+          "accumulation_rate": 1.0
+        },
+        "period_4": {
+          "issues_opened": 0,
+          "issues_closed": 0,
+          "net_accumulation": 0,
+          "accumulation_rate": 0
+        }
+      },
+      "breaking_changes_by_period": {
+        "period_1": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 7,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0.0
+        },
+        "period_2": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 4,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0.0
+        },
+        "period_3": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 7,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0.0
+        },
+        "period_4": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        }
+      }
     }
   },
   {
     "name": "bower/bower",
-    "collection_date": "2026-02-01 19:15:59 UTC",
+    "collection_date": "2026-02-02 14:37:29 UTC",
     "evolvability": {
       "created_date": "2012-09-07",
-      "age_days": 4895,
+      "age_days": 4896,
       "stars": 14939,
       "forks": 1821,
       "watchers": 14939
@@ -360,7 +454,101 @@
     },
     "quality": {
       "issues_open": 14,
-      "issues_closed_last_3_months": 0
+      "issues_closed_last_3_months": 0,
+      "bug_feature_by_period": {
+        "period_1": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        },
+        "period_2": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 1
+        },
+        "period_3": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        },
+        "period_4": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 1
+        }
+      },
+      "issue_accumulation_by_period": {
+        "period_1": {
+          "issues_opened": 0,
+          "issues_closed": 0,
+          "net_accumulation": 0,
+          "accumulation_rate": 0
+        },
+        "period_2": {
+          "issues_opened": 1,
+          "issues_closed": 0,
+          "net_accumulation": 1,
+          "accumulation_rate": 1.0
+        },
+        "period_3": {
+          "issues_opened": 0,
+          "issues_closed": 0,
+          "net_accumulation": 0,
+          "accumulation_rate": 0
+        },
+        "period_4": {
+          "issues_opened": 1,
+          "issues_closed": 1,
+          "net_accumulation": 0,
+          "accumulation_rate": 0.0
+        }
+      },
+      "breaking_changes_by_period": {
+        "period_1": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        },
+        "period_2": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 1,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0.0
+        },
+        "period_3": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        },
+        "period_4": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        }
+      }
     }
   }
 ]
