@@ -312,6 +312,47 @@ def calculate_issue_accumulation(repo, start_date, end_date):
         "accumulation_rate": round(net_accumulation / opened, 2) if opened > 0 else 0
     }
 
+def detect_breaking_changes(repo, start_date, end_date):
+    """Detect breaking changes from release notes and commit messages"""
+    releases = repo.get_releases()
+    
+    breaking_releases = 0
+    total_releases = 0
+    breaking_keywords = ['breaking', 'breaking change', 'bc break', 'backwards incompatible', 
+                        'major version', 'migration required', 'deprecated']
+    
+    for release in releases:
+        if release.published_at < start_date:
+            break
+        if release.published_at > end_date:
+            continue
+            
+        total_releases += 1
+        
+        # Check release notes for breaking change indicators
+        body = (release.body or '').lower()
+        if any(keyword in body for keyword in breaking_keywords):
+            breaking_releases += 1
+    
+    # Also check commit messages
+    commits = repo.get_commits(since=start_date, until=end_date)
+    breaking_commits = 0
+    total_commits = 0
+    
+    for commit in commits:
+        total_commits += 1
+        message = commit.commit.message.lower()
+        if any(keyword in message for keyword in breaking_keywords):
+            breaking_commits += 1
+    
+    return {
+        "total_releases": total_releases,
+        "breaking_releases": breaking_releases,
+        "total_commits": total_commits,
+        "breaking_commits": breaking_commits,
+        "breaking_change_rate": round(breaking_commits / total_commits, 3) if total_commits > 0 else 0
+    }
+
 # Store all repo data
 all_repo_data = []
 
@@ -470,12 +511,22 @@ for repo_name in repos:
             period_data["start"],
             period_data["end"]
         )
+
+    # Detect breaking changes per time period
+    breaking_changes_by_period = {}
+    for period_key, period_data in time_periods.items():
+        breaking_changes_by_period[period_key] = detect_breaking_changes(
+            repo,
+            period_data["start"],
+            period_data["end"]
+        )
     
     repo_data["quality"] = {
         "issues_open": repo.open_issues_count,
         "issues_closed_last_3_months": closed_issues,
         "bug_feature_by_period": bug_feature_by_period,
-        "issue_accumulation_by_period": issue_accumulation_by_period
+        "issue_accumulation_by_period": issue_accumulation_by_period,
+        "breaking_changes_by_period": breaking_changes_by_period
     }
     
     # Add to collection
