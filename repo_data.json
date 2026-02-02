@@ -1,13 +1,43 @@
 [
   {
     "name": "jashkenas/backbone",
-    "collection_date": "2026-02-02 14:36:12 UTC",
+    "collection_date": "2026-02-02 15:31:06 UTC",
     "evolvability": {
       "created_date": "2010-09-30",
       "age_days": 5603,
-      "stars": 28119,
+      "stars": 28120,
       "forks": 5335,
-      "watchers": 28119
+      "watchers": 28120,
+      "refactoring_by_period": {
+        "period_1": {
+          "total_commits": 7,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0.0,
+          "dependency_commits": 1,
+          "dependency_update_rate": 0.143
+        },
+        "period_2": {
+          "total_commits": 4,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0.0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0.0
+        },
+        "period_3": {
+          "total_commits": 7,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0.0,
+          "dependency_commits": 4,
+          "dependency_update_rate": 0.571
+        },
+        "period_4": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        }
+      }
     },
     "velocity": {
       "last_commit_date": "2025-04-01",
@@ -275,18 +305,70 @@
           "breaking_commits": 0,
           "breaking_change_rate": 0
         }
+      },
+      "regression_by_period": {
+        "period_1": {
+          "total_issues": 2,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_2": {
+          "total_issues": 2,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_3": {
+          "total_issues": 3,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_4": {
+          "total_issues": 2,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        }
       }
     }
   },
   {
     "name": "bower/bower",
-    "collection_date": "2026-02-02 14:37:29 UTC",
+    "collection_date": "2026-02-02 15:32:46 UTC",
     "evolvability": {
       "created_date": "2012-09-07",
       "age_days": 4896,
       "stars": 14939,
       "forks": 1821,
-      "watchers": 14939
+      "watchers": 14939,
+      "refactoring_by_period": {
+        "period_1": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_2": {
+          "total_commits": 1,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0.0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0.0
+        },
+        "period_3": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_4": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        }
+      }
     },
     "velocity": {
       "last_commit_date": "2024-10-13",
@@ -547,6 +629,28 @@
           "total_commits": 0,
           "breaking_commits": 0,
           "breaking_change_rate": 0
+        }
+      },
+      "regression_by_period": {
+        "period_1": {
+          "total_issues": 0,
+          "reopened_issues": 0,
+          "regression_rate": 0
+        },
+        "period_2": {
+          "total_issues": 3,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_3": {
+          "total_issues": 0,
+          "reopened_issues": 0,
+          "regression_rate": 0
+        },
+        "period_4": {
+          "total_issues": 1,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
         }
       }
     }

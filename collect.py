@@ -388,6 +388,44 @@ def calculate_regression_rate(repo, start_date, end_date):
         "regression_rate": round(regression_rate, 3)
     }
 
+def calculate_refactoring_and_dependencies(repo, start_date, end_date):
+    """Detect refactoring commits and dependency updates"""
+    commits = repo.get_commits(since=start_date, until=end_date)
+    
+    refactoring_commits = 0
+    dependency_commits = 0
+    total_commits = 0
+    
+    refactor_keywords = ['refactor', 'restructure', 'cleanup', 'clean up', 'reorganise', 
+                        'reorganize', 'simplify', 'improve code']
+    dependency_files = ['package.json', 'package-lock.json', 'requirements.txt', 'pipfile', 'cargo.toml', 'pom.xml', 'build.gradle', 'gemfile']
+    
+    for commit in commits:
+        total_commits += 1
+        message = commit.commit.message.lower()
+        
+        # Check for refactoring keywords
+        if any(keyword in message for keyword in refactor_keywords):
+            refactoring_commits += 1
+        
+        # Check for dependency file changes
+        files = commit.files
+        for file in files:
+            if any(dep_file in file.filename.lower() for dep_file in dependency_files):
+                dependency_commits += 1
+                break  # Count commit once even if multiple dep files changed
+    
+    refactoring_rate = refactoring_commits / total_commits if total_commits > 0 else 0
+    dependency_rate = dependency_commits / total_commits if total_commits > 0 else 0
+    
+    return {
+        "total_commits": total_commits,
+        "refactoring_commits": refactoring_commits,
+        "refactoring_rate": round(refactoring_rate, 3),
+        "dependency_commits": dependency_commits,
+        "dependency_update_rate": round(dependency_rate, 3)
+    }
+
 # Store all repo data
 all_repo_data = []
 
@@ -406,13 +444,23 @@ for repo_name in repos:
     created_date = repo.created_at
     repo_age_days = (datetime.now(timezone.utc) - created_date).days
 
+    # Calculate refactoring and dependency updates per time period
+    refactoring_by_period = {}
+    for period_key, period_data in time_periods.items():
+        refactoring_by_period[period_key] = calculate_refactoring_and_dependencies(
+            repo,
+            period_data["start"],
+            period_data["end"]
+        )
+
     # Basic info
     repo_data["evolvability"] = {
         "created_date": created_date.strftime('%Y-%m-%d'),
         "age_days": repo_age_days,
         "stars": repo.stargazers_count,
         "forks": repo.forks_count,
-        "watchers": repo.watchers_count
+        "watchers": repo.watchers_count,
+        "refactoring_by_period": refactoring_by_period
     }
     
     # ==================== VELOCITY (30%) ====================
