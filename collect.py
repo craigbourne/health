@@ -353,6 +353,41 @@ def detect_breaking_changes(repo, start_date, end_date):
         "breaking_change_rate": round(breaking_commits / total_commits, 3) if total_commits > 0 else 0
     }
 
+def calculate_regression_rate(repo, start_date, end_date):
+    """Detect regression through reopened issues in time period"""
+    issues = repo.get_issues(state='all', since=start_date, sort='updated', direction='desc')
+    
+    reopened_count = 0
+    total_issues = 0
+    
+    for issue in issues:
+        if issue.updated_at < start_date:
+            break
+        if issue.updated_at > end_date:
+            continue
+            
+        # Skip pull requests
+        if issue.pull_request:
+            continue
+        
+        total_issues += 1
+        
+        # Check timeline for reopen events
+        events = issue.get_events()
+        for event in events:
+            if event.event == 'reopened':
+                if start_date <= event.created_at <= end_date:
+                    reopened_count += 1
+                    break  # Count each issue only once
+    
+    regression_rate = reopened_count / total_issues if total_issues > 0 else 0
+    
+    return {
+        "total_issues": total_issues,
+        "reopened_issues": reopened_count,
+        "regression_rate": round(regression_rate, 3)
+    }
+
 # Store all repo data
 all_repo_data = []
 
