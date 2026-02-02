@@ -426,6 +426,51 @@ def calculate_refactoring_and_dependencies(repo, start_date, end_date):
         "dependency_update_rate": round(dependency_rate, 3)
     }
 
+def calculate_feature_and_growth_metrics(repo, start_date, end_date):
+    """Detect feature additions and codebase growth"""
+    commits = repo.get_commits(since=start_date, until=end_date)
+    
+    feature_commits = 0
+    maintenance_commits = 0
+    total_additions = 0
+    total_deletions = 0
+    total_commits = 0
+    
+    feature_keywords = ['feat', 'feature', 'add', 'new', 'implement', 'enhancement']
+    maintenance_keywords = ['fix', 'bug', 'patch', 'hotfix', 'typo', 'docs', 'documentation']
+    
+    for commit in commits:
+        total_commits += 1
+        message = commit.commit.message.lower()
+        
+        # Classify commit type
+        is_feature = any(keyword in message for keyword in feature_keywords)
+        is_maintenance = any(keyword in message for keyword in maintenance_keywords)
+        
+        if is_feature and not is_maintenance:
+            feature_commits += 1
+        elif is_maintenance:
+            maintenance_commits += 1
+        
+        # Track LOC changes
+        stats = commit.stats
+        total_additions += stats.additions
+        total_deletions += stats.deletions
+    
+    net_loc_change = total_additions - total_deletions
+    feature_rate = feature_commits / total_commits if total_commits > 0 else 0
+    
+    return {
+        "total_commits": total_commits,
+        "feature_commits": feature_commits,
+        "maintenance_commits": maintenance_commits,
+        "feature_rate": round(feature_rate, 3),
+        "total_additions": total_additions,
+        "total_deletions": total_deletions,
+        "net_loc_change": net_loc_change,
+        "growth_rate": round(net_loc_change / total_commits, 2) if total_commits > 0 else 0
+    }
+
 # Store all repo data
 all_repo_data = []
 
@@ -444,10 +489,16 @@ for repo_name in repos:
     created_date = repo.created_at
     repo_age_days = (datetime.now(timezone.utc) - created_date).days
 
-    # Calculate refactoring and dependency updates per time period
+    # Calculate evolvability metrics per time period
     refactoring_by_period = {}
+    feature_growth_by_period = {}
     for period_key, period_data in time_periods.items():
         refactoring_by_period[period_key] = calculate_refactoring_and_dependencies(
+            repo,
+            period_data["start"],
+            period_data["end"]
+        )
+        feature_growth_by_period[period_key] = calculate_feature_and_growth_metrics(
             repo,
             period_data["start"],
             period_data["end"]
