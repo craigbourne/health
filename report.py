@@ -16,6 +16,16 @@ report.append(f"\n**Total Repositories:** {len(repos)}\n")
 # Classification summary
 classifications = {}
 for repo in repos:
+    status = repo.get('classification', 'Unknown')
+    classifications[status] = classifications.get(status, 0) + 1
+
+report.append("## Classification Summary\n")
+for status, count in sorted(classifications.items()):
+    report.append(f"- **{status}:** {count} repos")
+report.append("\n---\n")
+
+# Repository details
+for repo in repos:
     report.append(f"\n### {repo['name']}")
     report.append(f"\n**Classification:** {repo['classification']}")
     report.append(f"\n**Evidence:** {repo['classification_evidence']}")
