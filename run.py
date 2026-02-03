@@ -1,20 +1,36 @@
 import subprocess
+import sys
 
-print("=" * 50)
-print("STEP 1: Collecting repo data from GitHub...")
-print("=" * 50 + "\n")
-result1 = subprocess.run(["python3", "collect.py"])
+print("=" * 60)
+print("GitHub Repository Health Data Collection")
+print("=" * 60)
+
+print("\nStep 1: Collecting repository data...")
+print("This may take several minutes for sophisticated metrics.\n")
+
+result1 = subprocess.run([sys.executable, "collect.py"])
 
 if result1.returncode == 0:
-    print("\n" + "=" * 50)
-    print("STEP 2: Classifying repos based on metrics...")
-    print("=" * 50 + "\n")
-    result2 = subprocess.run(["python3", "classify.py"])
+    print("\n" + "=" * 60)
+    print("Step 2: Classifying repositories...")
+    print("=" * 60)
+    result2 = subprocess.run([sys.executable, "classify.py"])
     
     if result2.returncode == 0:
-        print("\n" + "=" * 50)
-        print("✓ Complete! Data saved to repo_data.json")
-        print("=" * 50 + "\n")
+        print("\n" + "=" * 60)
+        print("Step 3: Generating report...")
+        print("=" * 60)
+        result3 = subprocess.run([sys.executable, "report.py"])
+        
+        if result3.returncode == 0:
+            print("\n" + "=" * 60)
+            print("✓ Complete!")
+            print("=" * 60)
+            print("Files created:")
+            print("  - repo_data.json (full dataset)")
+            print("  - report.md (summary)")
+        else:
+            print("\n✗ Report generation failed")
     else:
         print("\n✗ Classification failed")
 else:
