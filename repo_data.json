@@ -1,20 +1,20 @@
 [
   {
     "name": "jashkenas/backbone",
-    "collection_date": "2026-02-02 16:02:03 UTC",
+    "collection_date": "2026-02-17 17:50:41 UTC",
     "evolvability": {
       "created_date": "2010-09-30",
-      "age_days": 5603,
-      "stars": 28120,
-      "forks": 5335,
-      "watchers": 28120,
+      "age_days": 5618,
+      "stars": 28114,
+      "forks": 5333,
+      "watchers": 28114,
       "refactoring_by_period": {
         "period_1": {
-          "total_commits": 7,
+          "total_commits": 4,
           "refactoring_commits": 0,
           "refactoring_rate": 0.0,
-          "dependency_commits": 1,
-          "dependency_update_rate": 0.143
+          "dependency_commits": 0,
+          "dependency_update_rate": 0.0
         },
         "period_2": {
           "total_commits": 4,
@@ -44,11 +44,11 @@
       "commits_last_3_months": 0,
       "period_metrics": {
         "period_1": {
-          "commit_count": 7,
-          "additions": 139,
-          "deletions": 77,
-          "total_changes": 216,
-          "churn_rate": 30.857142857142858
+          "commit_count": 4,
+          "additions": 10,
+          "deletions": 10,
+          "total_changes": 20,
+          "churn_rate": 5.0
         },
         "period_2": {
           "commit_count": 4,
@@ -74,13 +74,12 @@
       },
       "pr_metrics_by_period": {
         "period_1": {
-          "merged_count": 3,
+          "merged_count": 2,
           "closed_without_merge": 1,
-          "avg_merge_time_hours": 121.63,
+          "avg_merge_time_hours": 27.55,
           "merge_times_sample": [
             4.71,
-            50.4,
-            309.79
+            50.4
           ]
         },
         "period_2": {
@@ -137,9 +136,9 @@
       "pull_requests_closed": 1851,
       "issue_response_by_period": {
         "period_1": {
-          "issues_created": 4,
+          "issues_created": 3,
           "issues_with_response": 2,
-          "issues_without_response": 2,
+          "issues_without_response": 1,
           "avg_response_time_hours": 146.85,
           "response_times_sample": [
             278.78,
@@ -172,11 +171,11 @@
       },
       "pr_review_by_period": {
         "period_1": {
-          "total_prs": 4,
-          "prs_with_reviews": 3,
+          "total_prs": 3,
+          "prs_with_reviews": 2,
           "prs_without_reviews": 1,
-          "unique_reviewers": 2,
-          "total_reviews": 4,
+          "unique_reviewers": 1,
+          "total_reviews": 3,
           "review_comments": 1,
           "avg_reviews_per_pr": 1.0
         },
@@ -214,9 +213,9 @@
       "issues_closed_last_3_months": 0,
       "bug_feature_by_period": {
         "period_1": {
-          "bugs_opened": 2,
+          "bugs_opened": 1,
           "bugs_closed": 1,
-          "bug_closure_rate": 0.5,
+          "bug_closure_rate": 1.0,
           "features_opened": 1,
           "features_closed": 0,
           "feature_closure_rate": 0.0,
@@ -252,9 +251,9 @@
       },
       "issue_accumulation_by_period": {
         "period_1": {
-          "issues_opened": 4,
+          "issues_opened": 3,
           "issues_closed": 0,
-          "net_accumulation": 4,
+          "net_accumulation": 3,
           "accumulation_rate": 1.0
         },
         "period_2": {
@@ -280,7 +279,7 @@
         "period_1": {
           "total_releases": 0,
           "breaking_releases": 0,
-          "total_commits": 7,
+          "total_commits": 4,
           "breaking_commits": 0,
           "breaking_change_rate": 0.0
         },
@@ -308,7 +307,7 @@
       },
       "regression_by_period": {
         "period_1": {
-          "total_issues": 2,
+          "total_issues": 1,
           "reopened_issues": 0,
           "regression_rate": 0.0
         },
@@ -328,17 +327,19 @@
           "regression_rate": 0.0
         }
       }
-    }
+    },
+    "classification": "Abandoned",
+    "classification_evidence": "Recent commits: 0 vs 4 (24mo ago), Recent contributors: 0 vs 3 (24mo ago), Last commit: 322 days ago"
   },
   {
     "name": "bower/bower",
-    "collection_date": "2026-02-02 16:03:54 UTC",
+    "collection_date": "2026-02-17 17:52:20 UTC",
     "evolvability": {
       "created_date": "2012-09-07",
-      "age_days": 4896,
-      "stars": 14939,
-      "forks": 1821,
-      "watchers": 14939,
+      "age_days": 4911,
+      "stars": 14936,
+      "forks": 1820,
+      "watchers": 14936,
       "refactoring_by_period": {
         "period_1": {
           "total_commits": 0,
@@ -653,6 +654,9 @@
           "regression_rate": 0.0
         }
       }
-    }
+    },
+    "classification": "Abandoned",
+    "classification_evidence": "Recent commits: 0 vs 0 (24mo ago), Recent contributors: 0 vs 0 (24mo ago), Last commit: 492 days ago",
+    "official_statement": "https://bower.io/blog/2017/how-to-migrate-away-from-bower/"
   }
 ]

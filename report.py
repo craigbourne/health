@@ -81,10 +81,11 @@ for repo in repos:
     refm = repo['evolvability']['refactoring_by_period']['period_4']
     report.append(f"- Refactoring rate (P4): {refm['refactoring_rate']:.1%}")
     report.append(f"- Dependency updates (P4): {refm['dependency_commits']}")
-    
-    fgm = repo['evolvability']['feature_growth_by_period']['period_4']
-    report.append(f"- Feature rate (P4): {fgm['feature_rate']:.1%}")
-    report.append(f"- Net LOC growth (P4): {fgm['net_loc_change']:,} lines")
+
+    # Net LOC growth derived from velocity data (additions - deletions)
+    p4v = repo['velocity']['period_metrics']['period_4']
+    net_loc = p4v['additions'] - p4v['deletions']
+    report.append(f"- Net LOC growth (P4): {net_loc:,} lines")
     
     report.append("\n---")
 
