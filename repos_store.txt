@@ -7,3 +7,6 @@ knockout/knockout
 atom/atom
 angular/angular.js
 jashkenas/backbone
+vitejs/vite
+bower/bower
+gruntjs/grunt

@@ -1,345 +1,13 @@
 [
   {
-    "name": "jashkenas/backbone",
-    "collection_date": "2026-02-17 17:50:41 UTC",
-    "evolvability": {
-      "created_date": "2010-09-30",
-      "age_days": 5618,
-      "stars": 28114,
-      "forks": 5333,
-      "watchers": 28114,
-      "refactoring_by_period": {
-        "period_1": {
-          "total_commits": 4,
-          "refactoring_commits": 0,
-          "refactoring_rate": 0.0,
-          "dependency_commits": 0,
-          "dependency_update_rate": 0.0
-        },
-        "period_2": {
-          "total_commits": 4,
-          "refactoring_commits": 0,
-          "refactoring_rate": 0.0,
-          "dependency_commits": 0,
-          "dependency_update_rate": 0.0
-        },
-        "period_3": {
-          "total_commits": 7,
-          "refactoring_commits": 0,
-          "refactoring_rate": 0.0,
-          "dependency_commits": 4,
-          "dependency_update_rate": 0.571
-        },
-        "period_4": {
-          "total_commits": 0,
-          "refactoring_commits": 0,
-          "refactoring_rate": 0,
-          "dependency_commits": 0,
-          "dependency_update_rate": 0
-        }
-      }
-    },
-    "velocity": {
-      "last_commit_date": "2025-04-01",
-      "commits_last_3_months": 0,
-      "period_metrics": {
-        "period_1": {
-          "commit_count": 4,
-          "additions": 10,
-          "deletions": 10,
-          "total_changes": 20,
-          "churn_rate": 5.0
-        },
-        "period_2": {
-          "commit_count": 4,
-          "additions": 29,
-          "deletions": 3,
-          "total_changes": 32,
-          "churn_rate": 8.0
-        },
-        "period_3": {
-          "commit_count": 7,
-          "additions": 2563,
-          "deletions": 11647,
-          "total_changes": 14210,
-          "churn_rate": 2030.0
-        },
-        "period_4": {
-          "commit_count": 0,
-          "additions": 0,
-          "deletions": 0,
-          "total_changes": 0,
-          "churn_rate": 0
-        }
-      },
-      "pr_metrics_by_period": {
-        "period_1": {
-          "merged_count": 2,
-          "closed_without_merge": 1,
-          "avg_merge_time_hours": 27.55,
-          "merge_times_sample": [
-            4.71,
-            50.4
-          ]
-        },
-        "period_2": {
-          "merged_count": 0,
-          "closed_without_merge": 1,
-          "avg_merge_time_hours": 0,
-          "merge_times_sample": []
-        },
-        "period_3": {
-          "merged_count": 2,
-          "closed_without_merge": 1,
-          "avg_merge_time_hours": 18.09,
-          "merge_times_sample": [
-            1.2,
-            34.97
-          ]
-        },
-        "period_4": {
-          "merged_count": 0,
-          "closed_without_merge": 0,
-          "avg_merge_time_hours": 0,
-          "merge_times_sample": []
-        }
-      },
-      "releases_last_year": 0,
-      "latest_release_date": null
-    },
-    "collaboration": {
-      "total_contributors": 284,
-      "active_contributors_last_3_months": 0,
-      "contributor_metrics_by_period": {
-        "period_1": {
-          "total_contributors": 3,
-          "new_contributors": 3,
-          "retention_rate": 0
-        },
-        "period_2": {
-          "total_contributors": 1,
-          "new_contributors": 0,
-          "retention_rate": 0.33
-        },
-        "period_3": {
-          "total_contributors": 1,
-          "new_contributors": 0,
-          "retention_rate": 1.0
-        },
-        "period_4": {
-          "total_contributors": 0,
-          "new_contributors": 0,
-          "retention_rate": 0.0
-        }
-      },
-      "pull_requests_open": 20,
-      "pull_requests_closed": 1851,
-      "issue_response_by_period": {
-        "period_1": {
-          "issues_created": 3,
-          "issues_with_response": 2,
-          "issues_without_response": 1,
-          "avg_response_time_hours": 146.85,
-          "response_times_sample": [
-            278.78,
-            14.93
-          ]
-        },
-        "period_2": {
-          "issues_created": 0,
-          "issues_with_response": 0,
-          "issues_without_response": 0,
-          "avg_response_time_hours": 0,
-          "response_times_sample": []
-        },
-        "period_3": {
-          "issues_created": 2,
-          "issues_with_response": 1,
-          "issues_without_response": 1,
-          "avg_response_time_hours": 80.47,
-          "response_times_sample": [
-            80.47
-          ]
-        },
-        "period_4": {
-          "issues_created": 0,
-          "issues_with_response": 0,
-          "issues_without_response": 0,
-          "avg_response_time_hours": 0,
-          "response_times_sample": []
-        }
-      },
-      "pr_review_by_period": {
-        "period_1": {
-          "total_prs": 3,
-          "prs_with_reviews": 2,
-          "prs_without_reviews": 1,
-          "unique_reviewers": 1,
-          "total_reviews": 3,
-          "review_comments": 1,
-          "avg_reviews_per_pr": 1.0
-        },
-        "period_2": {
-          "total_prs": 1,
-          "prs_with_reviews": 0,
-          "prs_without_reviews": 1,
-          "unique_reviewers": 0,
-          "total_reviews": 0,
-          "review_comments": 0,
-          "avg_reviews_per_pr": 0.0
-        },
-        "period_3": {
-          "total_prs": 4,
-          "prs_with_reviews": 3,
-          "prs_without_reviews": 1,
-          "unique_reviewers": 2,
-          "total_reviews": 4,
-          "review_comments": 2,
-          "avg_reviews_per_pr": 1.0
-        },
-        "period_4": {
-          "total_prs": 0,
-          "prs_with_reviews": 0,
-          "prs_without_reviews": 0,
-          "unique_reviewers": 0,
-          "total_reviews": 0,
-          "review_comments": 0,
-          "avg_reviews_per_pr": 0
-        }
-      }
-    },
-    "quality": {
-      "issues_open": 62,
-      "issues_closed_last_3_months": 0,
-      "bug_feature_by_period": {
-        "period_1": {
-          "bugs_opened": 1,
-          "bugs_closed": 1,
-          "bug_closure_rate": 1.0,
-          "features_opened": 1,
-          "features_closed": 0,
-          "feature_closure_rate": 0.0,
-          "other_issues": 1
-        },
-        "period_2": {
-          "bugs_opened": 0,
-          "bugs_closed": 0,
-          "bug_closure_rate": 0,
-          "features_opened": 0,
-          "features_closed": 0,
-          "feature_closure_rate": 0,
-          "other_issues": 0
-        },
-        "period_3": {
-          "bugs_opened": 0,
-          "bugs_closed": 0,
-          "bug_closure_rate": 0,
-          "features_opened": 0,
-          "features_closed": 0,
-          "feature_closure_rate": 0,
-          "other_issues": 2
-        },
-        "period_4": {
-          "bugs_opened": 0,
-          "bugs_closed": 0,
-          "bug_closure_rate": 0,
-          "features_opened": 0,
-          "features_closed": 0,
-          "feature_closure_rate": 0,
-          "other_issues": 0
-        }
-      },
-      "issue_accumulation_by_period": {
-        "period_1": {
-          "issues_opened": 3,
-          "issues_closed": 0,
-          "net_accumulation": 3,
-          "accumulation_rate": 1.0
-        },
-        "period_2": {
-          "issues_opened": 0,
-          "issues_closed": 0,
-          "net_accumulation": 0,
-          "accumulation_rate": 0
-        },
-        "period_3": {
-          "issues_opened": 2,
-          "issues_closed": 0,
-          "net_accumulation": 2,
-          "accumulation_rate": 1.0
-        },
-        "period_4": {
-          "issues_opened": 0,
-          "issues_closed": 0,
-          "net_accumulation": 0,
-          "accumulation_rate": 0
-        }
-      },
-      "breaking_changes_by_period": {
-        "period_1": {
-          "total_releases": 0,
-          "breaking_releases": 0,
-          "total_commits": 4,
-          "breaking_commits": 0,
-          "breaking_change_rate": 0.0
-        },
-        "period_2": {
-          "total_releases": 0,
-          "breaking_releases": 0,
-          "total_commits": 4,
-          "breaking_commits": 0,
-          "breaking_change_rate": 0.0
-        },
-        "period_3": {
-          "total_releases": 0,
-          "breaking_releases": 0,
-          "total_commits": 7,
-          "breaking_commits": 0,
-          "breaking_change_rate": 0.0
-        },
-        "period_4": {
-          "total_releases": 0,
-          "breaking_releases": 0,
-          "total_commits": 0,
-          "breaking_commits": 0,
-          "breaking_change_rate": 0
-        }
-      },
-      "regression_by_period": {
-        "period_1": {
-          "total_issues": 1,
-          "reopened_issues": 0,
-          "regression_rate": 0.0
-        },
-        "period_2": {
-          "total_issues": 2,
-          "reopened_issues": 0,
-          "regression_rate": 0.0
-        },
-        "period_3": {
-          "total_issues": 3,
-          "reopened_issues": 0,
-          "regression_rate": 0.0
-        },
-        "period_4": {
-          "total_issues": 2,
-          "reopened_issues": 0,
-          "regression_rate": 0.0
-        }
-      }
-    },
-    "classification": "Abandoned",
-    "classification_evidence": "Recent commits: 0 vs 4 (24mo ago), Recent contributors: 0 vs 3 (24mo ago), Last commit: 322 days ago"
-  },
-  {
     "name": "bower/bower",
-    "collection_date": "2026-02-17 17:52:20 UTC",
+    "collection_date": "2026-02-18 17:42:49 UTC",
     "evolvability": {
       "created_date": "2012-09-07",
-      "age_days": 4911,
-      "stars": 14936,
+      "age_days": 4912,
+      "stars": 14937,
       "forks": 1820,
-      "watchers": 14936,
+      "watchers": 14937,
       "refactoring_by_period": {
         "period_1": {
           "total_commits": 0,
@@ -368,6 +36,48 @@
           "refactoring_rate": 0,
           "dependency_commits": 0,
           "dependency_update_rate": 0
+        }
+      },
+      "feature_growth_by_period": {
+        "period_1": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_2": {
+          "total_commits": 1,
+          "feature_commits": 1,
+          "maintenance_commits": 0,
+          "feature_rate": 1.0,
+          "total_additions": 29,
+          "total_deletions": 3,
+          "net_loc_change": 26,
+          "growth_rate": 26.0
+        },
+        "period_3": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_4": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
         }
       }
     },
@@ -656,7 +366,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "Recent commits: 0 vs 0 (24mo ago), Recent contributors: 0 vs 0 (24mo ago), Last commit: 492 days ago",
+    "classification_evidence": "Recent commits: 0 vs 0 (24mo ago), Recent contributors: 0 vs 0 (24mo ago), Last commit: 493 days ago",
     "official_statement": "https://bower.io/blog/2017/how-to-migrate-away-from-bower/"
   }
 ]

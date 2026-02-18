@@ -1,7 +1,6 @@
 import os
 import json
 import time
-from github import RateLimitExceededException
 from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
 from github import Github, Auth, RateLimitExceededException
@@ -48,6 +47,10 @@ time_periods = {
 # Additional time reference for recent activity metrics
 three_months_ago = datetime.now(timezone.utc) - timedelta(days=90)
 
+# Sampling limit for API efficiency (caps issue/PR iterations to prevent rate limit exhaustion)
+SAMPLE_LIMIT = 200
+
+# ==================== RATE LIMIT HANDLING ====================
 def with_retry(func):
     """Wrapper to handle rate limit exhaustion with automatic retry"""
     while True:
@@ -72,8 +75,7 @@ def collect_period_commits(repo, start_date, end_date):
     feature_commits = 0
     maintenance_commits = 0
     
-    refactor_keywords = ['refactor', 'restructure', 'cleanup', 'clean up', 'reorganise', 
-                        'reorganize', 'simplify', 'improve code']
+    refactor_keywords = ['refactor', 'restructure', 'cleanup', 'clean up', 'reorganise', 'reorganize', 'simplify', 'improve code']
     dependency_keywords = ['dep', 'deps', 'dependency', 'dependencies', 'bump', 'package.json', 'requirements.txt', 'cargo.toml', 'pom.xml', 'build.gradle', 'gemfile', 'pipfile']
     feature_keywords = ['feat', 'feature', 'add', 'new', 'implement', 'enhancement']
     maintenance_keywords = ['fix', 'bug', 'patch', 'hotfix', 'typo', 'docs', 'documentation']
@@ -81,11 +83,11 @@ def collect_period_commits(repo, start_date, end_date):
     for commit in commits:
         commit_count += 1
         
-        # Get stats - single call per commit + rate limit handling & burst prevention
+        # Get stats with rate limit handling & burst prevention
         stats = with_retry(lambda: commit.stats)
         total_additions += stats.additions
         total_deletions += stats.deletions
-        time.sleep(0.1)  # prevents secondary rate limit (burst detection)
+        time.sleep(0.1)  # Prevent burst detection
         
         # Check message keywords
         message = commit.commit.message.lower()
@@ -130,20 +132,26 @@ def get_period_metrics(period_data):
     }
 
 def calculate_pr_metrics(repo, start_date, end_date):
-    """Calculate PR merge times and patterns for a time period"""
+    """Calculate PR merge times and patterns (sampled for API efficiency)"""
     prs = repo.get_pulls(state='closed', sort='updated', direction='desc')
     
     merge_times = []
     merged_count = 0
     closed_without_merge = 0
+    processed = 0
     
     for pr in prs:
+        if processed >= SAMPLE_LIMIT:
+            break
+            
         # Only look at PRs updated in our time period
         if pr.updated_at < start_date:
             break
         if pr.updated_at > end_date:
             continue
             
+        processed += 1
+        
         if pr.merged_at:
             # Calculate time from opened to merged (in hours)
             time_to_merge = (pr.merged_at - pr.created_at).total_seconds() / 3600
@@ -162,7 +170,7 @@ def calculate_pr_metrics(repo, start_date, end_date):
     }
 
 def calculate_issue_response_times(repo, start_date, end_date):
-    """Calculate time to first response for issues in time period"""
+    """Calculate time to first response for issues (sampled for API efficiency)"""
     issues = repo.get_issues(state='all', since=start_date, sort='created', direction='desc')
     
     response_times = []
@@ -170,13 +178,16 @@ def calculate_issue_response_times(repo, start_date, end_date):
     issues_counted = 0
     
     for issue in issues:
+        if issues_counted >= SAMPLE_LIMIT:
+            break
+            
         # Only issues created in our time period
         if issue.created_at > end_date:
             continue
         if issue.created_at < start_date:
             break
             
-        # Skip pull requests (GitHub treats them as issues)
+        # Skip pull requests
         if issue.pull_request:
             continue
             
@@ -201,7 +212,7 @@ def calculate_issue_response_times(repo, start_date, end_date):
     }
 
 def calculate_pr_review_metrics(repo, start_date, end_date):
-    """Calculate PR review participation for time period"""
+    """Calculate PR review participation (sampled for API efficiency)"""
     prs = repo.get_pulls(state='all', sort='updated', direction='desc')
     
     total_reviewers = set()
@@ -209,13 +220,19 @@ def calculate_pr_review_metrics(repo, start_date, end_date):
     prs_with_reviews = 0
     prs_without_reviews = 0
     review_comments = 0
+    processed = 0
     
     for pr in prs:
+        if processed >= SAMPLE_LIMIT:
+            break
+            
         if pr.updated_at < start_date:
             break
         if pr.updated_at > end_date:
             continue
             
+        processed += 1
+        
         # Get reviews for this PR
         reviews = pr.get_reviews()
         review_count = 0
@@ -251,9 +268,9 @@ def calculate_contributor_metrics(repo, periods_dict):
     # Track contributors by period
     contributors_by_period = {}
     
-    for period_key, period_data in periods_dict.items():
+    for period_key, period_bounds in periods_dict.items():
         contributors_set = set()
-        commits = repo.get_commits(since=period_data["start"], until=period_data["end"])
+        commits = repo.get_commits(since=period_bounds["start"], until=period_bounds["end"])
         
         for commit in commits:
             if commit.author:
@@ -292,7 +309,7 @@ def calculate_contributor_metrics(repo, periods_dict):
     return metrics_by_period
 
 def calculate_bug_feature_metrics(repo, start_date, end_date):
-    """Classify issues as bugs vs features and track closure rates"""
+    """Classify issues as bugs vs features (sampled for API efficiency)"""
     issues = repo.get_issues(state='all', since=start_date, sort='created', direction='desc')
     
     bugs_opened = 0
@@ -300,8 +317,12 @@ def calculate_bug_feature_metrics(repo, start_date, end_date):
     features_opened = 0
     features_closed = 0
     other_issues = 0
+    processed = 0
     
     for issue in issues:
+        if processed >= SAMPLE_LIMIT:
+            break
+            
         if issue.created_at > end_date:
             continue
         if issue.created_at < start_date:
@@ -310,6 +331,8 @@ def calculate_bug_feature_metrics(repo, start_date, end_date):
         # Skip pull requests
         if issue.pull_request:
             continue
+        
+        processed += 1
         
         # Check labels
         labels = [label.name.lower() for label in issue.labels]
@@ -341,17 +364,23 @@ def calculate_bug_feature_metrics(repo, start_date, end_date):
     }
 
 def calculate_issue_accumulation(repo, start_date, end_date):
-    """Calculate issue backlog growth/shrinkage for time period"""
+    """Calculate issue backlog growth/shrinkage (sampled for API efficiency)"""
     issues = repo.get_issues(state='all', since=start_date, sort='created', direction='desc')
     
     opened = 0
     closed = 0
+    processed = 0
     
     for issue in issues:
+        if processed >= SAMPLE_LIMIT:
+            break
+            
         # Skip pull requests
         if issue.pull_request:
             continue
             
+        processed += 1
+        
         # Issues created in period
         if start_date <= issue.created_at <= end_date:
             opened += 1
@@ -414,13 +443,16 @@ def detect_breaking_changes(repo, start_date, end_date):
     }
 
 def calculate_regression_rate(repo, start_date, end_date):
-    """Detect regression through reopened issues in time period"""
+    """Detect regression through reopened issues (sampled for API efficiency)"""
     issues = repo.get_issues(state='all', since=start_date, sort='updated', direction='desc')
     
     reopened_count = 0
     total_issues = 0
     
     for issue in issues:
+        if total_issues >= SAMPLE_LIMIT:
+            break
+            
         if issue.updated_at < start_date:
             break
         if issue.updated_at > end_date:
@@ -487,12 +519,13 @@ def calculate_feature_and_growth_metrics(period_data):
         "growth_rate": round(net_loc_change / total_commits, 2) if total_commits > 0 else 0
     }
 
+# ==================== MAIN COLLECTION LOOP ====================
 # Store all repo data
 all_repo_data = []
 
 # Get data for each repo
 for repo_name in repos:
-    print(f"Collected: {repo_name}", end=" ")
+    print(f"Collecting: {repo_name}", end=" ", flush=True)
     repo = g.get_repo(repo_name)
     
     # Create dictionary for repo
