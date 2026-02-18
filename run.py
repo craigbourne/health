@@ -5,8 +5,7 @@ print("=" * 60)
 print("GitHub Repository Health Data Collection")
 print("=" * 60)
 
-print("\nStep 1: Collecting repository data...")
-print("This may take several minutes for sophisticated metrics.\n")
+print("\nStep 1: Collecting repository data. This may take several minutes...")
 
 result1 = subprocess.run([sys.executable, "collect.py"])
 

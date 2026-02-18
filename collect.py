@@ -17,7 +17,7 @@ with open('repos.txt', 'r') as file:
     repos = [line.strip() for line in file if line.strip()]
 
 # ==================== TIME PERIOD DEFINITIONS ====================
-# Define 4 time periods for temporal analysis (6-month intervals over 24 months)
+# Define time periods (6-month intervals over 24 months)
 now = datetime.now(timezone.utc)
 
 time_periods = {
@@ -47,25 +47,72 @@ time_periods = {
 three_months_ago = datetime.now(timezone.utc) - timedelta(days=90)
 
 # ==================== HELPER FUNCTIONS ====================
-def get_period_metrics(repo, start_date, end_date):
-    """Get commits and code churn for a time period in single pass"""
+def collect_period_commits(repo, start_date, end_date):
+    """Single-pass commit collection extracting all needed data"""
+    commits = repo.get_commits(since=start_date, until=end_date)
+    
     commit_count = 0
     total_additions = 0
     total_deletions = 0
+    refactoring_commits = 0
+    dependency_commits = 0
+    feature_commits = 0
+    maintenance_commits = 0
     
-    commits = repo.get_commits(since=start_date, until=end_date)
+    refactor_keywords = ['refactor', 'restructure', 'cleanup', 'clean up', 'reorganise', 
+                        'reorganize', 'simplify', 'improve code']
+    dependency_keywords = ['dep', 'deps', 'dependency', 'dependencies', 'bump', 'package.json', 'requirements.txt', 'cargo.toml', 'pom.xml', 'build.gradle', 'gemfile', 'pipfile']
+    feature_keywords = ['feat', 'feature', 'add', 'new', 'implement', 'enhancement']
+    maintenance_keywords = ['fix', 'bug', 'patch', 'hotfix', 'typo', 'docs', 'documentation']
+    
     for commit in commits:
         commit_count += 1
+        
+        # Get stats
         stats = commit.stats
         total_additions += stats.additions
         total_deletions += stats.deletions
+        
+        # Check message keywords
+        message = commit.commit.message.lower()
+        
+        if any(keyword in message for keyword in refactor_keywords):
+            refactoring_commits += 1
+        
+        if any(keyword in message for keyword in dependency_keywords):
+            dependency_commits += 1
+        
+        is_feature = any(keyword in message for keyword in feature_keywords)
+        is_maintenance = any(keyword in message for keyword in maintenance_keywords)
+        
+        if is_feature and not is_maintenance:
+            feature_commits += 1
+        elif is_maintenance:
+            maintenance_commits += 1
+    
+    return {
+        "commit_count": commit_count,
+        "total_additions": total_additions,
+        "total_deletions": total_deletions,
+        "refactoring_commits": refactoring_commits,
+        "dependency_commits": dependency_commits,
+        "feature_commits": feature_commits,
+        "maintenance_commits": maintenance_commits
+    }
+
+def get_period_metrics(period_data):
+    """Calculate velocity metrics from collected period data"""
+    commit_count = period_data["commit_count"]
+    total_additions = period_data["total_additions"]
+    total_deletions = period_data["total_deletions"]
+    total_changes = total_additions + total_deletions
     
     return {
         "commit_count": commit_count,
         "additions": total_additions,
         "deletions": total_deletions,
-        "total_changes": total_additions + total_deletions,
-        "churn_rate": (total_additions + total_deletions) / commit_count if commit_count > 0 else 0
+        "total_changes": total_changes,
+        "churn_rate": total_changes / commit_count if commit_count > 0 else 0
     }
 
 def calculate_pr_metrics(repo, start_date, end_date):
@@ -318,8 +365,7 @@ def detect_breaking_changes(repo, start_date, end_date):
     
     breaking_releases = 0
     total_releases = 0
-    breaking_keywords = ['breaking', 'breaking change', 'bc break', 'backwards incompatible', 
-                        'major version', 'migration required', 'deprecated']
+    breaking_keywords = ['breaking', 'breaking change', 'bc break', 'backwards incompatible', 'major version', 'migration required', 'deprecated']
     
     for release in releases:
         if release.published_at < start_date:
@@ -388,32 +434,11 @@ def calculate_regression_rate(repo, start_date, end_date):
         "regression_rate": round(regression_rate, 3)
     }
 
-def calculate_refactoring_and_dependencies(repo, start_date, end_date):
-    """Detect refactoring commits and dependency updates"""
-    commits = repo.get_commits(since=start_date, until=end_date)
-    
-    refactoring_commits = 0
-    dependency_commits = 0
-    total_commits = 0
-    
-    refactor_keywords = ['refactor', 'restructure', 'cleanup', 'clean up', 'reorganise', 
-                        'reorganize', 'simplify', 'improve code']
-    dependency_files = ['package.json', 'package-lock.json', 'requirements.txt', 'pipfile', 'cargo.toml', 'pom.xml', 'build.gradle', 'gemfile']
-    
-    for commit in commits:
-        total_commits += 1
-        message = commit.commit.message.lower()
-        
-        # Check for refactoring keywords
-        if any(keyword in message for keyword in refactor_keywords):
-            refactoring_commits += 1
-        
-        # Check for dependency file changes
-        files = commit.files
-        for file in files:
-            if any(dep_file in file.filename.lower() for dep_file in dependency_files):
-                dependency_commits += 1
-                break  # Count commit once even if multiple dep files changed
+def calculate_refactoring_and_dependencies(period_data):
+    """Calculate refactoring and dependency metrics from collected period data"""
+    total_commits = period_data["commit_count"]
+    refactoring_commits = period_data["refactoring_commits"]
+    dependency_commits = period_data["dependency_commits"]
     
     refactoring_rate = refactoring_commits / total_commits if total_commits > 0 else 0
     dependency_rate = dependency_commits / total_commits if total_commits > 0 else 0
@@ -426,36 +451,13 @@ def calculate_refactoring_and_dependencies(repo, start_date, end_date):
         "dependency_update_rate": round(dependency_rate, 3)
     }
 
-def calculate_feature_and_growth_metrics(repo, start_date, end_date):
-    """Detect feature additions and codebase growth"""
-    commits = repo.get_commits(since=start_date, until=end_date)
-    
-    feature_commits = 0
-    maintenance_commits = 0
-    total_additions = 0
-    total_deletions = 0
-    total_commits = 0
-    
-    feature_keywords = ['feat', 'feature', 'add', 'new', 'implement', 'enhancement']
-    maintenance_keywords = ['fix', 'bug', 'patch', 'hotfix', 'typo', 'docs', 'documentation']
-    
-    for commit in commits:
-        total_commits += 1
-        message = commit.commit.message.lower()
-        
-        # Classify commit type
-        is_feature = any(keyword in message for keyword in feature_keywords)
-        is_maintenance = any(keyword in message for keyword in maintenance_keywords)
-        
-        if is_feature and not is_maintenance:
-            feature_commits += 1
-        elif is_maintenance:
-            maintenance_commits += 1
-        
-        # Track LOC changes
-        stats = commit.stats
-        total_additions += stats.additions
-        total_deletions += stats.deletions
+def calculate_feature_and_growth_metrics(period_data):
+    """Calculate feature and growth metrics from collected period data"""
+    total_commits = period_data["commit_count"]
+    feature_commits = period_data["feature_commits"]
+    maintenance_commits = period_data["maintenance_commits"]
+    total_additions = period_data["total_additions"]
+    total_deletions = period_data["total_deletions"]
     
     net_loc_change = total_additions - total_deletions
     feature_rate = feature_commits / total_commits if total_commits > 0 else 0
@@ -476,7 +478,7 @@ all_repo_data = []
 
 # Get data for each repo
 for repo_name in repos:
-    print(f"Collected: {repo_name}...", end=" ")
+    print(f"Collected: {repo_name}", end=" ")
     repo = g.get_repo(repo_name)
     
     # Create dictionary for repo
@@ -489,20 +491,23 @@ for repo_name in repos:
     created_date = repo.created_at
     repo_age_days = (datetime.now(timezone.utc) - created_date).days
 
-    # Calculate evolvability metrics per time period
+    # Calculate evolvability and velocity metrics per time period (consolidated single pass)
     refactoring_by_period = {}
     feature_growth_by_period = {}
-    for period_key, period_data in time_periods.items():
-        refactoring_by_period[period_key] = calculate_refactoring_and_dependencies(
+    period_metrics = {}
+    
+    for period_key, period_bounds in time_periods.items():
+        # Collect commits once per period
+        period_data = collect_period_commits(
             repo,
-            period_data["start"],
-            period_data["end"]
+            period_bounds["start"],
+            period_bounds["end"]
         )
-        feature_growth_by_period[period_key] = calculate_feature_and_growth_metrics(
-            repo,
-            period_data["start"],
-            period_data["end"]
-        )
+        
+        # Process collected data through metric functions
+        refactoring_by_period[period_key] = calculate_refactoring_and_dependencies(period_data)
+        feature_growth_by_period[period_key] = calculate_feature_and_growth_metrics(period_data)
+        period_metrics[period_key] = get_period_metrics(period_data)
 
     # Basic info
     repo_data["evolvability"] = {
@@ -511,7 +516,8 @@ for repo_name in repos:
         "stars": repo.stargazers_count,
         "forks": repo.forks_count,
         "watchers": repo.watchers_count,
-        "refactoring_by_period": refactoring_by_period
+        "refactoring_by_period": refactoring_by_period,
+        "feature_growth_by_period": feature_growth_by_period
     }
     
     # ==================== VELOCITY (30%) ====================
@@ -522,32 +528,24 @@ for repo_name in repos:
     last_commit = commits[0]
     last_commit_date = last_commit.commit.author.date
     
-    # Count commits in last 3 months (backwards compatible)
+    # Count commits in last 3 months
     recent_commit_count = 0
     for commit in commits:
         if commit.commit.author.date >= three_months_ago:
             recent_commit_count += 1
         else:
-            break  # Stop when we hit older commits
-    # Get commits and code churn per time period (combined for efficiency)
-    period_metrics = {}
-    for period_key, period_data in time_periods.items():
-        period_metrics[period_key] = get_period_metrics(
-            repo,
-            period_data["start"],
-            period_data["end"]
-        )
+            break
     
     # Calculate PR merge velocity per time period
     pr_metrics_by_period = {}
-    for period_key, period_data in time_periods.items():
+    for period_key, period_bounds in time_periods.items():
         pr_metrics_by_period[period_key] = calculate_pr_metrics(
             repo,
-            period_data["start"],
-            period_data["end"]
+            period_bounds["start"],
+            period_bounds["end"]
         )
 
-# Get release info
+    # Get release info
     releases = repo.get_releases()
     latest_release = None
     latest_release_date = None
@@ -594,20 +592,20 @@ for repo_name in repos:
     
     # Calculate issue response times per time period
     issue_response_by_period = {}
-    for period_key, period_data in time_periods.items():
+    for period_key, period_bounds in time_periods.items():
         issue_response_by_period[period_key] = calculate_issue_response_times(
             repo,
-            period_data["start"],
-            period_data["end"]
+            period_bounds["start"],
+            period_bounds["end"]
         )
     
     # Calculate PR review participation per time period
     pr_review_by_period = {}
-    for period_key, period_data in time_periods.items():
+    for period_key, period_bounds in time_periods.items():
         pr_review_by_period[period_key] = calculate_pr_review_metrics(
             repo,
-            period_data["start"],
-            period_data["end"]
+            period_bounds["start"],
+            period_bounds["end"]
         )
     
     # Get pull request info
@@ -630,38 +628,38 @@ for repo_name in repos:
     
     # Calculate bug vs feature metrics per time period
     bug_feature_by_period = {}
-    for period_key, period_data in time_periods.items():
+    for period_key, period_bounds in time_periods.items():
         bug_feature_by_period[period_key] = calculate_bug_feature_metrics(
             repo,
-            period_data["start"],
-            period_data["end"]
+            period_bounds["start"],
+            period_bounds["end"]
         )
 
     # Calculate issue accumulation per time period
     issue_accumulation_by_period = {}
-    for period_key, period_data in time_periods.items():
+    for period_key, period_bounds in time_periods.items():
         issue_accumulation_by_period[period_key] = calculate_issue_accumulation(
             repo,
-            period_data["start"],
-            period_data["end"]
+            period_bounds["start"],
+            period_bounds["end"]
         )
 
     # Detect breaking changes per time period
     breaking_changes_by_period = {}
-    for period_key, period_data in time_periods.items():
+    for period_key, period_bounds in time_periods.items():
         breaking_changes_by_period[period_key] = detect_breaking_changes(
             repo,
-            period_data["start"],
-            period_data["end"]
+            period_bounds["start"],
+            period_bounds["end"]
         )
 
     # Calculate regression rate per time period
     regression_by_period = {}
-    for period_key, period_data in time_periods.items():
+    for period_key, period_bounds in time_periods.items():
         regression_by_period[period_key] = calculate_regression_rate(
             repo,
-            period_data["start"],
-            period_data["end"]
+            period_bounds["start"],
+            period_bounds["end"]
         )
     
     repo_data["quality"] = {
