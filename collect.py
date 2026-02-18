@@ -1,8 +1,10 @@
 import os
 import json
+import time
+from github import RateLimitExceededException
 from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
-from github import Github, Auth
+from github import Github, Auth, RateLimitExceededException
 
 # Load the token from .env file
 load_dotenv()
@@ -46,6 +48,17 @@ time_periods = {
 # Additional time reference for recent activity metrics
 three_months_ago = datetime.now(timezone.utc) - timedelta(days=90)
 
+def with_retry(func):
+    """Wrapper to handle rate limit exhaustion with automatic retry"""
+    while True:
+        try:
+            return func()
+        except RateLimitExceededException:
+            reset_time = g.get_rate_limit().core.reset
+            wait_seconds = (reset_time - datetime.now(timezone.utc)).total_seconds() + 60
+            print(f"\nRate limit exceeded. Waiting {wait_seconds/60:.1f} minutes until reset...")
+            time.sleep(wait_seconds)
+
 # ==================== HELPER FUNCTIONS ====================
 def collect_period_commits(repo, start_date, end_date):
     """Single-pass commit collection extracting all needed data"""
@@ -68,10 +81,11 @@ def collect_period_commits(repo, start_date, end_date):
     for commit in commits:
         commit_count += 1
         
-        # Get stats
-        stats = commit.stats
+        # Get stats - single call per commit + rate limit handling & burst prevention
+        stats = with_retry(lambda: commit.stats)
         total_additions += stats.additions
         total_deletions += stats.deletions
+        time.sleep(0.1)  # prevents secondary rate limit (burst detection)
         
         # Check message keywords
         message = commit.commit.message.lower()
