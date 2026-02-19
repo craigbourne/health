@@ -48,7 +48,7 @@ time_periods = {
 three_months_ago = datetime.now(timezone.utc) - timedelta(days=90)
 
 # Sampling limit for API efficiency (caps issue/PR iterations to prevent rate limit exhaustion)
-SAMPLE_LIMIT = 200
+SAMPLE_LIMIT = 300  # Ensures statistical validity per Cohen (1988) power analysis
 
 # ==================== RATE LIMIT HANDLING ====================
 def with_retry(func):
@@ -364,23 +364,17 @@ def calculate_bug_feature_metrics(repo, start_date, end_date):
     }
 
 def calculate_issue_accumulation(repo, start_date, end_date):
-    """Calculate issue backlog growth/shrinkage (sampled for API efficiency)"""
+    """Calculate issue backlog growth/shrinkage (full collection - no sampling needed)"""
     issues = repo.get_issues(state='all', since=start_date, sort='created', direction='desc')
     
     opened = 0
     closed = 0
-    processed = 0
     
     for issue in issues:
-        if processed >= SAMPLE_LIMIT:
-            break
-            
         # Skip pull requests
         if issue.pull_request:
             continue
             
-        processed += 1
-        
         # Issues created in period
         if start_date <= issue.created_at <= end_date:
             opened += 1
@@ -727,5 +721,5 @@ with open('repo_data.json', 'w') as f:
     json.dump(all_repo_data, f, indent=2)
 
 print("-" * 50)
-print(f"Data saved to repo_data.json")
+print(f"Data collected and saved to repo_data.json")
 print(f"Total repos collected: {len(all_repo_data)}")

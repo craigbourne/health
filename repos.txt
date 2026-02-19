@@ -1,1 +1,1 @@
-bower/bower
+vitejs/vite
