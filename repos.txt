@@ -1,1 +1,12 @@
 vitejs/vite
+fastify/fastify
+microsoft/playwright
+shadcn-ui/ui
+jashkenas/coffeescript
+gulpjs/gulp
+knockout/knockout
+atom/atom
+angular/angular.js
+jashkenas/backbone
+bower/bower
+gruntjs/grunt

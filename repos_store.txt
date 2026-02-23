@@ -1,3 +1,4 @@
+vitejs/vite
 fastify/fastify
 microsoft/playwright
 shadcn-ui/ui
@@ -7,6 +8,5 @@ knockout/knockout
 atom/atom
 angular/angular.js
 jashkenas/backbone
-vitejs/vite
 bower/bower
 gruntjs/grunt

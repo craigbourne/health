@@ -1,331 +1,3072 @@
 [
   {
     "name": "vitejs/vite",
-    "collection_date": "2026-02-18 17:49:56 UTC",
+    "collection_date": "2026-02-20 10:38:20 UTC",
     "evolvability": {
       "created_date": "2020-04-21",
-      "age_days": 2129,
-      "stars": 78197,
-      "forks": 7841,
-      "watchers": 78197,
+      "age_days": 2131,
+      "stars": 78300,
+      "forks": 7842,
+      "watchers": 78300,
       "refactoring_by_period": {
         "period_1": {
-          "total_commits": 403,
+          "total_commits": 391,
           "refactoring_commits": 15,
-          "refactoring_rate": 0.037,
-          "dependency_commits": 70,
+          "refactoring_rate": 0.038,
+          "dependency_commits": 68,
           "dependency_update_rate": 0.174
         },
         "period_2": {
-          "total_commits": 612,
+          "total_commits": 618,
           "refactoring_commits": 37,
           "refactoring_rate": 0.06,
-          "dependency_commits": 84,
-          "dependency_update_rate": 0.137
-        },
-        "period_3": {
-          "total_commits": 826,
-          "refactoring_commits": 52,
-          "refactoring_rate": 0.063,
-          "dependency_commits": 115,
+          "dependency_commits": 86,
           "dependency_update_rate": 0.139
         },
+        "period_3": {
+          "total_commits": 821,
+          "refactoring_commits": 52,
+          "refactoring_rate": 0.063,
+          "dependency_commits": 113,
+          "dependency_update_rate": 0.138
+        },
         "period_4": {
-          "total_commits": 591,
+          "total_commits": 593,
           "refactoring_commits": 31,
           "refactoring_rate": 0.052,
-          "dependency_commits": 112,
-          "dependency_update_rate": 0.19
+          "dependency_commits": 113,
+          "dependency_update_rate": 0.191
         }
       },
       "feature_growth_by_period": {
         "period_1": {
-          "total_commits": 403,
-          "feature_commits": 41,
-          "maintenance_commits": 228,
+          "total_commits": 391,
+          "feature_commits": 40,
+          "maintenance_commits": 222,
           "feature_rate": 0.102,
-          "total_additions": 34894,
-          "total_deletions": 27327,
-          "net_loc_change": 7567,
-          "growth_rate": 18.78
+          "total_additions": 34408,
+          "total_deletions": 26943,
+          "net_loc_change": 7465,
+          "growth_rate": 19.09
         },
         "period_2": {
-          "total_commits": 612,
-          "feature_commits": 71,
-          "maintenance_commits": 357,
-          "feature_rate": 0.116,
-          "total_additions": 56987,
-          "total_deletions": 37133,
-          "net_loc_change": 19854,
-          "growth_rate": 32.44
+          "total_commits": 618,
+          "feature_commits": 72,
+          "maintenance_commits": 359,
+          "feature_rate": 0.117,
+          "total_additions": 59393,
+          "total_deletions": 39761,
+          "net_loc_change": 19632,
+          "growth_rate": 31.77
         },
         "period_3": {
-          "total_commits": 826,
-          "feature_commits": 176,
-          "maintenance_commits": 311,
+          "total_commits": 821,
+          "feature_commits": 175,
+          "maintenance_commits": 310,
           "feature_rate": 0.213,
-          "total_additions": 76212,
-          "total_deletions": 62498,
-          "net_loc_change": 13714,
-          "growth_rate": 16.6
+          "total_additions": 73766,
+          "total_deletions": 59867,
+          "net_loc_change": 13899,
+          "growth_rate": 16.93
         },
         "period_4": {
-          "total_commits": 591,
-          "feature_commits": 101,
-          "maintenance_commits": 266,
-          "feature_rate": 0.171,
-          "total_additions": 68234,
-          "total_deletions": 54598,
-          "net_loc_change": 13636,
-          "growth_rate": 23.07
+          "total_commits": 593,
+          "feature_commits": 104,
+          "maintenance_commits": 264,
+          "feature_rate": 0.175,
+          "total_additions": 68451,
+          "total_deletions": 54892,
+          "net_loc_change": 13559,
+          "growth_rate": 22.87
         }
       }
     },
     "velocity": {
-      "last_commit_date": "2026-02-18",
-      "commits_last_3_months": 260,
+      "last_commit_date": "2026-02-20",
+      "commits_last_3_months": 265,
       "period_metrics": {
         "period_1": {
-          "commit_count": 403,
-          "additions": 34894,
-          "deletions": 27327,
-          "total_changes": 62221,
-          "churn_rate": 154.39454094292805
+          "commit_count": 391,
+          "additions": 34408,
+          "deletions": 26943,
+          "total_changes": 61351,
+          "churn_rate": 156.9079283887468
         },
         "period_2": {
-          "commit_count": 612,
-          "additions": 56987,
-          "deletions": 37133,
-          "total_changes": 94120,
-          "churn_rate": 153.79084967320262
+          "commit_count": 618,
+          "additions": 59393,
+          "deletions": 39761,
+          "total_changes": 99154,
+          "churn_rate": 160.4433656957929
         },
         "period_3": {
-          "commit_count": 826,
-          "additions": 76212,
-          "deletions": 62498,
-          "total_changes": 138710,
-          "churn_rate": 167.92978208232446
+          "commit_count": 821,
+          "additions": 73766,
+          "deletions": 59867,
+          "total_changes": 133633,
+          "churn_rate": 162.768574908648
         },
         "period_4": {
-          "commit_count": 591,
-          "additions": 68234,
-          "deletions": 54598,
-          "total_changes": 122832,
-          "churn_rate": 207.83756345177665
+          "commit_count": 593,
+          "additions": 68451,
+          "deletions": 54892,
+          "total_changes": 123343,
+          "churn_rate": 207.99831365935918
         }
       },
       "pr_metrics_by_period": {
         "period_1": {
-          "merged_count": 152,
-          "closed_without_merge": 48,
-          "avg_merge_time_hours": 472.51,
+          "merged_count": 227,
+          "closed_without_merge": 73,
+          "avg_merge_time_hours": 486.18,
           "merge_times_sample": [
-            122.86,
-            97.25,
-            7.93,
-            72.83,
-            66.27
+            30.46,
+            1.95,
+            24.55,
+            177.75,
+            122.86
           ]
         },
         "period_2": {
-          "merged_count": 142,
-          "closed_without_merge": 58,
-          "avg_merge_time_hours": 456.21,
+          "merged_count": 222,
+          "closed_without_merge": 78,
+          "avg_merge_time_hours": 315.68,
           "merge_times_sample": [
-            1258.21,
-            1.44,
-            5.15,
-            22.23,
-            95.68
+            252.55,
+            2.6,
+            1.29,
+            2029.44,
+            0.18
           ]
         },
         "period_3": {
-          "merged_count": 162,
-          "closed_without_merge": 38,
-          "avg_merge_time_hours": 168.7,
+          "merged_count": 245,
+          "closed_without_merge": 55,
+          "avg_merge_time_hours": 234.07,
           "merge_times_sample": [
-            14.59,
-            0.11,
-            16.3,
-            20.94,
-            15.86
+            72.94,
+            10.81,
+            0.23,
+            15.55,
+            1243.17
           ]
         },
         "period_4": {
-          "merged_count": 148,
-          "closed_without_merge": 52,
-          "avg_merge_time_hours": 189.59,
+          "merged_count": 220,
+          "closed_without_merge": 80,
+          "avg_merge_time_hours": 177.68,
           "merge_times_sample": [
-            120.85,
-            0.63,
-            21.53,
-            0.05,
-            1.87
+            3.26,
+            0.12,
+            3.1,
+            1691.62,
+            12.91
           ]
         }
       },
       "releases_last_year": 135,
-      "latest_release_date": "2026-02-12"
+      "latest_release_date": "2026-02-19"
     },
     "collaboration": {
       "total_contributors": 439,
       "active_contributors_last_3_months": 60,
       "contributor_metrics_by_period": {
         "period_1": {
-          "total_contributors": 124,
-          "new_contributors": 124,
+          "total_contributors": 120,
+          "new_contributors": 120,
           "retention_rate": 0
         },
         "period_2": {
-          "total_contributors": 118,
-          "new_contributors": 97,
+          "total_contributors": 119,
+          "new_contributors": 99,
           "retention_rate": 0.17
         },
         "period_3": {
-          "total_contributors": 83,
+          "total_contributors": 82,
           "new_contributors": 60,
-          "retention_rate": 0.17
+          "retention_rate": 0.16
         },
         "period_4": {
-          "total_contributors": 101,
-          "new_contributors": 77,
-          "retention_rate": 0.19
+          "total_contributors": 100,
+          "new_contributors": 76,
+          "retention_rate": 0.2
         }
       },
       "pull_requests_open": 165,
-      "pull_requests_closed": 7771,
+      "pull_requests_closed": 7776,
       "issue_response_by_period": {
         "period_1": {
-          "issues_created": 200,
-          "issues_with_response": 170,
-          "issues_without_response": 30,
-          "avg_response_time_hours": 176.36,
+          "issues_created": 300,
+          "issues_with_response": 252,
+          "issues_without_response": 48,
+          "avg_response_time_hours": 170.8,
           "response_times_sample": [
-            14.5,
-            14.8,
             0.0,
-            3.4,
-            49.51
+            2.74,
+            0.0,
+            14.5,
+            14.8
           ]
         },
         "period_2": {
-          "issues_created": 200,
-          "issues_with_response": 157,
-          "issues_without_response": 43,
-          "avg_response_time_hours": 111.62,
+          "issues_created": 300,
+          "issues_with_response": 234,
+          "issues_without_response": 66,
+          "avg_response_time_hours": 119.3,
           "response_times_sample": [
+            0.16,
             4.66,
             10.11,
             11.0,
-            15.0,
-            0.67
+            15.0
           ]
         },
         "period_3": {
-          "issues_created": 200,
-          "issues_with_response": 148,
-          "issues_without_response": 52,
-          "avg_response_time_hours": 194.32,
+          "issues_created": 300,
+          "issues_with_response": 211,
+          "issues_without_response": 89,
+          "avg_response_time_hours": 189.89,
           "response_times_sample": [
+            0.24,
+            0.57,
             0.03,
             18.7,
-            909.01,
-            71.37,
-            64.81
+            909.01
           ]
         },
         "period_4": {
-          "issues_created": 200,
-          "issues_with_response": 148,
-          "issues_without_response": 52,
-          "avg_response_time_hours": 49.3,
+          "issues_created": 250,
+          "issues_with_response": 182,
+          "issues_without_response": 68,
+          "avg_response_time_hours": 77.41,
           "response_times_sample": [
+            0.3,
             2.79,
             5.61,
             2.64,
-            2.51,
-            10.97
+            2.51
           ]
         }
       },
       "pr_review_by_period": {
         "period_1": {
-          "total_prs": 200,
-          "prs_with_reviews": 158,
-          "prs_without_reviews": 42,
-          "unique_reviewers": 46,
-          "total_reviews": 572,
-          "review_comments": 370,
-          "avg_reviews_per_pr": 2.86
+          "total_prs": 300,
+          "prs_with_reviews": 236,
+          "prs_without_reviews": 64,
+          "unique_reviewers": 60,
+          "total_reviews": 839,
+          "review_comments": 561,
+          "avg_reviews_per_pr": 2.8
         },
         "period_2": {
-          "total_prs": 200,
-          "prs_with_reviews": 152,
-          "prs_without_reviews": 48,
-          "unique_reviewers": 45,
-          "total_reviews": 483,
-          "review_comments": 300,
-          "avg_reviews_per_pr": 2.42
+          "total_prs": 300,
+          "prs_with_reviews": 229,
+          "prs_without_reviews": 71,
+          "unique_reviewers": 60,
+          "total_reviews": 695,
+          "review_comments": 414,
+          "avg_reviews_per_pr": 2.32
         },
         "period_3": {
-          "total_prs": 200,
-          "prs_with_reviews": 141,
-          "prs_without_reviews": 59,
-          "unique_reviewers": 21,
-          "total_reviews": 457,
-          "review_comments": 342,
-          "avg_reviews_per_pr": 2.29
+          "total_prs": 300,
+          "prs_with_reviews": 224,
+          "prs_without_reviews": 76,
+          "unique_reviewers": 29,
+          "total_reviews": 631,
+          "review_comments": 430,
+          "avg_reviews_per_pr": 2.1
         },
         "period_4": {
-          "total_prs": 200,
-          "prs_with_reviews": 104,
-          "prs_without_reviews": 96,
-          "unique_reviewers": 36,
-          "total_reviews": 282,
-          "review_comments": 232,
-          "avg_reviews_per_pr": 1.41
+          "total_prs": 300,
+          "prs_with_reviews": 162,
+          "prs_without_reviews": 138,
+          "unique_reviewers": 56,
+          "total_reviews": 456,
+          "review_comments": 372,
+          "avg_reviews_per_pr": 1.52
         }
       }
     },
     "quality": {
-      "issues_open": 618,
+      "issues_open": 619,
       "issues_closed_last_3_months": 0,
       "bug_feature_by_period": {
         "period_1": {
-          "bugs_opened": 15,
-          "bugs_closed": 11,
-          "bug_closure_rate": 0.73,
-          "features_opened": 21,
-          "features_closed": 20,
-          "feature_closure_rate": 0.95,
-          "other_issues": 164
+          "bugs_opened": 24,
+          "bugs_closed": 18,
+          "bug_closure_rate": 0.75,
+          "features_opened": 30,
+          "features_closed": 28,
+          "feature_closure_rate": 0.93,
+          "other_issues": 246
         },
         "period_2": {
-          "bugs_opened": 20,
-          "bugs_closed": 18,
+          "bugs_opened": 30,
+          "bugs_closed": 27,
           "bug_closure_rate": 0.9,
-          "features_opened": 28,
-          "features_closed": 27,
-          "feature_closure_rate": 0.96,
-          "other_issues": 152
+          "features_opened": 41,
+          "features_closed": 40,
+          "feature_closure_rate": 0.98,
+          "other_issues": 229
         },
         "period_3": {
-          "bugs_opened": 15,
-          "bugs_closed": 12,
+          "bugs_opened": 30,
+          "bugs_closed": 24,
           "bug_closure_rate": 0.8,
           "features_opened": 0,
           "features_closed": 0,
           "feature_closure_rate": 0,
-          "other_issues": 185
+          "other_issues": 270
         },
         "period_4": {
-          "bugs_opened": 22,
-          "bugs_closed": 17,
-          "bug_closure_rate": 0.77,
+          "bugs_opened": 27,
+          "bugs_closed": 21,
+          "bug_closure_rate": 0.78,
           "features_opened": 1,
           "features_closed": 0,
           "feature_closure_rate": 0.0,
-          "other_issues": 177
+          "other_issues": 222
+        }
+      },
+      "issue_accumulation_by_period": {
+        "period_1": {
+          "issues_opened": 534,
+          "issues_closed": 391,
+          "net_accumulation": 143,
+          "accumulation_rate": 0.27
+        },
+        "period_2": {
+          "issues_opened": 474,
+          "issues_closed": 385,
+          "net_accumulation": 89,
+          "accumulation_rate": 0.19
+        },
+        "period_3": {
+          "issues_opened": 346,
+          "issues_closed": 261,
+          "net_accumulation": 85,
+          "accumulation_rate": 0.25
+        },
+        "period_4": {
+          "issues_opened": 250,
+          "issues_closed": 196,
+          "net_accumulation": 54,
+          "accumulation_rate": 0.22
+        }
+      },
+      "breaking_changes_by_period": {
+        "period_1": {
+          "total_releases": 69,
+          "breaking_releases": 0,
+          "total_commits": 391,
+          "breaking_commits": 2,
+          "breaking_change_rate": 0.005
+        },
+        "period_2": {
+          "total_releases": 61,
+          "breaking_releases": 3,
+          "total_commits": 618,
+          "breaking_commits": 1,
+          "breaking_change_rate": 0.002
+        },
+        "period_3": {
+          "total_releases": 76,
+          "breaking_releases": 0,
+          "total_commits": 821,
+          "breaking_commits": 7,
+          "breaking_change_rate": 0.009
+        },
+        "period_4": {
+          "total_releases": 59,
+          "breaking_releases": 0,
+          "total_commits": 593,
+          "breaking_commits": 3,
+          "breaking_change_rate": 0.005
+        }
+      },
+      "regression_by_period": {
+        "period_1": {
+          "total_issues": 300,
+          "reopened_issues": 3,
+          "regression_rate": 0.01
+        },
+        "period_2": {
+          "total_issues": 300,
+          "reopened_issues": 5,
+          "regression_rate": 0.017
+        },
+        "period_3": {
+          "total_issues": 300,
+          "reopened_issues": 2,
+          "regression_rate": 0.007
+        },
+        "period_4": {
+          "total_issues": 300,
+          "reopened_issues": 6,
+          "regression_rate": 0.02
+        }
+      }
+    },
+    "classification": "Active",
+    "classification_evidence": "Recent commits: 593 vs 391 (24mo ago), Recent contributors: 100 vs 120 (24mo ago), Last commit: 0 days ago"
+  },
+  {
+    "name": "fastify/fastify",
+    "collection_date": "2026-02-22 21:17:08 UTC",
+    "evolvability": {
+      "created_date": "2016-09-28",
+      "age_days": 3434,
+      "stars": 35664,
+      "forks": 2589,
+      "watchers": 35664,
+      "refactoring_by_period": {
+        "period_1": {
+          "total_commits": 146,
+          "refactoring_commits": 14,
+          "refactoring_rate": 0.096,
+          "dependency_commits": 33,
+          "dependency_update_rate": 0.226
+        },
+        "period_2": {
+          "total_commits": 196,
+          "refactoring_commits": 4,
+          "refactoring_rate": 0.02,
+          "dependency_commits": 27,
+          "dependency_update_rate": 0.138
+        },
+        "period_3": {
+          "total_commits": 204,
+          "refactoring_commits": 7,
+          "refactoring_rate": 0.034,
+          "dependency_commits": 24,
+          "dependency_update_rate": 0.118
+        },
+        "period_4": {
+          "total_commits": 124,
+          "refactoring_commits": 6,
+          "refactoring_rate": 0.048,
+          "dependency_commits": 31,
+          "dependency_update_rate": 0.25
+        }
+      },
+      "feature_growth_by_period": {
+        "period_1": {
+          "total_commits": 146,
+          "feature_commits": 22,
+          "maintenance_commits": 62,
+          "feature_rate": 0.151,
+          "total_additions": 6655,
+          "total_deletions": 4067,
+          "net_loc_change": 2588,
+          "growth_rate": 17.73
+        },
+        "period_2": {
+          "total_commits": 196,
+          "feature_commits": 10,
+          "maintenance_commits": 85,
+          "feature_rate": 0.051,
+          "total_additions": 10627,
+          "total_deletions": 8917,
+          "net_loc_change": 1710,
+          "growth_rate": 8.72
+        },
+        "period_3": {
+          "total_commits": 204,
+          "feature_commits": 11,
+          "maintenance_commits": 71,
+          "feature_rate": 0.054,
+          "total_additions": 13057,
+          "total_deletions": 11227,
+          "net_loc_change": 1830,
+          "growth_rate": 8.97
+        },
+        "period_4": {
+          "total_commits": 124,
+          "feature_commits": 8,
+          "maintenance_commits": 65,
+          "feature_rate": 0.065,
+          "total_additions": 4183,
+          "total_deletions": 1922,
+          "net_loc_change": 2261,
+          "growth_rate": 18.23
+        }
+      }
+    },
+    "velocity": {
+      "last_commit_date": "2026-02-22",
+      "commits_last_3_months": 64,
+      "period_metrics": {
+        "period_1": {
+          "commit_count": 146,
+          "additions": 6655,
+          "deletions": 4067,
+          "total_changes": 10722,
+          "churn_rate": 73.43835616438356
+        },
+        "period_2": {
+          "commit_count": 196,
+          "additions": 10627,
+          "deletions": 8917,
+          "total_changes": 19544,
+          "churn_rate": 99.71428571428571
+        },
+        "period_3": {
+          "commit_count": 204,
+          "additions": 13057,
+          "deletions": 11227,
+          "total_changes": 24284,
+          "churn_rate": 119.03921568627452
+        },
+        "period_4": {
+          "commit_count": 124,
+          "additions": 4183,
+          "deletions": 1922,
+          "total_changes": 6105,
+          "churn_rate": 49.233870967741936
+        }
+      },
+      "pr_metrics_by_period": {
+        "period_1": {
+          "merged_count": 197,
+          "closed_without_merge": 45,
+          "avg_merge_time_hours": 238.65,
+          "merge_times_sample": [
+            8.56,
+            27.34,
+            265.73,
+            0.35,
+            0.43
+          ]
+        },
+        "period_2": {
+          "merged_count": 153,
+          "closed_without_merge": 33,
+          "avg_merge_time_hours": 189.0,
+          "merge_times_sample": [
+            61.77,
+            20.92,
+            3.78,
+            0.32,
+            1.52
+          ]
+        },
+        "period_3": {
+          "merged_count": 245,
+          "closed_without_merge": 55,
+          "avg_merge_time_hours": 159.06,
+          "merge_times_sample": [
+            0.24,
+            146.44,
+            2.02,
+            0.2,
+            0.09
+          ]
+        },
+        "period_4": {
+          "merged_count": 228,
+          "closed_without_merge": 72,
+          "avg_merge_time_hours": 222.52,
+          "merge_times_sample": [
+            3.54,
+            11.95,
+            25.67,
+            14.73,
+            0.86
+          ]
+        }
+      },
+      "releases_last_year": 16,
+      "latest_release_date": "2026-02-02"
+    },
+    "collaboration": {
+      "total_contributors": 436,
+      "active_contributors_last_3_months": 23,
+      "contributor_metrics_by_period": {
+        "period_1": {
+          "total_contributors": 50,
+          "new_contributors": 50,
+          "retention_rate": 0
+        },
+        "period_2": {
+          "total_contributors": 60,
+          "new_contributors": 47,
+          "retention_rate": 0.26
+        },
+        "period_3": {
+          "total_contributors": 44,
+          "new_contributors": 30,
+          "retention_rate": 0.2
+        },
+        "period_4": {
+          "total_contributors": 46,
+          "new_contributors": 27,
+          "retention_rate": 0.34
+        }
+      },
+      "pull_requests_open": 37,
+      "pull_requests_closed": 3908,
+      "issue_response_by_period": {
+        "period_1": {
+          "issues_created": 94,
+          "issues_with_response": 87,
+          "issues_without_response": 7,
+          "avg_response_time_hours": 70.78,
+          "response_times_sample": [
+            1.27,
+            18.89,
+            1.15,
+            0.67,
+            0.25
+          ]
+        },
+        "period_2": {
+          "issues_created": 64,
+          "issues_with_response": 60,
+          "issues_without_response": 4,
+          "avg_response_time_hours": 10.35,
+          "response_times_sample": [
+            7.07,
+            0.22,
+            1.11,
+            3.12,
+            0.08
+          ]
+        },
+        "period_3": {
+          "issues_created": 56,
+          "issues_with_response": 54,
+          "issues_without_response": 2,
+          "avg_response_time_hours": 45.05,
+          "response_times_sample": [
+            18.32,
+            0.25,
+            3.81,
+            0.42,
+            0.07
+          ]
+        },
+        "period_4": {
+          "issues_created": 53,
+          "issues_with_response": 51,
+          "issues_without_response": 2,
+          "avg_response_time_hours": 18.33,
+          "response_times_sample": [
+            5.64,
+            18.41,
+            11.14,
+            41.7,
+            0.21
+          ]
+        }
+      },
+      "pr_review_by_period": {
+        "period_1": {
+          "total_prs": 242,
+          "prs_with_reviews": 216,
+          "prs_without_reviews": 26,
+          "unique_reviewers": 43,
+          "total_reviews": 944,
+          "review_comments": 615,
+          "avg_reviews_per_pr": 3.9
+        },
+        "period_2": {
+          "total_prs": 186,
+          "prs_with_reviews": 169,
+          "prs_without_reviews": 17,
+          "unique_reviewers": 46,
+          "total_reviews": 831,
+          "review_comments": 556,
+          "avg_reviews_per_pr": 4.47
+        },
+        "period_3": {
+          "total_prs": 300,
+          "prs_with_reviews": 274,
+          "prs_without_reviews": 26,
+          "unique_reviewers": 56,
+          "total_reviews": 988,
+          "review_comments": 487,
+          "avg_reviews_per_pr": 3.29
+        },
+        "period_4": {
+          "total_prs": 300,
+          "prs_with_reviews": 259,
+          "prs_without_reviews": 41,
+          "unique_reviewers": 60,
+          "total_reviews": 1030,
+          "review_comments": 679,
+          "avg_reviews_per_pr": 3.43
+        }
+      }
+    },
+    "quality": {
+      "issues_open": 113,
+      "issues_closed_last_3_months": 0,
+      "bug_feature_by_period": {
+        "period_1": {
+          "bugs_opened": 9,
+          "bugs_closed": 9,
+          "bug_closure_rate": 1.0,
+          "features_opened": 8,
+          "features_closed": 6,
+          "feature_closure_rate": 0.75,
+          "other_issues": 77
+        },
+        "period_2": {
+          "bugs_opened": 5,
+          "bugs_closed": 5,
+          "bug_closure_rate": 1.0,
+          "features_opened": 2,
+          "features_closed": 1,
+          "feature_closure_rate": 0.5,
+          "other_issues": 57
+        },
+        "period_3": {
+          "bugs_opened": 6,
+          "bugs_closed": 5,
+          "bug_closure_rate": 0.83,
+          "features_opened": 1,
+          "features_closed": 0,
+          "feature_closure_rate": 0.0,
+          "other_issues": 49
+        },
+        "period_4": {
+          "bugs_opened": 1,
+          "bugs_closed": 1,
+          "bug_closure_rate": 1.0,
+          "features_opened": 1,
+          "features_closed": 1,
+          "feature_closure_rate": 1.0,
+          "other_issues": 51
+        }
+      },
+      "issue_accumulation_by_period": {
+        "period_1": {
+          "issues_opened": 94,
+          "issues_closed": 73,
+          "net_accumulation": 21,
+          "accumulation_rate": 0.22
+        },
+        "period_2": {
+          "issues_opened": 64,
+          "issues_closed": 55,
+          "net_accumulation": 9,
+          "accumulation_rate": 0.14
+        },
+        "period_3": {
+          "issues_opened": 56,
+          "issues_closed": 36,
+          "net_accumulation": 20,
+          "accumulation_rate": 0.36
+        },
+        "period_4": {
+          "issues_opened": 53,
+          "issues_closed": 42,
+          "net_accumulation": 11,
+          "accumulation_rate": 0.21
+        }
+      },
+      "breaking_changes_by_period": {
+        "period_1": {
+          "total_releases": 6,
+          "breaking_releases": 1,
+          "total_commits": 146,
+          "breaking_commits": 2,
+          "breaking_change_rate": 0.014
+        },
+        "period_2": {
+          "total_releases": 6,
+          "breaking_releases": 1,
+          "total_commits": 196,
+          "breaking_commits": 2,
+          "breaking_change_rate": 0.01
+        },
+        "period_3": {
+          "total_releases": 8,
+          "breaking_releases": 0,
+          "total_commits": 204,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0.0
+        },
+        "period_4": {
+          "total_releases": 8,
+          "breaking_releases": 1,
+          "total_commits": 124,
+          "breaking_commits": 2,
+          "breaking_change_rate": 0.016
+        }
+      },
+      "regression_by_period": {
+        "period_1": {
+          "total_issues": 101,
+          "reopened_issues": 3,
+          "regression_rate": 0.03
+        },
+        "period_2": {
+          "total_issues": 91,
+          "reopened_issues": 2,
+          "regression_rate": 0.022
+        },
+        "period_3": {
+          "total_issues": 64,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_4": {
+          "total_issues": 85,
+          "reopened_issues": 1,
+          "regression_rate": 0.012
+        }
+      }
+    },
+    "classification": "Active",
+    "classification_evidence": "Recent commits: 124 vs 146 (24mo ago), Recent contributors: 46 vs 50 (24mo ago), Last commit: 1 days ago"
+  },
+  {
+    "name": "microsoft/playwright",
+    "collection_date": "2026-02-22 22:23:22 UTC",
+    "evolvability": {
+      "created_date": "2019-11-15",
+      "age_days": 2291,
+      "stars": 82908,
+      "forks": 5171,
+      "watchers": 82908,
+      "refactoring_by_period": {
+        "period_1": {
+          "total_commits": 946,
+          "refactoring_commits": 17,
+          "refactoring_rate": 0.018,
+          "dependency_commits": 41,
+          "dependency_update_rate": 0.043
+        },
+        "period_2": {
+          "total_commits": 1058,
+          "refactoring_commits": 14,
+          "refactoring_rate": 0.013,
+          "dependency_commits": 24,
+          "dependency_update_rate": 0.023
+        },
+        "period_3": {
+          "total_commits": 997,
+          "refactoring_commits": 19,
+          "refactoring_rate": 0.019,
+          "dependency_commits": 29,
+          "dependency_update_rate": 0.029
+        },
+        "period_4": {
+          "total_commits": 1071,
+          "refactoring_commits": 7,
+          "refactoring_rate": 0.007,
+          "dependency_commits": 42,
+          "dependency_update_rate": 0.039
+        }
+      },
+      "feature_growth_by_period": {
+        "period_1": {
+          "total_commits": 946,
+          "feature_commits": 242,
+          "maintenance_commits": 452,
+          "feature_rate": 0.256,
+          "total_additions": 79133,
+          "total_deletions": 48088,
+          "net_loc_change": 31045,
+          "growth_rate": 32.82
+        },
+        "period_2": {
+          "total_commits": 1058,
+          "feature_commits": 265,
+          "maintenance_commits": 407,
+          "feature_rate": 0.25,
+          "total_additions": 145238,
+          "total_deletions": 69311,
+          "net_loc_change": 75927,
+          "growth_rate": 71.76
+        },
+        "period_3": {
+          "total_commits": 997,
+          "feature_commits": 232,
+          "maintenance_commits": 287,
+          "feature_rate": 0.233,
+          "total_additions": 77439,
+          "total_deletions": 61495,
+          "net_loc_change": 15944,
+          "growth_rate": 15.99
+        },
+        "period_4": {
+          "total_commits": 1071,
+          "feature_commits": 238,
+          "maintenance_commits": 309,
+          "feature_rate": 0.222,
+          "total_additions": 138877,
+          "total_deletions": 109363,
+          "net_loc_change": 29514,
+          "growth_rate": 27.56
+        }
+      }
+    },
+    "velocity": {
+      "last_commit_date": "2026-02-21",
+      "commits_last_3_months": 504,
+      "period_metrics": {
+        "period_1": {
+          "commit_count": 946,
+          "additions": 79133,
+          "deletions": 48088,
+          "total_changes": 127221,
+          "churn_rate": 134.4830866807611
+        },
+        "period_2": {
+          "commit_count": 1058,
+          "additions": 145238,
+          "deletions": 69311,
+          "total_changes": 214549,
+          "churn_rate": 202.78733459357278
+        },
+        "period_3": {
+          "commit_count": 997,
+          "additions": 77439,
+          "deletions": 61495,
+          "total_changes": 138934,
+          "churn_rate": 139.35205616850553
+        },
+        "period_4": {
+          "commit_count": 1071,
+          "additions": 138877,
+          "deletions": 109363,
+          "total_changes": 248240,
+          "churn_rate": 231.78338001867414
+        }
+      },
+      "pr_metrics_by_period": {
+        "period_1": {
+          "merged_count": 254,
+          "closed_without_merge": 46,
+          "avg_merge_time_hours": 28.42,
+          "merge_times_sample": [
+            12.73,
+            0.49,
+            16.58,
+            16.34,
+            1.06
+          ]
+        },
+        "period_2": {
+          "merged_count": 258,
+          "closed_without_merge": 42,
+          "avg_merge_time_hours": 33.8,
+          "merge_times_sample": [
+            0.68,
+            0.46,
+            0.35,
+            3.5,
+            164.0
+          ]
+        },
+        "period_3": {
+          "merged_count": 231,
+          "closed_without_merge": 69,
+          "avg_merge_time_hours": 32.5,
+          "merge_times_sample": [
+            1.91,
+            1.61,
+            23.65,
+            19.88,
+            2.2
+          ]
+        },
+        "period_4": {
+          "merged_count": 223,
+          "closed_without_merge": 77,
+          "avg_merge_time_hours": 30.93,
+          "merge_times_sample": [
+            126.43,
+            73.76,
+            16.5,
+            13.58,
+            88.79
+          ]
+        }
+      },
+      "releases_last_year": 17,
+      "latest_release_date": "2026-02-06"
+    },
+    "collaboration": {
+      "total_contributors": 472,
+      "active_contributors_last_3_months": 40,
+      "contributor_metrics_by_period": {
+        "period_1": {
+          "total_contributors": 85,
+          "new_contributors": 85,
+          "retention_rate": 0
+        },
+        "period_2": {
+          "total_contributors": 66,
+          "new_contributors": 48,
+          "retention_rate": 0.21
+        },
+        "period_3": {
+          "total_contributors": 52,
+          "new_contributors": 34,
+          "retention_rate": 0.27
+        },
+        "period_4": {
+          "total_contributors": 64,
+          "new_contributors": 44,
+          "retention_rate": 0.31
+        }
+      },
+      "pull_requests_open": 26,
+      "pull_requests_closed": 18678,
+      "issue_response_by_period": {
+        "period_1": {
+          "issues_created": 300,
+          "issues_with_response": 261,
+          "issues_without_response": 39,
+          "avg_response_time_hours": 245.59,
+          "response_times_sample": [
+            74.6,
+            53.75,
+            383.98,
+            10.89,
+            8.36
+          ]
+        },
+        "period_2": {
+          "issues_created": 300,
+          "issues_with_response": 273,
+          "issues_without_response": 27,
+          "avg_response_time_hours": 258.5,
+          "response_times_sample": [
+            20.05,
+            61.31,
+            39.63,
+            0.21,
+            1.42
+          ]
+        },
+        "period_3": {
+          "issues_created": 300,
+          "issues_with_response": 250,
+          "issues_without_response": 50,
+          "avg_response_time_hours": 75.34,
+          "response_times_sample": [
+            62.59,
+            166.78,
+            1.45,
+            0.19,
+            3.97
+          ]
+        },
+        "period_4": {
+          "issues_created": 300,
+          "issues_with_response": 240,
+          "issues_without_response": 60,
+          "avg_response_time_hours": 41.1,
+          "response_times_sample": [
+            4.59,
+            3.04,
+            6.24,
+            16.67,
+            19.11
+          ]
+        }
+      },
+      "pr_review_by_period": {
+        "period_1": {
+          "total_prs": 300,
+          "prs_with_reviews": 220,
+          "prs_without_reviews": 80,
+          "unique_reviewers": 17,
+          "total_reviews": 460,
+          "review_comments": 451,
+          "avg_reviews_per_pr": 1.53
+        },
+        "period_2": {
+          "total_prs": 300,
+          "prs_with_reviews": 233,
+          "prs_without_reviews": 67,
+          "unique_reviewers": 15,
+          "total_reviews": 506,
+          "review_comments": 516,
+          "avg_reviews_per_pr": 1.69
+        },
+        "period_3": {
+          "total_prs": 300,
+          "prs_with_reviews": 246,
+          "prs_without_reviews": 54,
+          "unique_reviewers": 24,
+          "total_reviews": 397,
+          "review_comments": 267,
+          "avg_reviews_per_pr": 1.32
+        },
+        "period_4": {
+          "total_prs": 300,
+          "prs_with_reviews": 235,
+          "prs_without_reviews": 65,
+          "unique_reviewers": 19,
+          "total_reviews": 407,
+          "review_comments": 370,
+          "avg_reviews_per_pr": 1.36
+        }
+      }
+    },
+    "quality": {
+      "issues_open": 624,
+      "issues_closed_last_3_months": 0,
+      "bug_feature_by_period": {
+        "period_1": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 15,
+          "features_closed": 7,
+          "feature_closure_rate": 0.47,
+          "other_issues": 285
+        },
+        "period_2": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 16,
+          "features_closed": 8,
+          "feature_closure_rate": 0.5,
+          "other_issues": 284
+        },
+        "period_3": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 11,
+          "features_closed": 5,
+          "feature_closure_rate": 0.45,
+          "other_issues": 289
+        },
+        "period_4": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 17,
+          "features_closed": 2,
+          "feature_closure_rate": 0.12,
+          "other_issues": 283
+        }
+      },
+      "issue_accumulation_by_period": {
+        "period_1": {
+          "issues_opened": 1480,
+          "issues_closed": 1275,
+          "net_accumulation": 205,
+          "accumulation_rate": 0.14
+        },
+        "period_2": {
+          "issues_opened": 1300,
+          "issues_closed": 1091,
+          "net_accumulation": 209,
+          "accumulation_rate": 0.16
+        },
+        "period_3": {
+          "issues_opened": 979,
+          "issues_closed": 815,
+          "net_accumulation": 164,
+          "accumulation_rate": 0.17
+        },
+        "period_4": {
+          "issues_opened": 749,
+          "issues_closed": 603,
+          "net_accumulation": 146,
+          "accumulation_rate": 0.19
+        }
+      },
+      "breaking_changes_by_period": {
+        "period_1": {
+          "total_releases": 12,
+          "breaking_releases": 2,
+          "total_commits": 946,
+          "breaking_commits": 4,
+          "breaking_change_rate": 0.004
+        },
+        "period_2": {
+          "total_releases": 10,
+          "breaking_releases": 3,
+          "total_commits": 1058,
+          "breaking_commits": 7,
+          "breaking_change_rate": 0.007
+        },
+        "period_3": {
+          "total_releases": 10,
+          "breaking_releases": 3,
+          "total_commits": 997,
+          "breaking_commits": 2,
+          "breaking_change_rate": 0.002
+        },
+        "period_4": {
+          "total_releases": 7,
+          "breaking_releases": 3,
+          "total_commits": 1071,
+          "breaking_commits": 1,
+          "breaking_change_rate": 0.001
+        }
+      },
+      "regression_by_period": {
+        "period_1": {
+          "total_issues": 300,
+          "reopened_issues": 7,
+          "regression_rate": 0.023
+        },
+        "period_2": {
+          "total_issues": 300,
+          "reopened_issues": 3,
+          "regression_rate": 0.01
+        },
+        "period_3": {
+          "total_issues": 300,
+          "reopened_issues": 10,
+          "regression_rate": 0.033
+        },
+        "period_4": {
+          "total_issues": 300,
+          "reopened_issues": 10,
+          "regression_rate": 0.033
+        }
+      }
+    },
+    "classification": "Active",
+    "classification_evidence": "Recent commits: 1071 vs 946 (24mo ago), Recent contributors: 64 vs 85 (24mo ago), Last commit: 2 days ago"
+  },
+  {
+    "name": "shadcn-ui/ui",
+    "collection_date": "2026-02-23 03:48:20 UTC",
+    "evolvability": {
+      "created_date": "2023-01-04",
+      "age_days": 1145,
+      "stars": 107099,
+      "forks": 7941,
+      "watchers": 107099,
+      "refactoring_by_period": {
+        "period_1": {
+          "total_commits": 72,
+          "refactoring_commits": 2,
+          "refactoring_rate": 0.028,
+          "dependency_commits": 3,
+          "dependency_update_rate": 0.042
+        },
+        "period_2": {
+          "total_commits": 228,
+          "refactoring_commits": 9,
+          "refactoring_rate": 0.039,
+          "dependency_commits": 15,
+          "dependency_update_rate": 0.066
+        },
+        "period_3": {
+          "total_commits": 207,
+          "refactoring_commits": 8,
+          "refactoring_rate": 0.039,
+          "dependency_commits": 44,
+          "dependency_update_rate": 0.213
+        },
+        "period_4": {
+          "total_commits": 592,
+          "refactoring_commits": 19,
+          "refactoring_rate": 0.032,
+          "dependency_commits": 48,
+          "dependency_update_rate": 0.081
+        }
+      },
+      "feature_growth_by_period": {
+        "period_1": {
+          "total_commits": 72,
+          "feature_commits": 7,
+          "maintenance_commits": 56,
+          "feature_rate": 0.097,
+          "total_additions": 109298,
+          "total_deletions": 31122,
+          "net_loc_change": 78176,
+          "growth_rate": 1085.78
+        },
+        "period_2": {
+          "total_commits": 228,
+          "feature_commits": 36,
+          "maintenance_commits": 152,
+          "feature_rate": 0.158,
+          "total_additions": 288402,
+          "total_deletions": 107257,
+          "net_loc_change": 181145,
+          "growth_rate": 794.5
+        },
+        "period_3": {
+          "total_commits": 207,
+          "feature_commits": 31,
+          "maintenance_commits": 132,
+          "feature_rate": 0.15,
+          "total_additions": 205764,
+          "total_deletions": 47580,
+          "net_loc_change": 158184,
+          "growth_rate": 764.17
+        },
+        "period_4": {
+          "total_commits": 592,
+          "feature_commits": 199,
+          "maintenance_commits": 292,
+          "feature_rate": 0.336,
+          "total_additions": 663858,
+          "total_deletions": 155865,
+          "net_loc_change": 507993,
+          "growth_rate": 858.1
+        }
+      }
+    },
+    "velocity": {
+      "last_commit_date": "2026-02-22",
+      "commits_last_3_months": 333,
+      "period_metrics": {
+        "period_1": {
+          "commit_count": 72,
+          "additions": 109298,
+          "deletions": 31122,
+          "total_changes": 140420,
+          "churn_rate": 1950.2777777777778
+        },
+        "period_2": {
+          "commit_count": 228,
+          "additions": 288402,
+          "deletions": 107257,
+          "total_changes": 395659,
+          "churn_rate": 1735.3464912280701
+        },
+        "period_3": {
+          "commit_count": 207,
+          "additions": 205764,
+          "deletions": 47580,
+          "total_changes": 253344,
+          "churn_rate": 1223.8840579710145
+        },
+        "period_4": {
+          "commit_count": 592,
+          "additions": 663858,
+          "deletions": 155865,
+          "total_changes": 819723,
+          "churn_rate": 1384.6672297297298
+        }
+      },
+      "pr_metrics_by_period": {
+        "period_1": {
+          "merged_count": 57,
+          "closed_without_merge": 125,
+          "avg_merge_time_hours": 407.35,
+          "merge_times_sample": [
+            38.26,
+            8.26,
+            3603.54,
+            402.63,
+            158.33
+          ]
+        },
+        "period_2": {
+          "merged_count": 132,
+          "closed_without_merge": 168,
+          "avg_merge_time_hours": 162.01,
+          "merge_times_sample": [
+            0.04,
+            216.23,
+            0.51,
+            1713.38,
+            0.06
+          ]
+        },
+        "period_3": {
+          "merged_count": 75,
+          "closed_without_merge": 225,
+          "avg_merge_time_hours": 125.1,
+          "merge_times_sample": [
+            4.8,
+            23.45,
+            4.28,
+            0.18,
+            0.35
+          ]
+        },
+        "period_4": {
+          "merged_count": 110,
+          "closed_without_merge": 190,
+          "avg_merge_time_hours": 132.19,
+          "merge_times_sample": [
+            11.34,
+            42.2,
+            271.87,
+            0.16,
+            61.79
+          ]
+        }
+      },
+      "releases_last_year": 38,
+      "latest_release_date": "2026-02-16"
+    },
+    "collaboration": {
+      "total_contributors": 450,
+      "active_contributors_last_3_months": 92,
+      "contributor_metrics_by_period": {
+        "period_1": {
+          "total_contributors": 37,
+          "new_contributors": 37,
+          "retention_rate": 0
+        },
+        "period_2": {
+          "total_contributors": 45,
+          "new_contributors": 44,
+          "retention_rate": 0.03
+        },
+        "period_3": {
+          "total_contributors": 38,
+          "new_contributors": 33,
+          "retention_rate": 0.11
+        },
+        "period_4": {
+          "total_contributors": 180,
+          "new_contributors": 173,
+          "retention_rate": 0.16
+        }
+      },
+      "pull_requests_open": 784,
+      "pull_requests_closed": 2592,
+      "issue_response_by_period": {
+        "period_1": {
+          "issues_created": 300,
+          "issues_with_response": 289,
+          "issues_without_response": 11,
+          "avg_response_time_hours": 1265.55,
+          "response_times_sample": [
+            116.16,
+            24.75,
+            4606.79,
+            4291.28,
+            8767.41
+          ]
+        },
+        "period_2": {
+          "issues_created": 300,
+          "issues_with_response": 288,
+          "issues_without_response": 12,
+          "avg_response_time_hours": 1779.67,
+          "response_times_sample": [
+            26.51,
+            14.77,
+            8766.46,
+            16.93,
+            8769.87
+          ]
+        },
+        "period_3": {
+          "issues_created": 300,
+          "issues_with_response": 213,
+          "issues_without_response": 87,
+          "avg_response_time_hours": 325.48,
+          "response_times_sample": [
+            94.42,
+            131.22,
+            17.61,
+            101.34,
+            2.67
+          ]
+        },
+        "period_4": {
+          "issues_created": 300,
+          "issues_with_response": 210,
+          "issues_without_response": 90,
+          "avg_response_time_hours": 116.54,
+          "response_times_sample": [
+            3.05,
+            20.66,
+            2.82,
+            13.63,
+            8.89
+          ]
+        }
+      },
+      "pr_review_by_period": {
+        "period_1": {
+          "total_prs": 182,
+          "prs_with_reviews": 74,
+          "prs_without_reviews": 108,
+          "unique_reviewers": 42,
+          "total_reviews": 120,
+          "review_comments": 26,
+          "avg_reviews_per_pr": 0.66
+        },
+        "period_2": {
+          "total_prs": 300,
+          "prs_with_reviews": 85,
+          "prs_without_reviews": 215,
+          "unique_reviewers": 46,
+          "total_reviews": 137,
+          "review_comments": 46,
+          "avg_reviews_per_pr": 0.46
+        },
+        "period_3": {
+          "total_prs": 300,
+          "prs_with_reviews": 57,
+          "prs_without_reviews": 243,
+          "unique_reviewers": 53,
+          "total_reviews": 103,
+          "review_comments": 55,
+          "avg_reviews_per_pr": 0.34
+        },
+        "period_4": {
+          "total_prs": 300,
+          "prs_with_reviews": 55,
+          "prs_without_reviews": 245,
+          "unique_reviewers": 48,
+          "total_reviews": 87,
+          "review_comments": 54,
+          "avg_reviews_per_pr": 0.29
+        }
+      }
+    },
+    "quality": {
+      "issues_open": 1773,
+      "issues_closed_last_3_months": 0,
+      "bug_feature_by_period": {
+        "period_1": {
+          "bugs_opened": 217,
+          "bugs_closed": 201,
+          "bug_closure_rate": 0.93,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 83
+        },
+        "period_2": {
+          "bugs_opened": 254,
+          "bugs_closed": 170,
+          "bug_closure_rate": 0.67,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 46
+        },
+        "period_3": {
+          "bugs_opened": 232,
+          "bugs_closed": 75,
+          "bug_closure_rate": 0.32,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 68
+        },
+        "period_4": {
+          "bugs_opened": 202,
+          "bugs_closed": 61,
+          "bug_closure_rate": 0.3,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 98
+        }
+      },
+      "issue_accumulation_by_period": {
+        "period_1": {
+          "issues_opened": 589,
+          "issues_closed": 299,
+          "net_accumulation": 290,
+          "accumulation_rate": 0.49
+        },
+        "period_2": {
+          "issues_opened": 687,
+          "issues_closed": 175,
+          "net_accumulation": 512,
+          "accumulation_rate": 0.75
+        },
+        "period_3": {
+          "issues_opened": 553,
+          "issues_closed": 160,
+          "net_accumulation": 393,
+          "accumulation_rate": 0.71
+        },
+        "period_4": {
+          "issues_opened": 563,
+          "issues_closed": 201,
+          "net_accumulation": 362,
+          "accumulation_rate": 0.64
+        }
+      },
+      "breaking_changes_by_period": {
+        "period_1": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 72,
+          "breaking_commits": 2,
+          "breaking_change_rate": 0.028
+        },
+        "period_2": {
+          "total_releases": 21,
+          "breaking_releases": 0,
+          "total_commits": 228,
+          "breaking_commits": 2,
+          "breaking_change_rate": 0.009
+        },
+        "period_3": {
+          "total_releases": 15,
+          "breaking_releases": 1,
+          "total_commits": 207,
+          "breaking_commits": 3,
+          "breaking_change_rate": 0.014
+        },
+        "period_4": {
+          "total_releases": 23,
+          "breaking_releases": 0,
+          "total_commits": 592,
+          "breaking_commits": 3,
+          "breaking_change_rate": 0.005
+        }
+      },
+      "regression_by_period": {
+        "period_1": {
+          "total_issues": 300,
+          "reopened_issues": 1,
+          "regression_rate": 0.003
+        },
+        "period_2": {
+          "total_issues": 300,
+          "reopened_issues": 2,
+          "regression_rate": 0.007
+        },
+        "period_3": {
+          "total_issues": 300,
+          "reopened_issues": 3,
+          "regression_rate": 0.01
+        },
+        "period_4": {
+          "total_issues": 300,
+          "reopened_issues": 3,
+          "regression_rate": 0.01
+        }
+      }
+    },
+    "classification": "Active",
+    "classification_evidence": "Recent commits: 592 vs 72 (24mo ago), Recent contributors: 180 vs 37 (24mo ago), Last commit: 1 days ago"
+  },
+  {
+    "name": "jashkenas/coffeescript",
+    "collection_date": "2026-02-23 07:13:32 UTC",
+    "evolvability": {
+      "created_date": "2009-12-18",
+      "age_days": 5911,
+      "stars": 16590,
+      "forks": 1981,
+      "watchers": 16590,
+      "refactoring_by_period": {
+        "period_1": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_2": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_3": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_4": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        }
+      },
+      "feature_growth_by_period": {
+        "period_1": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_2": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_3": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_4": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        }
+      }
+    },
+    "velocity": {
+      "last_commit_date": "2023-09-19",
+      "commits_last_3_months": 0,
+      "period_metrics": {
+        "period_1": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        },
+        "period_2": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        },
+        "period_3": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        },
+        "period_4": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        }
+      },
+      "pr_metrics_by_period": {
+        "period_1": {
+          "merged_count": 0,
+          "closed_without_merge": 1,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        },
+        "period_2": {
+          "merged_count": 0,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        },
+        "period_3": {
+          "merged_count": 2,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 17.8,
+          "merge_times_sample": [
+            0.99,
+            34.6
+          ]
+        },
+        "period_4": {
+          "merged_count": 0,
+          "closed_without_merge": 2,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        }
+      },
+      "releases_last_year": 0,
+      "latest_release_date": null
+    },
+    "collaboration": {
+      "total_contributors": 213,
+      "active_contributors_last_3_months": 0,
+      "contributor_metrics_by_period": {
+        "period_1": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        },
+        "period_2": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        },
+        "period_3": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        },
+        "period_4": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        }
+      },
+      "pull_requests_open": 21,
+      "pull_requests_closed": 1231,
+      "issue_response_by_period": {
+        "period_1": {
+          "issues_created": 2,
+          "issues_with_response": 2,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 1014.62,
+          "response_times_sample": [
+            2001.1,
+            28.15
+          ]
+        },
+        "period_2": {
+          "issues_created": 9,
+          "issues_with_response": 6,
+          "issues_without_response": 3,
+          "avg_response_time_hours": 12.75,
+          "response_times_sample": [
+            2.84,
+            0.52,
+            10.66,
+            13.31,
+            0.05
+          ]
+        },
+        "period_3": {
+          "issues_created": 4,
+          "issues_with_response": 3,
+          "issues_without_response": 1,
+          "avg_response_time_hours": 121.61,
+          "response_times_sample": [
+            44.96,
+            319.54,
+            0.33
+          ]
+        },
+        "period_4": {
+          "issues_created": 3,
+          "issues_with_response": 2,
+          "issues_without_response": 1,
+          "avg_response_time_hours": 5.14,
+          "response_times_sample": [
+            1.73,
+            8.55
+          ]
+        }
+      },
+      "pr_review_by_period": {
+        "period_1": {
+          "total_prs": 2,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 2,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0.0
+        },
+        "period_2": {
+          "total_prs": 7,
+          "prs_with_reviews": 2,
+          "prs_without_reviews": 5,
+          "unique_reviewers": 2,
+          "total_reviews": 3,
+          "review_comments": 2,
+          "avg_reviews_per_pr": 0.43
+        },
+        "period_3": {
+          "total_prs": 2,
+          "prs_with_reviews": 1,
+          "prs_without_reviews": 1,
+          "unique_reviewers": 3,
+          "total_reviews": 8,
+          "review_comments": 8,
+          "avg_reviews_per_pr": 4.0
+        },
+        "period_4": {
+          "total_prs": 5,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 5,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0.0
+        }
+      }
+    },
+    "quality": {
+      "issues_open": 95,
+      "issues_closed_last_3_months": 1,
+      "bug_feature_by_period": {
+        "period_1": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 2
+        },
+        "period_2": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 9
+        },
+        "period_3": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 4
+        },
+        "period_4": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 3
+        }
+      },
+      "issue_accumulation_by_period": {
+        "period_1": {
+          "issues_opened": 2,
+          "issues_closed": 1,
+          "net_accumulation": 1,
+          "accumulation_rate": 0.5
+        },
+        "period_2": {
+          "issues_opened": 9,
+          "issues_closed": 5,
+          "net_accumulation": 4,
+          "accumulation_rate": 0.44
+        },
+        "period_3": {
+          "issues_opened": 4,
+          "issues_closed": 3,
+          "net_accumulation": 1,
+          "accumulation_rate": 0.25
+        },
+        "period_4": {
+          "issues_opened": 3,
+          "issues_closed": 3,
+          "net_accumulation": 0,
+          "accumulation_rate": 0.0
+        }
+      },
+      "breaking_changes_by_period": {
+        "period_1": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        },
+        "period_2": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        },
+        "period_3": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        },
+        "period_4": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        }
+      },
+      "regression_by_period": {
+        "period_1": {
+          "total_issues": 2,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_2": {
+          "total_issues": 16,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_3": {
+          "total_issues": 6,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_4": {
+          "total_issues": 3,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        }
+      }
+    },
+    "classification": "Abandoned",
+    "classification_evidence": "Recent commits: 0 vs 0 (24mo ago), Recent contributors: 0 vs 0 (24mo ago), Last commit: 888 days ago"
+  },
+  {
+    "name": "gulpjs/gulp",
+    "collection_date": "2026-02-23 07:15:44 UTC",
+    "evolvability": {
+      "created_date": "2013-07-04",
+      "age_days": 4617,
+      "stars": 33018,
+      "forks": 4183,
+      "watchers": 33018,
+      "refactoring_by_period": {
+        "period_1": {
+          "total_commits": 8,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0.0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0.0
+        },
+        "period_2": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_3": {
+          "total_commits": 6,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0.0,
+          "dependency_commits": 1,
+          "dependency_update_rate": 0.167
+        },
+        "period_4": {
+          "total_commits": 1,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0.0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0.0
+        }
+      },
+      "feature_growth_by_period": {
+        "period_1": {
+          "total_commits": 8,
+          "feature_commits": 2,
+          "maintenance_commits": 5,
+          "feature_rate": 0.25,
+          "total_additions": 494,
+          "total_deletions": 632,
+          "net_loc_change": -138,
+          "growth_rate": -17.25
+        },
+        "period_2": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_3": {
+          "total_commits": 6,
+          "feature_commits": 0,
+          "maintenance_commits": 5,
+          "feature_rate": 0.0,
+          "total_additions": 31,
+          "total_deletions": 8,
+          "net_loc_change": 23,
+          "growth_rate": 3.83
+        },
+        "period_4": {
+          "total_commits": 1,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0.0,
+          "total_additions": 2,
+          "total_deletions": 2,
+          "net_loc_change": 0,
+          "growth_rate": 0.0
+        }
+      }
+    },
+    "velocity": {
+      "last_commit_date": "2026-02-09",
+      "commits_last_3_months": 1,
+      "period_metrics": {
+        "period_1": {
+          "commit_count": 8,
+          "additions": 494,
+          "deletions": 632,
+          "total_changes": 1126,
+          "churn_rate": 140.75
+        },
+        "period_2": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        },
+        "period_3": {
+          "commit_count": 6,
+          "additions": 31,
+          "deletions": 8,
+          "total_changes": 39,
+          "churn_rate": 6.5
+        },
+        "period_4": {
+          "commit_count": 1,
+          "additions": 2,
+          "deletions": 2,
+          "total_changes": 4,
+          "churn_rate": 4.0
+        }
+      },
+      "pr_metrics_by_period": {
+        "period_1": {
+          "merged_count": 8,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 16.99,
+          "merge_times_sample": [
+            0.05,
+            0.26,
+            0.28,
+            0.12,
+            0.04
+          ]
+        },
+        "period_2": {
+          "merged_count": 1,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 3.05,
+          "merge_times_sample": [
+            3.05
+          ]
+        },
+        "period_3": {
+          "merged_count": 6,
+          "closed_without_merge": 1,
+          "avg_merge_time_hours": 412.3,
+          "merge_times_sample": [
+            0.44,
+            0.06,
+            0.06,
+            0.14,
+            0.06
+          ]
+        },
+        "period_4": {
+          "merged_count": 1,
+          "closed_without_merge": 1,
+          "avg_merge_time_hours": 14840.11,
+          "merge_times_sample": [
+            14840.11
+          ]
+        }
+      },
+      "releases_last_year": 1,
+      "latest_release_date": "2025-06-01"
+    },
+    "collaboration": {
+      "total_contributors": 223,
+      "active_contributors_last_3_months": 1,
+      "contributor_metrics_by_period": {
+        "period_1": {
+          "total_contributors": 3,
+          "new_contributors": 3,
+          "retention_rate": 0
+        },
+        "period_2": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0.0
+        },
+        "period_3": {
+          "total_contributors": 3,
+          "new_contributors": 1,
+          "retention_rate": 0
+        },
+        "period_4": {
+          "total_contributors": 1,
+          "new_contributors": 1,
+          "retention_rate": 0.0
+        }
+      },
+      "pull_requests_open": 4,
+      "pull_requests_closed": 682,
+      "issue_response_by_period": {
+        "period_1": {
+          "issues_created": 35,
+          "issues_with_response": 35,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 342.26,
+          "response_times_sample": [
+            8614.62,
+            3.46,
+            343.23,
+            0.52,
+            0.01
+          ]
+        },
+        "period_2": {
+          "issues_created": 5,
+          "issues_with_response": 2,
+          "issues_without_response": 3,
+          "avg_response_time_hours": 220.09,
+          "response_times_sample": [
+            247.49,
+            192.69
+          ]
+        },
+        "period_3": {
+          "issues_created": 3,
+          "issues_with_response": 3,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 2086.43,
+          "response_times_sample": [
+            2.84,
+            4257.02,
+            1999.42
+          ]
+        },
+        "period_4": {
+          "issues_created": 1,
+          "issues_with_response": 0,
+          "issues_without_response": 1,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        }
+      },
+      "pr_review_by_period": {
+        "period_1": {
+          "total_prs": 8,
+          "prs_with_reviews": 2,
+          "prs_without_reviews": 6,
+          "unique_reviewers": 1,
+          "total_reviews": 2,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0.25
+        },
+        "period_2": {
+          "total_prs": 1,
+          "prs_with_reviews": 1,
+          "prs_without_reviews": 0,
+          "unique_reviewers": 1,
+          "total_reviews": 1,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 1.0
+        },
+        "period_3": {
+          "total_prs": 10,
+          "prs_with_reviews": 3,
+          "prs_without_reviews": 7,
+          "unique_reviewers": 5,
+          "total_reviews": 12,
+          "review_comments": 18,
+          "avg_reviews_per_pr": 1.2
+        },
+        "period_4": {
+          "total_prs": 3,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 3,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0.0
+        }
+      }
+    },
+    "quality": {
+      "issues_open": 34,
+      "issues_closed_last_3_months": 0,
+      "bug_feature_by_period": {
+        "period_1": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 35
+        },
+        "period_2": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 5
+        },
+        "period_3": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 3
+        },
+        "period_4": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 1
+        }
+      },
+      "issue_accumulation_by_period": {
+        "period_1": {
+          "issues_opened": 35,
+          "issues_closed": 28,
+          "net_accumulation": 7,
+          "accumulation_rate": 0.2
+        },
+        "period_2": {
+          "issues_opened": 5,
+          "issues_closed": 1,
+          "net_accumulation": 4,
+          "accumulation_rate": 0.8
+        },
+        "period_3": {
+          "issues_opened": 3,
+          "issues_closed": 1,
+          "net_accumulation": 2,
+          "accumulation_rate": 0.67
+        },
+        "period_4": {
+          "issues_opened": 1,
+          "issues_closed": 0,
+          "net_accumulation": 1,
+          "accumulation_rate": 1.0
+        }
+      },
+      "breaking_changes_by_period": {
+        "period_1": {
+          "total_releases": 1,
+          "breaking_releases": 1,
+          "total_commits": 8,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0.0
+        },
+        "period_2": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        },
+        "period_3": {
+          "total_releases": 1,
+          "breaking_releases": 0,
+          "total_commits": 6,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0.0
+        },
+        "period_4": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 1,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0.0
+        }
+      },
+      "regression_by_period": {
+        "period_1": {
+          "total_issues": 37,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_2": {
+          "total_issues": 10,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_3": {
+          "total_issues": 9,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_4": {
+          "total_issues": 5,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        }
+      }
+    },
+    "classification": "Declining",
+    "classification_evidence": "Recent commits: 1 vs 8 (24mo ago), Recent contributors: 1 vs 3 (24mo ago), Last commit: 14 days ago"
+  },
+  {
+    "name": "knockout/knockout",
+    "collection_date": "2026-02-23 07:19:58 UTC",
+    "evolvability": {
+      "created_date": "2010-07-05",
+      "age_days": 5711,
+      "stars": 10538,
+      "forks": 1498,
+      "watchers": 10538,
+      "refactoring_by_period": {
+        "period_1": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_2": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_3": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_4": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        }
+      },
+      "feature_growth_by_period": {
+        "period_1": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_2": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_3": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_4": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        }
+      }
+    },
+    "velocity": {
+      "last_commit_date": "2021-09-07",
+      "commits_last_3_months": 0,
+      "period_metrics": {
+        "period_1": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        },
+        "period_2": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        },
+        "period_3": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        },
+        "period_4": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        }
+      },
+      "pr_metrics_by_period": {
+        "period_1": {
+          "merged_count": 0,
+          "closed_without_merge": 1,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        },
+        "period_2": {
+          "merged_count": 0,
+          "closed_without_merge": 1,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        },
+        "period_3": {
+          "merged_count": 0,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        },
+        "period_4": {
+          "merged_count": 0,
+          "closed_without_merge": 2,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        }
+      },
+      "releases_last_year": 0,
+      "latest_release_date": "2019-11-05"
+    },
+    "collaboration": {
+      "total_contributors": 80,
+      "active_contributors_last_3_months": 0,
+      "contributor_metrics_by_period": {
+        "period_1": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        },
+        "period_2": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        },
+        "period_3": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        },
+        "period_4": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        }
+      },
+      "pull_requests_open": 72,
+      "pull_requests_closed": 687,
+      "issue_response_by_period": {
+        "period_1": {
+          "issues_created": 2,
+          "issues_with_response": 2,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 1568.17,
+          "response_times_sample": [
+            3132.07,
+            4.28
+          ]
+        },
+        "period_2": {
+          "issues_created": 2,
+          "issues_with_response": 1,
+          "issues_without_response": 1,
+          "avg_response_time_hours": 0.51,
+          "response_times_sample": [
+            0.51
+          ]
+        },
+        "period_3": {
+          "issues_created": 3,
+          "issues_with_response": 2,
+          "issues_without_response": 1,
+          "avg_response_time_hours": 443.21,
+          "response_times_sample": [
+            792.07,
+            94.35
+          ]
+        },
+        "period_4": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        }
+      },
+      "pr_review_by_period": {
+        "period_1": {
+          "total_prs": 2,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 2,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0.0
+        },
+        "period_2": {
+          "total_prs": 1,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 1,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0.0
+        },
+        "period_3": {
+          "total_prs": 3,
+          "prs_with_reviews": 2,
+          "prs_without_reviews": 1,
+          "unique_reviewers": 2,
+          "total_reviews": 3,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 1.0
+        },
+        "period_4": {
+          "total_prs": 2,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 2,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0.0
+        }
+      }
+    },
+    "quality": {
+      "issues_open": 375,
+      "issues_closed_last_3_months": 0,
+      "bug_feature_by_period": {
+        "period_1": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 2
+        },
+        "period_2": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 2
+        },
+        "period_3": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 3
+        },
+        "period_4": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        }
+      },
+      "issue_accumulation_by_period": {
+        "period_1": {
+          "issues_opened": 2,
+          "issues_closed": 1,
+          "net_accumulation": 1,
+          "accumulation_rate": 0.5
+        },
+        "period_2": {
+          "issues_opened": 2,
+          "issues_closed": 0,
+          "net_accumulation": 2,
+          "accumulation_rate": 1.0
+        },
+        "period_3": {
+          "issues_opened": 3,
+          "issues_closed": 0,
+          "net_accumulation": 3,
+          "accumulation_rate": 1.0
+        },
+        "period_4": {
+          "issues_opened": 0,
+          "issues_closed": 1,
+          "net_accumulation": -1,
+          "accumulation_rate": 0
+        }
+      },
+      "breaking_changes_by_period": {
+        "period_1": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        },
+        "period_2": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        },
+        "period_3": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        },
+        "period_4": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        }
+      },
+      "regression_by_period": {
+        "period_1": {
+          "total_issues": 4,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_2": {
+          "total_issues": 5,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_3": {
+          "total_issues": 4,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_4": {
+          "total_issues": 4,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        }
+      }
+    },
+    "classification": "Abandoned",
+    "classification_evidence": "Recent commits: 0 vs 0 (24mo ago), Recent contributors: 0 vs 0 (24mo ago), Last commit: 1630 days ago"
+  },
+  {
+    "name": "atom/atom",
+    "collection_date": "2026-02-23 07:21:23 UTC",
+    "evolvability": {
+      "created_date": "2012-01-20",
+      "age_days": 5147,
+      "stars": 61020,
+      "forks": 17289,
+      "watchers": 61020,
+      "refactoring_by_period": {
+        "period_1": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_2": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_3": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_4": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        }
+      },
+      "feature_growth_by_period": {
+        "period_1": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_2": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_3": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_4": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        }
+      }
+    },
+    "velocity": {
+      "last_commit_date": "2022-11-22",
+      "commits_last_3_months": 0,
+      "period_metrics": {
+        "period_1": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        },
+        "period_2": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        },
+        "period_3": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        },
+        "period_4": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        }
+      },
+      "pr_metrics_by_period": {
+        "period_1": {
+          "merged_count": 0,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        },
+        "period_2": {
+          "merged_count": 0,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        },
+        "period_3": {
+          "merged_count": 0,
+          "closed_without_merge": 1,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        },
+        "period_4": {
+          "merged_count": 0,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        }
+      },
+      "releases_last_year": 0,
+      "latest_release_date": "2022-03-08"
+    },
+    "collaboration": {
+      "total_contributors": 325,
+      "active_contributors_last_3_months": 0,
+      "contributor_metrics_by_period": {
+        "period_1": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        },
+        "period_2": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        },
+        "period_3": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        },
+        "period_4": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        }
+      },
+      "pull_requests_open": 31,
+      "pull_requests_closed": 5248,
+      "issue_response_by_period": {
+        "period_1": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        },
+        "period_2": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        },
+        "period_3": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        },
+        "period_4": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        }
+      },
+      "pr_review_by_period": {
+        "period_1": {
+          "total_prs": 0,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 0,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0
+        },
+        "period_2": {
+          "total_prs": 0,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 0,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0
+        },
+        "period_3": {
+          "total_prs": 1,
+          "prs_with_reviews": 1,
+          "prs_without_reviews": 0,
+          "unique_reviewers": 1,
+          "total_reviews": 1,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 1.0
+        },
+        "period_4": {
+          "total_prs": 0,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 0,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0
+        }
+      }
+    },
+    "quality": {
+      "issues_open": 994,
+      "issues_closed_last_3_months": 0,
+      "bug_feature_by_period": {
+        "period_1": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        },
+        "period_2": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        },
+        "period_3": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        },
+        "period_4": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
         }
       },
       "issue_accumulation_by_period": {
@@ -348,66 +3089,1557 @@
           "accumulation_rate": 0
         },
         "period_4": {
-          "issues_opened": 200,
-          "issues_closed": 157,
-          "net_accumulation": 43,
-          "accumulation_rate": 0.21
+          "issues_opened": 0,
+          "issues_closed": 0,
+          "net_accumulation": 0,
+          "accumulation_rate": 0
         }
       },
       "breaking_changes_by_period": {
         "period_1": {
-          "total_releases": 69,
+          "total_releases": 0,
           "breaking_releases": 0,
-          "total_commits": 403,
-          "breaking_commits": 2,
-          "breaking_change_rate": 0.005
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
         },
         "period_2": {
-          "total_releases": 60,
-          "breaking_releases": 3,
-          "total_commits": 612,
-          "breaking_commits": 1,
-          "breaking_change_rate": 0.002
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
         },
         "period_3": {
-          "total_releases": 77,
+          "total_releases": 0,
           "breaking_releases": 0,
-          "total_commits": 826,
-          "breaking_commits": 7,
-          "breaking_change_rate": 0.008
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
         },
         "period_4": {
-          "total_releases": 58,
+          "total_releases": 0,
           "breaking_releases": 0,
-          "total_commits": 591,
-          "breaking_commits": 3,
-          "breaking_change_rate": 0.005
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
         }
       },
       "regression_by_period": {
         "period_1": {
-          "total_issues": 200,
-          "reopened_issues": 3,
-          "regression_rate": 0.015
+          "total_issues": 0,
+          "reopened_issues": 0,
+          "regression_rate": 0
         },
         "period_2": {
-          "total_issues": 200,
-          "reopened_issues": 4,
-          "regression_rate": 0.02
+          "total_issues": 0,
+          "reopened_issues": 0,
+          "regression_rate": 0
         },
         "period_3": {
-          "total_issues": 200,
-          "reopened_issues": 2,
-          "regression_rate": 0.01
+          "total_issues": 0,
+          "reopened_issues": 0,
+          "regression_rate": 0
         },
         "period_4": {
-          "total_issues": 200,
-          "reopened_issues": 5,
-          "regression_rate": 0.025
+          "total_issues": 0,
+          "reopened_issues": 0,
+          "regression_rate": 0
         }
       }
     },
-    "classification": "Active",
-    "classification_evidence": "Recent commits: 591 vs 403 (24mo ago), Recent contributors: 101 vs 124 (24mo ago), Last commit: 1 days ago"
+    "classification": "Abandoned",
+    "classification_evidence": "Recent commits: 0 vs 0 (24mo ago), Recent contributors: 0 vs 0 (24mo ago), Last commit: 1189 days ago",
+    "official_statement": "https://github.blog/2022-06-08-sunsetting-atom/"
+  },
+  {
+    "name": "angular/angular.js",
+    "collection_date": "2026-02-23 07:21:59 UTC",
+    "evolvability": {
+      "created_date": "2010-01-06",
+      "age_days": 5892,
+      "stars": 58973,
+      "forks": 27258,
+      "watchers": 58973,
+      "refactoring_by_period": {
+        "period_1": {
+          "total_commits": 1,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0.0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0.0
+        },
+        "period_2": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_3": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_4": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        }
+      },
+      "feature_growth_by_period": {
+        "period_1": {
+          "total_commits": 1,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0.0,
+          "total_additions": 1,
+          "total_deletions": 2,
+          "net_loc_change": -1,
+          "growth_rate": -1.0
+        },
+        "period_2": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_3": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_4": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        }
+      }
+    },
+    "velocity": {
+      "last_commit_date": "2024-04-12",
+      "commits_last_3_months": 0,
+      "period_metrics": {
+        "period_1": {
+          "commit_count": 1,
+          "additions": 1,
+          "deletions": 2,
+          "total_changes": 3,
+          "churn_rate": 3.0
+        },
+        "period_2": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        },
+        "period_3": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        },
+        "period_4": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        }
+      },
+      "pr_metrics_by_period": {
+        "period_1": {
+          "merged_count": 1,
+          "closed_without_merge": 1,
+          "avg_merge_time_hours": 0.42,
+          "merge_times_sample": [
+            0.42
+          ]
+        },
+        "period_2": {
+          "merged_count": 0,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        },
+        "period_3": {
+          "merged_count": 0,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        },
+        "period_4": {
+          "merged_count": 0,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        }
+      },
+      "releases_last_year": 0,
+      "latest_release_date": null
+    },
+    "collaboration": {
+      "total_contributors": 396,
+      "active_contributors_last_3_months": 0,
+      "contributor_metrics_by_period": {
+        "period_1": {
+          "total_contributors": 1,
+          "new_contributors": 1,
+          "retention_rate": 0
+        },
+        "period_2": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0.0
+        },
+        "period_3": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        },
+        "period_4": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        }
+      },
+      "pull_requests_open": 72,
+      "pull_requests_closed": 7928,
+      "issue_response_by_period": {
+        "period_1": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        },
+        "period_2": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        },
+        "period_3": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        },
+        "period_4": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        }
+      },
+      "pr_review_by_period": {
+        "period_1": {
+          "total_prs": 2,
+          "prs_with_reviews": 1,
+          "prs_without_reviews": 1,
+          "unique_reviewers": 1,
+          "total_reviews": 1,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0.5
+        },
+        "period_2": {
+          "total_prs": 0,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 0,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0
+        },
+        "period_3": {
+          "total_prs": 0,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 0,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0
+        },
+        "period_4": {
+          "total_prs": 0,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 0,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0
+        }
+      }
+    },
+    "quality": {
+      "issues_open": 461,
+      "issues_closed_last_3_months": 0,
+      "bug_feature_by_period": {
+        "period_1": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        },
+        "period_2": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        },
+        "period_3": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        },
+        "period_4": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        }
+      },
+      "issue_accumulation_by_period": {
+        "period_1": {
+          "issues_opened": 0,
+          "issues_closed": 0,
+          "net_accumulation": 0,
+          "accumulation_rate": 0
+        },
+        "period_2": {
+          "issues_opened": 0,
+          "issues_closed": 0,
+          "net_accumulation": 0,
+          "accumulation_rate": 0
+        },
+        "period_3": {
+          "issues_opened": 0,
+          "issues_closed": 0,
+          "net_accumulation": 0,
+          "accumulation_rate": 0
+        },
+        "period_4": {
+          "issues_opened": 0,
+          "issues_closed": 0,
+          "net_accumulation": 0,
+          "accumulation_rate": 0
+        }
+      },
+      "breaking_changes_by_period": {
+        "period_1": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 1,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0.0
+        },
+        "period_2": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        },
+        "period_3": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        },
+        "period_4": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        }
+      },
+      "regression_by_period": {
+        "period_1": {
+          "total_issues": 0,
+          "reopened_issues": 0,
+          "regression_rate": 0
+        },
+        "period_2": {
+          "total_issues": 0,
+          "reopened_issues": 0,
+          "regression_rate": 0
+        },
+        "period_3": {
+          "total_issues": 0,
+          "reopened_issues": 0,
+          "regression_rate": 0
+        },
+        "period_4": {
+          "total_issues": 0,
+          "reopened_issues": 0,
+          "regression_rate": 0
+        }
+      }
+    },
+    "classification": "Abandoned",
+    "classification_evidence": "Recent commits: 0 vs 1 (24mo ago), Recent contributors: 0 vs 1 (24mo ago), Last commit: 682 days ago",
+    "official_statement": "https://blog.angular.io/discontinued-long-term-support-for-angularjs-cc066b82e65a"
+  },
+  {
+    "name": "jashkenas/backbone",
+    "collection_date": "2026-02-23 07:22:36 UTC",
+    "evolvability": {
+      "created_date": "2010-09-30",
+      "age_days": 5624,
+      "stars": 28114,
+      "forks": 5333,
+      "watchers": 28114,
+      "refactoring_by_period": {
+        "period_1": {
+          "total_commits": 4,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0.0,
+          "dependency_commits": 2,
+          "dependency_update_rate": 0.5
+        },
+        "period_2": {
+          "total_commits": 4,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0.0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0.0
+        },
+        "period_3": {
+          "total_commits": 7,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0.0,
+          "dependency_commits": 3,
+          "dependency_update_rate": 0.429
+        },
+        "period_4": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        }
+      },
+      "feature_growth_by_period": {
+        "period_1": {
+          "total_commits": 4,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0.0,
+          "total_additions": 10,
+          "total_deletions": 10,
+          "net_loc_change": 0,
+          "growth_rate": 0.0
+        },
+        "period_2": {
+          "total_commits": 4,
+          "feature_commits": 2,
+          "maintenance_commits": 1,
+          "feature_rate": 0.5,
+          "total_additions": 29,
+          "total_deletions": 3,
+          "net_loc_change": 26,
+          "growth_rate": 6.5
+        },
+        "period_3": {
+          "total_commits": 7,
+          "feature_commits": 1,
+          "maintenance_commits": 2,
+          "feature_rate": 0.143,
+          "total_additions": 2563,
+          "total_deletions": 11647,
+          "net_loc_change": -9084,
+          "growth_rate": -1297.71
+        },
+        "period_4": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        }
+      }
+    },
+    "velocity": {
+      "last_commit_date": "2025-04-01",
+      "commits_last_3_months": 0,
+      "period_metrics": {
+        "period_1": {
+          "commit_count": 4,
+          "additions": 10,
+          "deletions": 10,
+          "total_changes": 20,
+          "churn_rate": 5.0
+        },
+        "period_2": {
+          "commit_count": 4,
+          "additions": 29,
+          "deletions": 3,
+          "total_changes": 32,
+          "churn_rate": 8.0
+        },
+        "period_3": {
+          "commit_count": 7,
+          "additions": 2563,
+          "deletions": 11647,
+          "total_changes": 14210,
+          "churn_rate": 2030.0
+        },
+        "period_4": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        }
+      },
+      "pr_metrics_by_period": {
+        "period_1": {
+          "merged_count": 2,
+          "closed_without_merge": 1,
+          "avg_merge_time_hours": 27.55,
+          "merge_times_sample": [
+            4.71,
+            50.4
+          ]
+        },
+        "period_2": {
+          "merged_count": 0,
+          "closed_without_merge": 1,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        },
+        "period_3": {
+          "merged_count": 2,
+          "closed_without_merge": 1,
+          "avg_merge_time_hours": 18.09,
+          "merge_times_sample": [
+            1.2,
+            34.97
+          ]
+        },
+        "period_4": {
+          "merged_count": 0,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        }
+      },
+      "releases_last_year": 0,
+      "latest_release_date": null
+    },
+    "collaboration": {
+      "total_contributors": 284,
+      "active_contributors_last_3_months": 0,
+      "contributor_metrics_by_period": {
+        "period_1": {
+          "total_contributors": 3,
+          "new_contributors": 3,
+          "retention_rate": 0
+        },
+        "period_2": {
+          "total_contributors": 1,
+          "new_contributors": 0,
+          "retention_rate": 0.33
+        },
+        "period_3": {
+          "total_contributors": 1,
+          "new_contributors": 0,
+          "retention_rate": 1.0
+        },
+        "period_4": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0.0
+        }
+      },
+      "pull_requests_open": 20,
+      "pull_requests_closed": 1851,
+      "issue_response_by_period": {
+        "period_1": {
+          "issues_created": 3,
+          "issues_with_response": 2,
+          "issues_without_response": 1,
+          "avg_response_time_hours": 146.85,
+          "response_times_sample": [
+            278.78,
+            14.93
+          ]
+        },
+        "period_2": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        },
+        "period_3": {
+          "issues_created": 2,
+          "issues_with_response": 1,
+          "issues_without_response": 1,
+          "avg_response_time_hours": 80.47,
+          "response_times_sample": [
+            80.47
+          ]
+        },
+        "period_4": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        }
+      },
+      "pr_review_by_period": {
+        "period_1": {
+          "total_prs": 3,
+          "prs_with_reviews": 2,
+          "prs_without_reviews": 1,
+          "unique_reviewers": 1,
+          "total_reviews": 3,
+          "review_comments": 1,
+          "avg_reviews_per_pr": 1.0
+        },
+        "period_2": {
+          "total_prs": 1,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 1,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0.0
+        },
+        "period_3": {
+          "total_prs": 4,
+          "prs_with_reviews": 3,
+          "prs_without_reviews": 1,
+          "unique_reviewers": 2,
+          "total_reviews": 4,
+          "review_comments": 2,
+          "avg_reviews_per_pr": 1.0
+        },
+        "period_4": {
+          "total_prs": 0,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 0,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0
+        }
+      }
+    },
+    "quality": {
+      "issues_open": 62,
+      "issues_closed_last_3_months": 0,
+      "bug_feature_by_period": {
+        "period_1": {
+          "bugs_opened": 1,
+          "bugs_closed": 1,
+          "bug_closure_rate": 1.0,
+          "features_opened": 1,
+          "features_closed": 0,
+          "feature_closure_rate": 0.0,
+          "other_issues": 1
+        },
+        "period_2": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        },
+        "period_3": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 2
+        },
+        "period_4": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        }
+      },
+      "issue_accumulation_by_period": {
+        "period_1": {
+          "issues_opened": 3,
+          "issues_closed": 0,
+          "net_accumulation": 3,
+          "accumulation_rate": 1.0
+        },
+        "period_2": {
+          "issues_opened": 0,
+          "issues_closed": 0,
+          "net_accumulation": 0,
+          "accumulation_rate": 0
+        },
+        "period_3": {
+          "issues_opened": 2,
+          "issues_closed": 0,
+          "net_accumulation": 2,
+          "accumulation_rate": 1.0
+        },
+        "period_4": {
+          "issues_opened": 0,
+          "issues_closed": 0,
+          "net_accumulation": 0,
+          "accumulation_rate": 0
+        }
+      },
+      "breaking_changes_by_period": {
+        "period_1": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 4,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0.0
+        },
+        "period_2": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 4,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0.0
+        },
+        "period_3": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 7,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0.0
+        },
+        "period_4": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        }
+      },
+      "regression_by_period": {
+        "period_1": {
+          "total_issues": 1,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_2": {
+          "total_issues": 2,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_3": {
+          "total_issues": 3,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_4": {
+          "total_issues": 2,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        }
+      }
+    },
+    "classification": "Abandoned",
+    "classification_evidence": "Recent commits: 0 vs 4 (24mo ago), Recent contributors: 0 vs 3 (24mo ago), Last commit: 328 days ago"
+  },
+  {
+    "name": "bower/bower",
+    "collection_date": "2026-02-23 07:23:57 UTC",
+    "evolvability": {
+      "created_date": "2012-09-07",
+      "age_days": 4917,
+      "stars": 14937,
+      "forks": 1819,
+      "watchers": 14937,
+      "refactoring_by_period": {
+        "period_1": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_2": {
+          "total_commits": 1,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0.0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0.0
+        },
+        "period_3": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_4": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        }
+      },
+      "feature_growth_by_period": {
+        "period_1": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_2": {
+          "total_commits": 1,
+          "feature_commits": 1,
+          "maintenance_commits": 0,
+          "feature_rate": 1.0,
+          "total_additions": 29,
+          "total_deletions": 3,
+          "net_loc_change": 26,
+          "growth_rate": 26.0
+        },
+        "period_3": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_4": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        }
+      }
+    },
+    "velocity": {
+      "last_commit_date": "2024-10-13",
+      "commits_last_3_months": 0,
+      "period_metrics": {
+        "period_1": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        },
+        "period_2": {
+          "commit_count": 1,
+          "additions": 29,
+          "deletions": 3,
+          "total_changes": 32,
+          "churn_rate": 32.0
+        },
+        "period_3": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        },
+        "period_4": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        }
+      },
+      "pr_metrics_by_period": {
+        "period_1": {
+          "merged_count": 0,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        },
+        "period_2": {
+          "merged_count": 1,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 195.09,
+          "merge_times_sample": [
+            195.09
+          ]
+        },
+        "period_3": {
+          "merged_count": 1,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 0.47,
+          "merge_times_sample": [
+            0.47
+          ]
+        },
+        "period_4": {
+          "merged_count": 0,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        }
+      },
+      "releases_last_year": 0,
+      "latest_release_date": "2021-01-19"
+    },
+    "collaboration": {
+      "total_contributors": 204,
+      "active_contributors_last_3_months": 0,
+      "contributor_metrics_by_period": {
+        "period_1": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        },
+        "period_2": {
+          "total_contributors": 1,
+          "new_contributors": 1,
+          "retention_rate": 0
+        },
+        "period_3": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0.0
+        },
+        "period_4": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0
+        }
+      },
+      "pull_requests_open": 5,
+      "pull_requests_closed": 677,
+      "issue_response_by_period": {
+        "period_1": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        },
+        "period_2": {
+          "issues_created": 1,
+          "issues_with_response": 0,
+          "issues_without_response": 1,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        },
+        "period_3": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        },
+        "period_4": {
+          "issues_created": 1,
+          "issues_with_response": 1,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0.56,
+          "response_times_sample": [
+            0.56
+          ]
+        }
+      },
+      "pr_review_by_period": {
+        "period_1": {
+          "total_prs": 0,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 0,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0
+        },
+        "period_2": {
+          "total_prs": 1,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 1,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0.0
+        },
+        "period_3": {
+          "total_prs": 2,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 2,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 2,
+          "avg_reviews_per_pr": 0.0
+        },
+        "period_4": {
+          "total_prs": 1,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 1,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0.0
+        }
+      }
+    },
+    "quality": {
+      "issues_open": 14,
+      "issues_closed_last_3_months": 0,
+      "bug_feature_by_period": {
+        "period_1": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        },
+        "period_2": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 1
+        },
+        "period_3": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        },
+        "period_4": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 1
+        }
+      },
+      "issue_accumulation_by_period": {
+        "period_1": {
+          "issues_opened": 0,
+          "issues_closed": 0,
+          "net_accumulation": 0,
+          "accumulation_rate": 0
+        },
+        "period_2": {
+          "issues_opened": 1,
+          "issues_closed": 0,
+          "net_accumulation": 1,
+          "accumulation_rate": 1.0
+        },
+        "period_3": {
+          "issues_opened": 0,
+          "issues_closed": 0,
+          "net_accumulation": 0,
+          "accumulation_rate": 0
+        },
+        "period_4": {
+          "issues_opened": 1,
+          "issues_closed": 1,
+          "net_accumulation": 0,
+          "accumulation_rate": 0.0
+        }
+      },
+      "breaking_changes_by_period": {
+        "period_1": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        },
+        "period_2": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 1,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0.0
+        },
+        "period_3": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        },
+        "period_4": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        }
+      },
+      "regression_by_period": {
+        "period_1": {
+          "total_issues": 0,
+          "reopened_issues": 0,
+          "regression_rate": 0
+        },
+        "period_2": {
+          "total_issues": 3,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_3": {
+          "total_issues": 0,
+          "reopened_issues": 0,
+          "regression_rate": 0
+        },
+        "period_4": {
+          "total_issues": 1,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        }
+      }
+    },
+    "classification": "Abandoned",
+    "classification_evidence": "Recent commits: 0 vs 0 (24mo ago), Recent contributors: 0 vs 0 (24mo ago), Last commit: 498 days ago",
+    "official_statement": "https://bower.io/blog/2017/how-to-migrate-away-from-bower/"
+  },
+  {
+    "name": "gruntjs/grunt",
+    "collection_date": "2026-02-23 07:24:50 UTC",
+    "evolvability": {
+      "created_date": "2011-09-21",
+      "age_days": 5268,
+      "stars": 12259,
+      "forks": 1497,
+      "watchers": 12259,
+      "refactoring_by_period": {
+        "period_1": {
+          "total_commits": 2,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0.0,
+          "dependency_commits": 1,
+          "dependency_update_rate": 0.5
+        },
+        "period_2": {
+          "total_commits": 5,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0.0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0.0
+        },
+        "period_3": {
+          "total_commits": 0,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0
+        },
+        "period_4": {
+          "total_commits": 3,
+          "refactoring_commits": 0,
+          "refactoring_rate": 0.0,
+          "dependency_commits": 0,
+          "dependency_update_rate": 0.0
+        }
+      },
+      "feature_growth_by_period": {
+        "period_1": {
+          "total_commits": 2,
+          "feature_commits": 0,
+          "maintenance_commits": 1,
+          "feature_rate": 0.0,
+          "total_additions": 4,
+          "total_deletions": 4,
+          "net_loc_change": 0,
+          "growth_rate": 0.0
+        },
+        "period_2": {
+          "total_commits": 5,
+          "feature_commits": 3,
+          "maintenance_commits": 0,
+          "feature_rate": 0.6,
+          "total_additions": 46,
+          "total_deletions": 8,
+          "net_loc_change": 38,
+          "growth_rate": 7.6
+        },
+        "period_3": {
+          "total_commits": 0,
+          "feature_commits": 0,
+          "maintenance_commits": 0,
+          "feature_rate": 0,
+          "total_additions": 0,
+          "total_deletions": 0,
+          "net_loc_change": 0,
+          "growth_rate": 0
+        },
+        "period_4": {
+          "total_commits": 3,
+          "feature_commits": 0,
+          "maintenance_commits": 1,
+          "feature_rate": 0.0,
+          "total_additions": 50,
+          "total_deletions": 12,
+          "net_loc_change": 38,
+          "growth_rate": 12.67
+        }
+      }
+    },
+    "velocity": {
+      "last_commit_date": "2025-11-05",
+      "commits_last_3_months": 0,
+      "period_metrics": {
+        "period_1": {
+          "commit_count": 2,
+          "additions": 4,
+          "deletions": 4,
+          "total_changes": 8,
+          "churn_rate": 4.0
+        },
+        "period_2": {
+          "commit_count": 5,
+          "additions": 46,
+          "deletions": 8,
+          "total_changes": 54,
+          "churn_rate": 10.8
+        },
+        "period_3": {
+          "commit_count": 0,
+          "additions": 0,
+          "deletions": 0,
+          "total_changes": 0,
+          "churn_rate": 0
+        },
+        "period_4": {
+          "commit_count": 3,
+          "additions": 50,
+          "deletions": 12,
+          "total_changes": 62,
+          "churn_rate": 20.666666666666668
+        }
+      },
+      "pr_metrics_by_period": {
+        "period_1": {
+          "merged_count": 12,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 854.67,
+          "merge_times_sample": [
+            0.0,
+            5.05,
+            0.17,
+            0.19,
+            0.14
+          ]
+        },
+        "period_2": {
+          "merged_count": 3,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 246.73,
+          "merge_times_sample": [
+            687.4,
+            0.02,
+            52.76
+          ]
+        },
+        "period_3": {
+          "merged_count": 0,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 0,
+          "merge_times_sample": []
+        },
+        "period_4": {
+          "merged_count": 1,
+          "closed_without_merge": 0,
+          "avg_merge_time_hours": 750.25,
+          "merge_times_sample": [
+            750.25
+          ]
+        }
+      },
+      "releases_last_year": 0,
+      "latest_release_date": "2023-01-31"
+    },
+    "collaboration": {
+      "total_contributors": 76,
+      "active_contributors_last_3_months": 0,
+      "contributor_metrics_by_period": {
+        "period_1": {
+          "total_contributors": 2,
+          "new_contributors": 2,
+          "retention_rate": 0
+        },
+        "period_2": {
+          "total_contributors": 2,
+          "new_contributors": 1,
+          "retention_rate": 0.5
+        },
+        "period_3": {
+          "total_contributors": 0,
+          "new_contributors": 0,
+          "retention_rate": 0.0
+        },
+        "period_4": {
+          "total_contributors": 2,
+          "new_contributors": 1,
+          "retention_rate": 0
+        }
+      },
+      "pull_requests_open": 17,
+      "pull_requests_closed": 487,
+      "issue_response_by_period": {
+        "period_1": {
+          "issues_created": 6,
+          "issues_with_response": 2,
+          "issues_without_response": 4,
+          "avg_response_time_hours": 96.33,
+          "response_times_sample": [
+            181.43,
+            11.22
+          ]
+        },
+        "period_2": {
+          "issues_created": 0,
+          "issues_with_response": 0,
+          "issues_without_response": 0,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        },
+        "period_3": {
+          "issues_created": 2,
+          "issues_with_response": 1,
+          "issues_without_response": 1,
+          "avg_response_time_hours": 2263.6,
+          "response_times_sample": [
+            2263.6
+          ]
+        },
+        "period_4": {
+          "issues_created": 2,
+          "issues_with_response": 0,
+          "issues_without_response": 2,
+          "avg_response_time_hours": 0,
+          "response_times_sample": []
+        }
+      },
+      "pr_review_by_period": {
+        "period_1": {
+          "total_prs": 13,
+          "prs_with_reviews": 2,
+          "prs_without_reviews": 11,
+          "unique_reviewers": 4,
+          "total_reviews": 5,
+          "review_comments": 5,
+          "avg_reviews_per_pr": 0.38
+        },
+        "period_2": {
+          "total_prs": 3,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 3,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0.0
+        },
+        "period_3": {
+          "total_prs": 1,
+          "prs_with_reviews": 0,
+          "prs_without_reviews": 1,
+          "unique_reviewers": 0,
+          "total_reviews": 0,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 0.0
+        },
+        "period_4": {
+          "total_prs": 1,
+          "prs_with_reviews": 1,
+          "prs_without_reviews": 0,
+          "unique_reviewers": 1,
+          "total_reviews": 1,
+          "review_comments": 0,
+          "avg_reviews_per_pr": 1.0
+        }
+      }
+    },
+    "quality": {
+      "issues_open": 165,
+      "issues_closed_last_3_months": 0,
+      "bug_feature_by_period": {
+        "period_1": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 6
+        },
+        "period_2": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 0
+        },
+        "period_3": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 2
+        },
+        "period_4": {
+          "bugs_opened": 0,
+          "bugs_closed": 0,
+          "bug_closure_rate": 0,
+          "features_opened": 0,
+          "features_closed": 0,
+          "feature_closure_rate": 0,
+          "other_issues": 2
+        }
+      },
+      "issue_accumulation_by_period": {
+        "period_1": {
+          "issues_opened": 6,
+          "issues_closed": 1,
+          "net_accumulation": 5,
+          "accumulation_rate": 0.83
+        },
+        "period_2": {
+          "issues_opened": 0,
+          "issues_closed": 0,
+          "net_accumulation": 0,
+          "accumulation_rate": 0
+        },
+        "period_3": {
+          "issues_opened": 2,
+          "issues_closed": 0,
+          "net_accumulation": 2,
+          "accumulation_rate": 1.0
+        },
+        "period_4": {
+          "issues_opened": 2,
+          "issues_closed": 0,
+          "net_accumulation": 2,
+          "accumulation_rate": 1.0
+        }
+      },
+      "breaking_changes_by_period": {
+        "period_1": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 2,
+          "breaking_commits": 1,
+          "breaking_change_rate": 0.5
+        },
+        "period_2": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 5,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0.0
+        },
+        "period_3": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 0,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0
+        },
+        "period_4": {
+          "total_releases": 0,
+          "breaking_releases": 0,
+          "total_commits": 3,
+          "breaking_commits": 0,
+          "breaking_change_rate": 0.0
+        }
+      },
+      "regression_by_period": {
+        "period_1": {
+          "total_issues": 37,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_2": {
+          "total_issues": 13,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_3": {
+          "total_issues": 4,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        },
+        "period_4": {
+          "total_issues": 4,
+          "reopened_issues": 0,
+          "regression_rate": 0.0
+        }
+      }
+    },
+    "classification": "Declining",
+    "classification_evidence": "Recent commits: 3 vs 2 (24mo ago), Recent contributors: 2 vs 2 (24mo ago), Last commit: 110 days ago"
   }
 ]
