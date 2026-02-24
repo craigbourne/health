@@ -83,14 +83,23 @@ def score_evolvability(repo):
 
     return (refactoring_score + dependency_score + growth_score) / 3
 
-# ==================== TEST ====================
+# ==================== TEST ALL REPOS ====================
 if __name__ == "__main__":
     with open('repo_data.json', 'r') as f:
         repos = json.load(f)
     
-    test_repo = repos[0]
-    print(f"Repository: {test_repo['name']}\n")
-    print(f"Velocity:      {score_velocity(test_repo) * 100:5.1f}")
-    print(f"Collaboration: {score_collaboration(test_repo) * 100:5.1f}")
-    print(f"Quality:       {score_quality(test_repo) * 100:5.1f}")
-    print(f"Evolvability:  {score_evolvability(test_repo) * 100:5.1f}")
+    print("Repository Health Scores (Uncalibrated)")
+    print("-" * 70)
+    print(f"{'Repository':<30} {'Vel':>6} {'Collab':>6} {'Qual':>6} {'Evol':>6} {'Total':>6}")
+    print("-" * 70)
+    
+    for repo in repos:
+        vel = score_velocity(repo) * 100
+        col = score_collaboration(repo) * 100
+        qual = score_quality(repo) * 100
+        evol = score_evolvability(repo) * 100
+        
+        # Calculate weighted total
+        total = (vel * 0.30) + (col * 0.25) + (qual * 0.25) + (evol * 0.20)
+        
+        print(f"{repo['name']:<30} {vel:>6.1f} {col:>6.1f} {qual:>6.1f} {evol:>6.1f} {total:>6.1f}")
