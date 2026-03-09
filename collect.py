@@ -63,7 +63,7 @@ def with_retry(func):
             time.sleep(wait_seconds)
 
 # ==================== HELPER FUNCTIONS ====================
-def collect_period_commits(repo, start_date, end_date):
+def collect_period_commits(repo, start_date, end_date, repo_name=""):
     """Single-pass commit collection extracting all needed data"""
     commits = repo.get_commits(since=start_date, until=end_date)
     
@@ -85,7 +85,7 @@ def collect_period_commits(repo, start_date, end_date):
         
         # Live progress indicator
         if commit_count % 100 == 0:
-            print(f"\rProcessing commits: {commit_count}...", end="", flush=True)
+            print(f"\r{repo_name}: Processing commits: {commit_count}...", end="", flush=True)
         
         # Get stats with rate limit handling & burst prevention
         stats = with_retry(lambda: commit.stats)
@@ -534,7 +534,6 @@ for repo_name in repos:
         print(f"Skipping: {repo_name} (already collected)")
         continue
     
-    print(f"Collecting: {repo_name}", end=" ", flush=True)
     repo = g.get_repo(repo_name)
     
     # Create dictionary for repo
@@ -557,7 +556,8 @@ for repo_name in repos:
         period_data = collect_period_commits(
             repo,
             period_bounds["start"],
-            period_bounds["end"]
+            period_bounds["end"],
+            repo_name
         )
         
         # Process collected data through metric functions
@@ -735,7 +735,7 @@ for repo_name in repos:
         json.dump(all_repo_data, f, indent=2)
     
     # Clear progress line and print save confirmation
-    print(f"\r{'':80}\r✓ Saved ({len(all_repo_data)}/{len(repos)} repos)")
+    print(f"\r{'':80}\r{repo_name}: ✓ Saved ({len(all_repo_data)}/{len(repos)} repos)")
 
 # Final save
 with open('repo_data.json', 'w') as f:
