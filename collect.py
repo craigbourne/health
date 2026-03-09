@@ -83,9 +83,9 @@ def collect_period_commits(repo, start_date, end_date):
     for commit in commits:
         commit_count += 1
         
-        # Progress indicator every 100 commits
+        # Live progress indicator
         if commit_count % 100 == 0:
-            print(f".", end="", flush=True)
+            print(f"\rProcessing commits: {commit_count}...", end="", flush=True)
         
         # Get stats with rate limit handling & burst prevention
         stats = with_retry(lambda: commit.stats)
@@ -734,7 +734,8 @@ for repo_name in repos:
     with open('repo_data.json', 'w') as f:
         json.dump(all_repo_data, f, indent=2)
     
-    print(f"✓ Saved ({len(all_repo_data)}/{len(repos)} repos)")
+    # Clear progress line and print save confirmation
+    print(f"\r{'':80}\r✓ Saved ({len(all_repo_data)}/{len(repos)} repos)")
 
 # Final save
 with open('repo_data.json', 'w') as f:
