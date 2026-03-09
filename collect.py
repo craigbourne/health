@@ -524,7 +524,7 @@ try:
         all_repo_data = json.load(f)
     collected_names = {r['name'] for r in all_repo_data}
     print(f"Found existing data: {len(all_repo_data)} repos already collected\n")
-except FileNotFoundError:
+except (FileNotFoundError, json.JSONDecodeError):
     all_repo_data = []
     collected_names = set()
 
