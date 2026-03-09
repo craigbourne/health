@@ -83,11 +83,15 @@ def collect_period_commits(repo, start_date, end_date):
     for commit in commits:
         commit_count += 1
         
+        # Progress indicator every 100 commits
+        if commit_count % 100 == 0:
+            print(f".", end="", flush=True)
+        
         # Get stats with rate limit handling & burst prevention
         stats = with_retry(lambda: commit.stats)
         total_additions += stats.additions
         total_deletions += stats.deletions
-        time.sleep(0.1)  # Prevent burst detection
+        time.sleep(0.02)  # Prevent burst detection
         
         # Check message keywords
         message = commit.commit.message.lower()
@@ -514,11 +518,22 @@ def calculate_feature_and_growth_metrics(period_data):
     }
 
 # ==================== MAIN COLLECTION LOOP ====================
-# Store all repo data
-all_repo_data = []
+# Load existing data if present
+try:
+    with open('repo_data.json', 'r') as f:
+        all_repo_data = json.load(f)
+    collected_names = {r['name'] for r in all_repo_data}
+    print(f"Found existing data: {len(all_repo_data)} repos already collected\n")
+except FileNotFoundError:
+    all_repo_data = []
+    collected_names = set()
 
 # Get data for each repo
 for repo_name in repos:
+    if repo_name in collected_names:
+        print(f"Skipping: {repo_name} (already collected)")
+        continue
+    
     print(f"Collecting: {repo_name}", end=" ", flush=True)
     repo = g.get_repo(repo_name)
     
@@ -714,9 +729,14 @@ for repo_name in repos:
     
     # Add to collection
     all_repo_data.append(repo_data)
-    print("✓")
+    
+    # Save after each repo
+    with open('repo_data.json', 'w') as f:
+        json.dump(all_repo_data, f, indent=2)
+    
+    print(f"✓ Saved ({len(all_repo_data)}/{len(repos)} repos)")
 
-# Save to JSON file
+# Final save
 with open('repo_data.json', 'w') as f:
     json.dump(all_repo_data, f, indent=2)
 
