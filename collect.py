@@ -534,6 +534,7 @@ for repo_name in repos:
         print(f"Skipping: {repo_name} (already collected)")
         continue
     
+    print(f"Collecting: {repo_name}")
     repo = g.get_repo(repo_name)
     
     # Create dictionary for repo
