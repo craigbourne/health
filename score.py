@@ -175,31 +175,42 @@ if __name__ == "__main__":
     print("-" * 105)
     
     correct = 0
+    total_classified = 0
+    
     for repo in repos:
         scores = score_repo(repo)
-        expected = repo.get('classification', 'Unknown')
+        expected = repo.get('classification', None)
         
-        expected_band = {
-            'Active': 'Healthy',
-            'Declining': 'Declining',
-            'Abandoned': 'Critical'
-        }.get(expected, 'Unknown')
-        
-        match = "✓" if scores['health_band'] == expected_band else "✗"
-        if scores['health_band'] == expected_band:
-            correct += 1
+        if expected:
+            expected_band = {
+                'Active': 'Healthy',
+                'Moderate': 'Moderate',
+                'Declining': 'Declining',
+                'Abandoned': 'Critical'
+            }.get(expected, 'Unknown')
+            
+            total_classified += 1
+            match = "✓" if scores['health_band'] == expected_band else "✗"
+            if scores['health_band'] == expected_band:
+                correct += 1
+        else:
+            expected_band = 'Unknown'
+            match = ""
         
         print(f"{repo['name']:<30} "
-              f"{scores['velocity_score']:>6.1f} "
-              f"{scores['collaboration_score']:>6.1f} "
-              f"{scores['quality_score']:>6.1f} "
-              f"{scores['evolvability_score']:>6.1f} "
-              f"{scores['raw_score']:>6.1f} "
-              f"{scores['trend_modifier']:>+6.0f} "
-              f"{scores['recency_bonus']:>+6.0f} "
-              f"{scores['health_score']:>6.1f}  "
-              f"{scores['health_band']:<10}  "
-              f"{expected_band:<10} {match}")
+            f"{scores['velocity_score']:>6.1f} "
+            f"{scores['collaboration_score']:>6.1f} "
+            f"{scores['quality_score']:>6.1f} "
+            f"{scores['evolvability_score']:>6.1f} "
+            f"{scores['raw_score']:>6.1f} "
+            f"{scores['trend_modifier']:>+6.0f} "
+            f"{scores['recency_bonus']:>+6.0f} "
+            f"{scores['health_score']:>6.1f}  "
+            f"{scores['health_band']:<10}  "
+            f"{expected_band:<10} {match}")
     
     print("-" * 105)
-    print(f"Accuracy: {correct}/12 ({100*correct/12:.1f}%)")
+    if total_classified > 0:
+        print(f"Accuracy: {correct}/{total_classified} ({100*correct/total_classified:.1f}%)")
+    else:
+        print("No classified repos to validate against")
