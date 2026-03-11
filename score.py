@@ -103,14 +103,29 @@ def score_evolvability(repo):
 
 # ==================== MODIFIERS ====================
 def calculate_trend_modifier(repo):
-    """Reward growth: P4 >= P1 × 1.2 → +10 points."""
-    p1 = repo["velocity"]["period_metrics"]["period_1"]["commit_count"]
+    """Reward growth: P4 >= P1 × 1.2 → +10 points. Adapts to available data."""
     p4 = repo["velocity"]["period_metrics"]["period_4"]["commit_count"]
-
-    if p1 == 0:
-        return 10 if p4 > 0 else 0
     
-    return 10 if (p4 / p1) >= 1.2 else 0
+    # Try P1 first (full 24-month comparison)
+    p1 = repo["velocity"]["period_metrics"].get("period_1", {}).get("commit_count", None)
+    
+    if p1 is not None:
+        # Full trajectory available
+        if p1 == 0:
+            return 10 if p4 > 0 else 0
+        return 10 if (p4 / p1) >= 1.2 else 0
+    
+    # Fall back to P3 (12-month comparison) if P1 unavailable
+    p3 = repo["velocity"]["period_metrics"].get("period_3", {}).get("commit_count", None)
+    
+    if p3 is not None:
+        # Partial trajectory available
+        if p3 == 0:
+            return 10 if p4 > 0 else 0
+        return 10 if (p4 / p3) >= 1.2 else 0
+    
+    # No historical data - no trend bonus
+    return 0
 
 def calculate_recency_bonus(repo):
     """Recent activity bonus: commit in last 30 days AND >0 commits → +5 points."""
@@ -171,7 +186,7 @@ if __name__ == "__main__":
     
     print("Repository Health Scores")
     print("-" * 105)
-    print(f"{'Repository':<30} {'Vel':>6} {'Collab':>6} {'Qual':>6} {'Evol':>6} {'Raw':>6} {'Trend':>6} {'Bonus':>6} {'Final':>6}  {'Band':<10}  {'Expected':<10}")
+    print(f"{'Repository':<30} {'Expected':<10} {'Vel':>6} {'Collab':>6} {'Qual':>6} {'Evol':>6} {'Raw':>6} {'Trend':>6} {'Bonus':>6} {'Final':>6}  {'Band':<10}")
     print("-" * 105)
     
     correct = 0
@@ -198,6 +213,7 @@ if __name__ == "__main__":
             match = ""
         
         print(f"{repo['name']:<30} "
+            f"{expected_band:<10} "
             f"{scores['velocity_score']:>6.1f} "
             f"{scores['collaboration_score']:>6.1f} "
             f"{scores['quality_score']:>6.1f} "
@@ -206,8 +222,7 @@ if __name__ == "__main__":
             f"{scores['trend_modifier']:>+6.0f} "
             f"{scores['recency_bonus']:>+6.0f} "
             f"{scores['health_score']:>6.1f}  "
-            f"{scores['health_band']:<10}  "
-            f"{expected_band:<10} {match}")
+            f"{scores['health_band']:<10} {match}")
     
     print("-" * 105)
     if total_classified > 0:

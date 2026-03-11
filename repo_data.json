@@ -360,7 +360,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits (trajectory: 0.00), Contributors: 0 (trend: 0.00), Retention: 0.00, Bug closure: 0.00, Accumulation: 0.00, Maintenance: 0.00, Last: 1167d ago"
+    "classification_evidence": "P4: 0 commits, Last: 1167d ago (insufficient history for trajectory)"
   },
   {
     "name": "meteor/meteor",
@@ -771,7 +771,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 805 commits (trajectory: 0.67), Contributors: 18 (trend: 0.51), Retention: 0.26, Bug closure: 0.00, Accumulation: 0.54, Maintenance: 0.17, Last: 1d ago"
+    "classification_evidence": "P4: 805 commits, Trajectory: 0.67, Last: 1d ago"
   },
   {
     "name": "Polymer/polymer",
@@ -1138,7 +1138,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits (trajectory: 0.00), Contributors: 0 (trend: 0.00), Retention: 0.00, Bug closure: 0.00, Accumulation: 0.00, Maintenance: 0.00, Last: 519d ago"
+    "classification_evidence": "P4: 0 commits, Last: 519d ago (insufficient history for trajectory)"
   },
   {
     "name": "emberjs/ember.js",
@@ -1549,7 +1549,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 381 commits (trajectory: 1.82), Contributors: 14 (trend: 0.93), Retention: 0.30, Bug closure: 0.00, Accumulation: 0.48, Maintenance: 0.13, Last: 2d ago"
+    "classification_evidence": "P4: 381 commits, Trajectory: 1.82, Last: 2d ago"
   },
   {
     "name": "jquery/jquery",
@@ -1943,8 +1943,8 @@
         }
       }
     },
-    "classification": "Active",
-    "classification_evidence": "P4: 45 commits (trajectory: 0.94), Contributors: 6 (trend: 1.50), Retention: 0.75, Bug closure: 0.00, Accumulation: 0.12, Maintenance: 0.35, Last: 1d ago"
+    "classification": "Moderate",
+    "classification_evidence": "P4: 45 commits, Trajectory: 0.94, Last: 1d ago"
   },
   {
     "name": "lodash/lodash",
@@ -2346,8 +2346,8 @@
         }
       }
     },
-    "classification": "Active",
-    "classification_evidence": "P4: 23 commits (trajectory: 1.00), Contributors: 6 (trend: 1.00), Retention: 0.00, Bug closure: 0.00, Accumulation: 0.48, Maintenance: 0.09, Last: 15d ago"
+    "classification": "Moderate",
+    "classification_evidence": "P4: 23 commits, Last: 15d ago (insufficient history for trajectory)"
   },
   {
     "name": "moment/moment",
@@ -2737,7 +2737,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits (trajectory: 0.00), Contributors: 0 (trend: 0.00), Retention: 0.00, Bug closure: 0.00, Accumulation: 0.83, Maintenance: 0.00, Last: 751d ago"
+    "classification_evidence": "P4: 0 commits, Last: 751d ago (insufficient history for trajectory)"
   },
   {
     "name": "sveltejs/kit",
@@ -3148,7 +3148,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 455 commits (trajectory: 2.13), Contributors: 74 (trend: 1.37), Retention: 0.30, Bug closure: 1.00, Accumulation: 0.46, Maintenance: 0.24, Last: 1d ago"
+    "classification_evidence": "P4: 455 commits, Trajectory: 2.13, Last: 1d ago"
   },
   {
     "name": "withastro/astro",
@@ -3559,7 +3559,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 1003 commits (trajectory: 0.73), Contributors: 108 (trend: 0.74), Retention: 0.22, Bug closure: 0.73, Accumulation: 0.16, Maintenance: 0.23, Last: 1d ago"
+    "classification_evidence": "P4: 1003 commits, Trajectory: 0.73, Last: 1d ago"
   },
   {
     "name": "remix-run/remix",
@@ -3970,7 +3970,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 876 commits (trajectory: 1.03), Contributors: 25 (trend: 0.36), Retention: 0.38, Bug closure: 0.00, Accumulation: 0.39, Maintenance: 0.08, Last: 5d ago"
+    "classification_evidence": "P4: 876 commits, Trajectory: 1.03, Last: 5d ago"
   },
   {
     "name": "vitejs/vite",
@@ -4381,7 +4381,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 593 commits (trajectory: 1.52), Contributors: 100 (trend: 0.83), Retention: 0.20, Bug closure: 0.78, Accumulation: 0.22, Maintenance: 0.24, Last: 18d ago"
+    "classification_evidence": "P4: 593 commits, Trajectory: 1.52, Last: 18d ago"
   },
   {
     "name": "fastify/fastify",
@@ -4792,7 +4792,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 124 commits (trajectory: 0.85), Contributors: 46 (trend: 0.92), Retention: 0.34, Bug closure: 1.00, Accumulation: 0.21, Maintenance: 0.30, Last: 16d ago"
+    "classification_evidence": "P4: 124 commits, Trajectory: 0.85, Last: 16d ago"
   },
   {
     "name": "microsoft/playwright",
@@ -5203,7 +5203,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 1071 commits (trajectory: 1.13), Contributors: 64 (trend: 0.75), Retention: 0.31, Bug closure: 0.00, Accumulation: 0.19, Maintenance: 0.05, Last: 17d ago"
+    "classification_evidence": "P4: 1071 commits, Trajectory: 1.13, Last: 17d ago"
   },
   {
     "name": "shadcn-ui/ui",
@@ -5614,7 +5614,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 592 commits (trajectory: 8.22), Contributors: 180 (trend: 4.86), Retention: 0.16, Bug closure: 0.30, Accumulation: 0.64, Maintenance: 0.11, Last: 16d ago"
+    "classification_evidence": "P4: 592 commits, Trajectory: 8.22, Last: 16d ago"
   },
   {
     "name": "jashkenas/coffeescript",
@@ -5996,7 +5996,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits (trajectory: 0.00), Contributors: 0 (trend: 0.00), Retention: 0.00, Bug closure: 0.00, Accumulation: 0.00, Maintenance: 0.00, Last: 903d ago"
+    "classification_evidence": "P4: 0 commits, Last: 903d ago (insufficient history for trajectory)"
   },
   {
     "name": "knockout/knockout",
@@ -6367,7 +6367,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits (trajectory: 0.00), Contributors: 0 (trend: 0.00), Retention: 0.00, Bug closure: 0.00, Accumulation: 0.00, Maintenance: 0.00, Last: 1645d ago"
+    "classification_evidence": "P4: 0 commits, Last: 1645d ago (insufficient history for trajectory)"
   },
   {
     "name": "atom/atom",
@@ -6730,7 +6730,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits (trajectory: 0.00), Contributors: 0 (trend: 0.00), Retention: 0.00, Bug closure: 0.00, Accumulation: 0.00, Maintenance: 0.00, Last: 1204d ago"
+    "classification_evidence": "P4: 0 commits, Last: 1204d ago (insufficient history for trajectory)"
   },
   {
     "name": "angular/angular.js",
@@ -7095,7 +7095,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits (trajectory: 0.00), Contributors: 0 (trend: 0.00), Retention: 0.00, Bug closure: 0.00, Accumulation: 0.00, Maintenance: 0.00, Last: 697d ago"
+    "classification_evidence": "P4: 0 commits, Trajectory: 0.00, Last: 697d ago"
   },
   {
     "name": "bower/bower",
@@ -7464,7 +7464,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits (trajectory: 0.00), Contributors: 0 (trend: 0.00), Retention: 0.00, Bug closure: 0.00, Accumulation: 0.00, Maintenance: 0.00, Last: 513d ago"
+    "classification_evidence": "P4: 0 commits, Last: 513d ago (insufficient history for trajectory)"
   },
   {
     "name": "gulpjs/gulp",
@@ -7856,7 +7856,7 @@
       }
     },
     "classification": "Declining",
-    "classification_evidence": "P4: 1 commits (trajectory: 0.12), Contributors: 1 (trend: 0.33), Retention: 0.00, Bug closure: 0.00, Accumulation: 1.00, Maintenance: 0.00, Last: 29d ago"
+    "classification_evidence": "P4: 1 commits, Trajectory: 0.12, Last: 29d ago"
   },
   {
     "name": "gruntjs/grunt",
@@ -8236,7 +8236,7 @@
       }
     },
     "classification": "Declining",
-    "classification_evidence": "P4: 3 commits (trajectory: 1.50), Contributors: 2 (trend: 1.00), Retention: 0.00, Bug closure: 0.00, Accumulation: 1.00, Maintenance: 0.00, Last: 125d ago"
+    "classification_evidence": "P4: 3 commits, Trajectory: 1.50, Last: 125d ago"
   },
   {
     "name": "jashkenas/backbone",
@@ -8610,6 +8610,6 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits (trajectory: 0.00), Contributors: 0 (trend: 0.00), Retention: 0.00, Bug closure: 0.00, Accumulation: 0.00, Maintenance: 0.00, Last: 343d ago"
+    "classification_evidence": "P4: 0 commits, Trajectory: 0.00, Last: 343d ago"
   }
 ]
