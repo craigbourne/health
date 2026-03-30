@@ -74,7 +74,7 @@ def score_quality(repo):
     """Quality: bugs, accumulation, breaking changes, regressions (25%)"""
     if is_abandoned(repo):
         return 0.1
-    
+
     p4b = repo["quality"]["bug_feature_by_period"]["period_4"]
     p4a = repo["quality"]["issue_accumulation_by_period"]["period_4"]
     p4br = repo["quality"]["breaking_changes_by_period"]["period_4"]
@@ -108,13 +108,13 @@ def calculate_trend_modifier(repo):
     
     # Try P1 first (full 24-month comparison)
     p1 = repo["velocity"]["period_metrics"].get("period_1", {}).get("commit_count", None)
-    
+
     if p1 is not None:
         # Full trajectory available
         if p1 == 0:
             return 10 if p4 > 0 else 0
         return 10 if (p4 / p1) >= 1.2 else 0
-    
+
     # Fall back to P3 (12-month comparison) if P1 unavailable
     p3 = repo["velocity"]["period_metrics"].get("period_3", {}).get("commit_count", None)
     
@@ -123,7 +123,7 @@ def calculate_trend_modifier(repo):
         if p3 == 0:
             return 10 if p4 > 0 else 0
         return 10 if (p4 / p3) >= 1.2 else 0
-    
+
     # No historical data - no trend bonus
     return 0
 
@@ -131,10 +131,88 @@ def calculate_recency_bonus(repo):
     """Recent activity bonus: commit in last 30 days AND >0 commits → +5 points."""
     days = get_days_since_last_commit(repo)
     p4_commits = repo["velocity"]["period_metrics"]["period_4"]["commit_count"]
-    
+
     if days < 30 and p4_commits > 0:
         return 5
     return 0
+
+# ==================== LEHMAN'S LAWS DIAGNOSTICS ====================
+def calculate_self_regulation(repo):
+    """Law 3: Self-regulating evolution shows consistent patterns.
+    
+    Returns bonus/penalty based on commit consistency:
+    CV < 0.3 (consistent) → +5
+    CV > 0.6 (erratic) → -5
+    Otherwise → 0
+    """
+    periods = repo["velocity"]["period_metrics"]
+
+    # Collect commit counts from available periods
+    commits = []
+    for period in ["period_1", "period_2", "period_3", "period_4"]:
+        if period in periods:
+            commits.append(periods[period]["commit_count"])
+
+    # Need at least 2 periods to calculate variance
+    if len(commits) < 2:
+        return 0
+
+    mean = sum(commits) / len(commits)
+
+    # Can't calculate CV if mean is zero
+    if mean == 0:
+        return 0
+
+    # Calculate coefficient of variation
+    variance = sum((x - mean) ** 2 for x in commits) / len(commits)
+    std_dev = variance ** 0.5
+    cv = std_dev / mean
+
+    # Convert to bonus/penalty
+    if cv < 0.3:
+        return 3  # Consistent evolution
+    elif cv > 0.6:
+        return -3  # Erratic patterns
+    else:
+        return 0  # Neutral
+
+def calculate_org_stability(repo):
+    """Law 4: Stable organisations maintain consistent team sizes.
+
+    Returns bonus/penalty based on contributor stability:
+    CV < 0.3 (stable) → +3
+    CV > 0.6 (unstable) → -3
+    Otherwise → 0
+    """
+    collab = repo["collaboration"]["contributor_metrics_by_period"]
+
+    # Collect contributor counts from available periods
+    contributors = []
+    for period in ["period_1", "period_2", "period_3", "period_4"]:
+        if period in collab:
+            contributors.append(collab[period]["total_contributors"])
+
+    # Need at least 2 periods
+    if len(contributors) < 2:
+        return 0
+
+    mean = sum(contributors) / len(contributors)
+
+    if mean == 0:
+        return 0
+
+    # Calculate coefficient of variation
+    variance = sum((x - mean) ** 2 for x in contributors) / len(contributors)
+    std_dev = variance ** 0.5
+    cv = std_dev / mean
+
+    # Convert to bonus/penalty
+    if cv < 0.3:
+        return 3  # Stable team
+    elif cv > 0.6:
+        return -3  # High turnover
+    else:
+        return 0  # Neutral
 
 # ==================== BAND CLASSIFICATION ====================
 def get_band(score):
@@ -162,16 +240,23 @@ def score_repo(repo):
         qual * CATEGORY_WEIGHTS["quality"] +
         evol * CATEGORY_WEIGHTS["evolvability"]
     ) * 100
-    
+
     trend = calculate_trend_modifier(repo)
     recency = calculate_recency_bonus(repo)
-    final = max(0, min(100, raw + trend + recency))
+
+    # Lehman's Laws modifiers
+    self_reg = calculate_self_regulation(repo)
+    org_stab = calculate_org_stability(repo)
+
+    final = max(0, min(100, raw + trend + recency + self_reg + org_stab))
 
     return {
         "velocity_score": round(vel * 100, 1),
         "collaboration_score": round(collab * 100, 1),
         "quality_score": round(qual * 100, 1),
         "evolvability_score": round(evol * 100, 1),
+        "self_regulation": self_reg,
+        "org_stability": org_stab,
         "trend_modifier": trend,
         "recency_bonus": recency,
         "raw_score": round(raw, 1),
@@ -183,15 +268,15 @@ def score_repo(repo):
 if __name__ == "__main__":
     with open('repo_data.json') as f:
         repos = json.load(f)
-    
+
     print("Repository Health Scores")
-    print("-" * 105)
-    print(f"{'Repository':<30} {'Expected':<10} {'Vel':>6} {'Collab':>6} {'Qual':>6} {'Evol':>6} {'Raw':>6} {'Trend':>6} {'Bonus':>6} {'Final':>6}  {'Band':<10}")
-    print("-" * 105)
-    
+    print("-" * 115)
+    print(f"{'Repository':<20} {'Expected':<10} {'Vel':>6} {'Collab':>6} {'Qual':>6} {'Evol':>6} {'SelfReg':>8} {'OrgStab':>8} {'Raw':>6} {'Trend':>6} {'Recncy':>6} {'Final':>6}  {'Band':<10}")
+    print("-" * 115)
+
     correct = 0
     total_classified = 0
-    
+
     for repo in repos:
         scores = score_repo(repo)
         expected = repo.get('classification', None)
@@ -211,20 +296,29 @@ if __name__ == "__main__":
         else:
             expected_band = 'Unknown'
             match = ""
-        
-        print(f"{repo['name']:<30} "
+
+        # Format diagnostic values as bonus/penalty
+        self_reg_str = f"{scores['self_regulation']:+d}" if scores['self_regulation'] != 0 else "0"
+        org_stab_str = f"{scores['org_stability']:+d}" if scores['org_stability'] != 0 else "0"
+
+        # Extract repo name (after slash)
+        repo_name = repo['name'].split('/')[-1]
+
+        print(f"{repo_name:<20} "
             f"{expected_band:<10} "
             f"{scores['velocity_score']:>6.1f} "
             f"{scores['collaboration_score']:>6.1f} "
             f"{scores['quality_score']:>6.1f} "
             f"{scores['evolvability_score']:>6.1f} "
+            f"{self_reg_str:>8} "
+            f"{org_stab_str:>8} "
             f"{scores['raw_score']:>6.1f} "
             f"{scores['trend_modifier']:>+6.0f} "
             f"{scores['recency_bonus']:>+6.0f} "
             f"{scores['health_score']:>6.1f}  "
             f"{scores['health_band']:<10} {match}")
-    
-    print("-" * 105)
+
+    print("-" * 115)
     if total_classified > 0:
         print(f"Accuracy: {correct}/{total_classified} ({100*correct/total_classified:.1f}%)")
     else:
