@@ -23,10 +23,10 @@ def handle_zero(count, score_fn):
     return 0.5 if count == 0 else score_fn()
 
 def get_days_since_last_commit(repo):
-    """Days since last commit."""
+    """Days since last commit (calculated from collection date)."""
     last = datetime.strptime(repo["velocity"]["last_commit_date"], "%Y-%m-%d")
-    last = last.replace(tzinfo=timezone.utc)
-    return (datetime.now(timezone.utc) - last).days
+    collection = datetime.strptime(repo["collection_date"], "%Y-%m-%d %H:%M:%S UTC")
+    return (collection - last).days
 
 def is_abandoned(repo):
     """Abandoned: no P4 commits AND (no P3 OR >280 days inactive)."""

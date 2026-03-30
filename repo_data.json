@@ -360,7 +360,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits, Last: 1167d ago (insufficient history for trajectory)"
+    "classification_evidence": "P4: 0 commits, Last: 1168d ago (insufficient history for trajectory)"
   },
   {
     "name": "meteor/meteor",
@@ -771,7 +771,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 805 commits, Trajectory: 0.67, Last: 1d ago"
+    "classification_evidence": "P4: 805 commits, Trajectory: 0.67, Last: 2d ago"
   },
   {
     "name": "Polymer/polymer",
@@ -1138,7 +1138,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits, Last: 519d ago (insufficient history for trajectory)"
+    "classification_evidence": "P4: 0 commits, Last: 520d ago (insufficient history for trajectory)"
   },
   {
     "name": "emberjs/ember.js",
@@ -1549,7 +1549,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 381 commits, Trajectory: 1.82, Last: 2d ago"
+    "classification_evidence": "P4: 381 commits, Trajectory: 1.82, Last: 3d ago"
   },
   {
     "name": "jquery/jquery",
@@ -1944,7 +1944,7 @@
       }
     },
     "classification": "Moderate",
-    "classification_evidence": "P4: 45 commits, Trajectory: 0.94, Last: 1d ago"
+    "classification_evidence": "P4: 45 commits, Trajectory: 0.94, Last: 2d ago"
   },
   {
     "name": "lodash/lodash",
@@ -2347,7 +2347,7 @@
       }
     },
     "classification": "Moderate",
-    "classification_evidence": "P4: 23 commits, Last: 15d ago (insufficient history for trajectory)"
+    "classification_evidence": "P4: 23 commits, Last: 16d ago (insufficient history for trajectory)"
   },
   {
     "name": "moment/moment",
@@ -2737,7 +2737,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits, Last: 751d ago (insufficient history for trajectory)"
+    "classification_evidence": "P4: 0 commits, Last: 752d ago (insufficient history for trajectory)"
   },
   {
     "name": "sveltejs/kit",
@@ -3148,7 +3148,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 455 commits, Trajectory: 2.13, Last: 1d ago"
+    "classification_evidence": "P4: 455 commits, Trajectory: 2.13, Last: 2d ago"
   },
   {
     "name": "withastro/astro",
@@ -3559,7 +3559,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 1003 commits, Trajectory: 0.73, Last: 1d ago"
+    "classification_evidence": "P4: 1003 commits, Trajectory: 0.73, Last: 2d ago"
   },
   {
     "name": "remix-run/remix",
@@ -3970,7 +3970,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 876 commits, Trajectory: 1.03, Last: 5d ago"
+    "classification_evidence": "P4: 876 commits, Trajectory: 1.03, Last: 6d ago"
   },
   {
     "name": "vitejs/vite",
@@ -4381,7 +4381,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 593 commits, Trajectory: 1.52, Last: 18d ago"
+    "classification_evidence": "P4: 593 commits, Trajectory: 1.52, Last: 19d ago"
   },
   {
     "name": "fastify/fastify",
@@ -4792,7 +4792,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 124 commits, Trajectory: 0.85, Last: 16d ago"
+    "classification_evidence": "P4: 124 commits, Trajectory: 0.85, Last: 17d ago"
   },
   {
     "name": "microsoft/playwright",
@@ -5203,7 +5203,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 1071 commits, Trajectory: 1.13, Last: 17d ago"
+    "classification_evidence": "P4: 1071 commits, Trajectory: 1.13, Last: 18d ago"
   },
   {
     "name": "shadcn-ui/ui",
@@ -5614,7 +5614,7 @@
       }
     },
     "classification": "Active",
-    "classification_evidence": "P4: 592 commits, Trajectory: 8.22, Last: 16d ago"
+    "classification_evidence": "P4: 592 commits, Trajectory: 8.22, Last: 17d ago"
   },
   {
     "name": "jashkenas/coffeescript",
@@ -5996,7 +5996,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits, Last: 903d ago (insufficient history for trajectory)"
+    "classification_evidence": "P4: 0 commits, Last: 904d ago (insufficient history for trajectory)"
   },
   {
     "name": "knockout/knockout",
@@ -6367,7 +6367,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits, Last: 1645d ago (insufficient history for trajectory)"
+    "classification_evidence": "P4: 0 commits, Last: 1646d ago (insufficient history for trajectory)"
   },
   {
     "name": "atom/atom",
@@ -6730,7 +6730,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits, Last: 1204d ago (insufficient history for trajectory)"
+    "classification_evidence": "P4: 0 commits, Last: 1205d ago (insufficient history for trajectory)"
   },
   {
     "name": "angular/angular.js",
@@ -7095,7 +7095,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits, Trajectory: 0.00, Last: 697d ago"
+    "classification_evidence": "P4: 0 commits, Trajectory: 0.00, Last: 698d ago"
   },
   {
     "name": "bower/bower",
@@ -7464,7 +7464,7 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits, Last: 513d ago (insufficient history for trajectory)"
+    "classification_evidence": "P4: 0 commits, Last: 514d ago (insufficient history for trajectory)"
   },
   {
     "name": "gulpjs/gulp",
@@ -7856,7 +7856,7 @@
       }
     },
     "classification": "Declining",
-    "classification_evidence": "P4: 1 commits, Trajectory: 0.12, Last: 29d ago"
+    "classification_evidence": "P4: 1 commits, Trajectory: 0.12, Last: 30d ago"
   },
   {
     "name": "gruntjs/grunt",
@@ -8236,7 +8236,7 @@
       }
     },
     "classification": "Declining",
-    "classification_evidence": "P4: 3 commits, Trajectory: 1.50, Last: 125d ago"
+    "classification_evidence": "P4: 3 commits, Trajectory: 1.50, Last: 126d ago"
   },
   {
     "name": "jashkenas/backbone",
@@ -8610,6 +8610,6 @@
       }
     },
     "classification": "Abandoned",
-    "classification_evidence": "P4: 0 commits, Trajectory: 0.00, Last: 343d ago"
+    "classification_evidence": "P4: 0 commits, Trajectory: 0.00, Last: 344d ago"
   }
 ]

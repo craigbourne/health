@@ -15,7 +15,8 @@ for repo in repos:
     p4_commits = p4_data.get("commit_count", 0)
     
     last_commit = datetime.strptime(repo["velocity"]["last_commit_date"], '%Y-%m-%d')
-    days_since = (datetime.now() - last_commit).days
+    collection = datetime.strptime(repo["collection_date"], "%Y-%m-%d %H:%M:%S UTC")
+    days_since = (collection - last_commit).days
     
     # Calculate trajectory if historical data exists
     if p1_commits > 0:
