@@ -117,7 +117,7 @@ def calculate_trend_modifier(repo):
 
     # Fall back to P3 (12-month comparison) if P1 unavailable
     p3 = repo["velocity"]["period_metrics"].get("period_3", {}).get("commit_count", None)
-    
+
     if p3 is not None:
         # Partial trajectory available
         if p3 == 0:
@@ -139,10 +139,10 @@ def calculate_recency_bonus(repo):
 # ==================== LEHMAN'S LAWS DIAGNOSTICS ====================
 def calculate_self_regulation(repo):
     """Law 3: Self-regulating evolution shows consistent patterns.
-    
+
     Returns bonus/penalty based on commit consistency:
-    CV < 0.3 (consistent) → +5
-    CV > 0.6 (erratic) → -5
+    CV < 0.3 (consistent) → +3
+    CV > 0.6 (erratic) → -3
     Otherwise → 0
     """
     periods = repo["velocity"]["period_metrics"]
@@ -214,6 +214,34 @@ def calculate_org_stability(repo):
     else:
         return 0  # Neutral
 
+def calculate_high_activity_bonus(repo):
+    """Reward exceptionally active projects (>500 commits P4).
+
+    Recognizes projects with very high development activity.
+    Examples: vite (593), playwright (1071), meteor (805)
+    """
+    p4_commits = repo["velocity"]["period_metrics"]["period_4"]["commit_count"]
+    return 5 if p4_commits > 500 else 0
+
+def calculate_maintenance_mode_penalty(repo):
+    """Penalize legacy projects in maintenance mode.
+
+    Pattern: Low activity + High quality + No growth = Legacy maintenance
+
+    Detects projects like jQuery: technically sound but minimal development,
+    no growth trajectory, market has moved on.
+
+    Criteria: <60 commits P4, quality >75, no trend bonus
+    """
+    p4_commits = repo["velocity"]["period_metrics"]["period_4"]["commit_count"]
+    quality_score = score_quality(repo) * 100
+    trend = calculate_trend_modifier(repo)
+
+    # Pattern: Low activity, high quality, no growth
+    if p4_commits < 60 and quality_score > 75 and trend == 0:
+        return -30
+    return 0
+
 # ==================== BAND CLASSIFICATION ====================
 def get_band(score):
     """Map score to health band."""
@@ -248,7 +276,11 @@ def score_repo(repo):
     self_reg = calculate_self_regulation(repo)
     org_stab = calculate_org_stability(repo)
 
-    final = max(0, min(100, raw + trend + recency + self_reg + org_stab))
+    # Activity and maintenance modifiers
+    high_activity = calculate_high_activity_bonus(repo)
+    maintenance_penalty = calculate_maintenance_mode_penalty(repo)
+
+    final = max(0, min(100, raw + trend + recency + self_reg + org_stab + high_activity + maintenance_penalty))
 
     return {
         "velocity_score": round(vel * 100, 1),
@@ -257,6 +289,8 @@ def score_repo(repo):
         "evolvability_score": round(evol * 100, 1),
         "self_regulation": self_reg,
         "org_stability": org_stab,
+        "high_activity": high_activity,
+        "maintenance_penalty": maintenance_penalty,
         "trend_modifier": trend,
         "recency_bonus": recency,
         "raw_score": round(raw, 1),
@@ -270,56 +304,35 @@ if __name__ == "__main__":
         repos = json.load(f)
 
     print("Repository Health Scores")
-    print("-" * 115)
-    print(f"{'Repository':<20} {'Expected':<10} {'Vel':>6} {'Collab':>6} {'Qual':>6} {'Evol':>6} {'SelfReg':>8} {'OrgStab':>8} {'Raw':>6} {'Trend':>6} {'Recncy':>6} {'Final':>6}  {'Band':<10}")
-    print("-" * 115)
-
-    correct = 0
-    total_classified = 0
+    print("-" * 125)
+    print(f"{'Repository':<20} {'Vel':>6} {'Collab':>6} {'Qual':>6} {'Evol':>6} {'SelfReg':>8} {'OrgStab':>8} {'HiAct':>6} {'Maint':>6} {'Raw':>6} {'Trend':>6} {'Recncy':>6} {'Final':>6}  {'Band':<10}")
+    print("-" * 125)
 
     for repo in repos:
         scores = score_repo(repo)
-        expected = repo.get('classification', None)
-        
-        if expected:
-            expected_band = {
-                'Active': 'Healthy',
-                'Moderate': 'Moderate',
-                'Declining': 'Declining',
-                'Abandoned': 'Critical'
-            }.get(expected, 'Unknown')
-            
-            total_classified += 1
-            match = "✓" if scores['health_band'] == expected_band else "✗"
-            if scores['health_band'] == expected_band:
-                correct += 1
-        else:
-            expected_band = 'Unknown'
-            match = ""
 
         # Format diagnostic values as bonus/penalty
         self_reg_str = f"{scores['self_regulation']:+d}" if scores['self_regulation'] != 0 else "0"
         org_stab_str = f"{scores['org_stability']:+d}" if scores['org_stability'] != 0 else "0"
+        hi_act_str = f"{scores['high_activity']:+d}" if scores['high_activity'] != 0 else "0"
+        maint_str = f"{scores['maintenance_penalty']:+d}" if scores['maintenance_penalty'] != 0 else "0"
 
         # Extract repo name (after slash)
         repo_name = repo['name'].split('/')[-1]
 
         print(f"{repo_name:<20} "
-            f"{expected_band:<10} "
             f"{scores['velocity_score']:>6.1f} "
             f"{scores['collaboration_score']:>6.1f} "
             f"{scores['quality_score']:>6.1f} "
             f"{scores['evolvability_score']:>6.1f} "
             f"{self_reg_str:>8} "
             f"{org_stab_str:>8} "
+            f"{hi_act_str:>6} "
+            f"{maint_str:>6} "
             f"{scores['raw_score']:>6.1f} "
             f"{scores['trend_modifier']:>+6.0f} "
             f"{scores['recency_bonus']:>+6.0f} "
             f"{scores['health_score']:>6.1f}  "
-            f"{scores['health_band']:<10} {match}")
+            f"{scores['health_band']:<10}")
 
-    print("-" * 115)
-    if total_classified > 0:
-        print(f"Accuracy: {correct}/{total_classified} ({100*correct/total_classified:.1f}%)")
-    else:
-        print("No classified repos to validate against")
+    print("-" * 125)
